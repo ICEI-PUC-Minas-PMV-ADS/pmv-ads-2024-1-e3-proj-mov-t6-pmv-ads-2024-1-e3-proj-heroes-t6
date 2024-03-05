@@ -1,10 +1,10 @@
-# Heroes - Seja mais um heroi
+# Heroes - Seja mais um herói
 
 `Analise e desenvolvimento de sistemas - EAD`
 
 `DISCIPLINA`
 
-`3 SEMESTRE`
+`3° Semestre`
 
 Aplicação que facilite a doação de alimentos para pessoas em situação de vulnerabilidade social e vítimas de desastres, promovendo uma ponte eficaz entre doadores (indivíduos, empresas, e organizações) e os beneficiários finais.
 
@@ -20,7 +20,7 @@ Aplicação que facilite a doação de alimentos para pessoas em situação de v
 
 ## Orientador
 
-* Wesley 
+* Wesley Dias Maciel
 
 ## Instruções de utilização
 
