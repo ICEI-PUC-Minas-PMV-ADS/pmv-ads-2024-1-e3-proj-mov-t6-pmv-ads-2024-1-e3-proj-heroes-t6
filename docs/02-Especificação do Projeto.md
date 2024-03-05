@@ -152,9 +152,14 @@ De acordo com o PMBoK v6 as dez áreas que constituem os pilares para gerenciar 
 
 ## Gerenciamento de Tempo
 
-Com diagramas bem organizados que permitem gerenciar o tempo nos projetos, o gerente de projetos agenda e coordena tarefas dentro de um projeto para estimar o tempo necessário de conclusão.
-
-![Diagrama de rede simplificado notação francesa (método francês)](img/02-diagrama-rede-simplificado.png)
+| Nome da Tarefa |  Duração  |   Início   |  Término   |
+|----------------|-----------|------------|------------|
+|     Projeto    |  142 Dias | 01/02/2024 | 12/07/2024 |
+|     Etapa 1    |  32 Dias  | 01/02/2024 | 03/03/2024 |
+|     Etapa 2    |  28 Dias  | 04/03/2024 | 31/03/2024 |
+|     Etapa 3    |  21 Dias  | 01/04/2024 | 21/04/2024 |
+|     Etapa 4    |  34 Dias  | 22/04/2024 | 26/05/2024 |
+|     Etapa 5    |  27 Dias  | 27/05/2024 | 23/06/2024 |
 
 O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
 
@@ -164,10 +169,26 @@ O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utiliz
 
 O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
 
-![Simple Project Timeline](img/02-project-timeline.png)
+|        Equipe         |                  Função                     |
+|-----------------------|---------------------------------------------|
+|    Pedro Andrade      |    Scrum Master e Desenvolvedor             | 
+|    Wesley Gomes       |    PO e Desenvolvedor                       |
+|    Bruno Arantes      |    Desenvolvedor                            |
+|    Marcos Teixeira    |    Arquiteto de Software e Desenvolvedor    |
+|    Renan Golçaves     |    Analista de Negócios e Desenvolvedor     |
+|    Gustavo Candido    |    Desenvolvedor                            |
 
 ## Gestão de Orçamento
 
 O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo.
 
-![Orçamento](img/02-orcamento.png)
+|                         Orçamentos                            |
+|                    Recursos Necessários (R$)                  |
+| Ações                       | Valores                         |
+|-----------------------------|---------------------------------|
+| Desenvolvimento             |          R$23.878,59            |
+| Licença Play Store          | U$25 – R$123,45 (Uma única vez) |
+| Licença Apple Store         |    U$99 – R$489,00 (Anuais)     |
+| 6 - Desenvolvedores Salário |       R$15.700 (Mensal)         |
+| Registro de Patente         |           R$200,00              |
+| Total                       |          R$92.891,04            |
