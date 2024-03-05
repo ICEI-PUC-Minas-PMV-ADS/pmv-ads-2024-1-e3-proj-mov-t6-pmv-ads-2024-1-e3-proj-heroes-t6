@@ -1,13 +1,15 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Nos últimos anos, a questão da fome e da insegurança alimentar tem se agravado em diversas regiões ao redor do mundo, incluindo o Brasil. Este desafio é intensificado por eventos climáticos extremos e por indivíduos em condições de vulnerabilidade social, uma vez que esses fatores impactam diretamente o acesso das pessoas a alimentos essenciais e nutricionais. Diante dessa realidade, torna-se imperativo desenvolver soluções inovadoras e eficazes para combater a fome e fornecer assistência rápida às vítimas de desastres naturais.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+A fome, um desafio global que persiste no Brasil, reflete uma complexidade resultante de fatores sociais e econômicos. Apesar dos avanços econômicos e iniciativas de redução da pobreza, a desigualdade social, a disparidade na distribuição de recursos e as crises econômicas contribuem para a perpetuação desse problema. A luta contra a fome requer soluções abrangentes que abordem esses elementos intrincados.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+A situação torna-se ainda mais crítica diante de desastres naturais, como enchentes e secas, que não apenas destroem moradias e infra estruturas, mas também deixam comunidades vulneráveis, demandando assistência imediata em alimentos e higiene pessoal. 
+
+Em síntese, combater a fome e suas ramificações exige uma abordagem coordenada que compreenda as nuances sociais, econômicas e ambientais. Somente através de esforços conjuntos, conscientização e implementação de políticas eficazes será possível avançar na erradicação desse desafio que impacta inúmeras vidas, transformando a luta contra a fome em um caminho mais próximo da superação.
+
 
 > **Links Úteis**:
 > - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
@@ -16,9 +18,13 @@ Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thin
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
+O principal objetivo deste projeto é desenvolver uma aplicação que facilite a doação de alimentos para pessoas em situação de vulnerabilidade social e vítimas de desastres, promovendo uma ponte eficaz entre doadores (indivíduos, empresas, e organizações) e os beneficiários finais. Os objetivos específicos incluem:
+
+Conectar Doadores e Beneficiários: Criar uma plataforma que conecte os doadores com as instituições responsáveis pela arrecadação, garantindo uma distribuição eficiente e direcionada dos recursos.
+
+Promover a Conscientização: Usar o aplicativo como uma ferramenta de conscientização sobre as questões da fome e dos impactos causados por desastres, incentivando mais pessoas e empresas a contribuírem com doações.
+
  
 > **Links Úteis**:
 > - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
