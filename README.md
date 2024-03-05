@@ -1,23 +1,26 @@
-# TÍTULO DO PROJETO
+# Heroes - Seja mais um heroi
 
-`CURSO`
+`Analise e desenvolvimento de sistemas - EAD`
 
 `DISCIPLINA`
 
-`SEMESTRE`
+`3 SEMESTRE`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Aplicação que facilite a doação de alimentos para pessoas em situação de vulnerabilidade social e vítimas de desastres, promovendo uma ponte eficaz entre doadores (indivíduos, empresas, e organizações) e os beneficiários finais.
+
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Bruno
+* Gustavo
+* Marcos Teixeira Dias
+* Renan
+* Pedro
+* Wesley
 
 ## Orientador
 
-* Nome completo do professor 1
+* Wesley 
 
 ## Instruções de utilização
 
