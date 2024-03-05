@@ -4,7 +4,7 @@ Nos últimos anos, a questão da fome e da insegurança alimentar tem se agravad
 
 ## Problema
 
-A fome, um desafio global que persiste no Brasil, reflete uma complexidade resultante de fatores sociais e econômicos. Apesar dos avanços econômicos e iniciativas de redução da pobreza, a desigualdade social, a disparidade na distribuição de recursos e as crises econômicas contribuem para a perpetuação desse problema. A luta contra a fome requer soluções abrangentes que abordem esses elementos intrincados.
+A fome, um desafio global que persiste no Brasil, reflete uma complexidade resultante de fatores sociais e econômicos. Apesar dos avanços econômicos e iniciativas de redução da pobreza, a desigualdade social, a diferença na distribuição de recursos e as crises econômicas contribuem para a perpetuação desse problema. A luta contra a fome requer soluções abrangentes que abordem esses elementos intrincados.
 
 A situação torna-se ainda mais crítica diante de desastres naturais, como enchentes e secas, que não apenas destroem moradias e infra estruturas, mas também deixam comunidades vulneráveis, demandando assistência imediata em alimentos e higiene pessoal. 
 
