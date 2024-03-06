@@ -1,6 +1,6 @@
 # Introdução
 
-Nos últimos anos, a questão da fome e da insegurança alimentar tem se agravado em diversas regiões ao redor do mundo, incluindo o Brasil. Este desafio é intensificado por eventos climáticos extremos e por indivíduos em condições de vulnerabilidade social, uma vez que esses fatores impactam diretamente o acesso das pessoas a alimentos essenciais e nutricionais. Diante dessa realidade, torna-se imperativo desenvolver soluções inovadoras e eficazes para combater a fome e fornecer assistência rápida às vítimas de desastres naturais.
+Nos últimos anos, a questão da fome e da insegurança alimentar tem se agravado em diversas regiões ao redor do mundo, incluindo o Brasil. Este desafio é intensificado por eventos climáticos extremos e por indivíduos em condições de vulnerabilidade social, uma vez que esses fatores impactam diretamente o acesso das pessoas a alimentos essenciais e nutricionais. Diante dessa realidade, Heroes será desenvolvido para criar soluções inovadoras e eficazes no combate à fome, além de fornecer assistência rápida às vítimas de desastres naturais.
 
 ## Problema
 
