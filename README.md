@@ -6,17 +6,17 @@
 
 `3° Semestre`
 
-Aplicação que facilite a doação de alimentos para pessoas em situação de vulnerabilidade social e vítimas de desastres, promovendo uma ponte eficaz entre doadores (indivíduos, empresas, e organizações) e os beneficiários finais.
+Uma aplicação que facilite a doação de alimentos para pessoas em situação de vulnerabilidade social e vítimas de desastres, promovendo uma ponte eficaz entre doadores (indivíduos, empresas, e organizações) e os beneficiários finais.
 
 
 ## Integrantes
 
-* Bruno
-* Gustavo
+* Bruno Henrique Arantes Dias
+* Gustavo da Silva Candido
 * Marcos Teixeira Dias
-* Renan
-* Pedro
-* Wesley
+* Renan Gonçalves da Cunha
+* Pedro Ferreira Andrade
+* Wesley Correa Gomes
 
 ## Orientador
 
