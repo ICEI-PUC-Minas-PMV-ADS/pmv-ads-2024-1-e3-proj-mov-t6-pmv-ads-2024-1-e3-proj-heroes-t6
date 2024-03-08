@@ -6,9 +6,219 @@ Definição do problema e ideia de solução a partir da perspectiva do usuário
 
 Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
 
-## Personas
+Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+
+As personas levantadas durante o processo de entendimento do problema são apresentadas a seguir:
+
+
+
+
+Personas
+
+
+As personas levantadas durante o processo de entendimento do problema são apresentadas a seguir:
+
+
+
+
+
+
+
+
+
+
+
+
+
+Florentino Rossi
+    Idade:
+29 Anos
+    Ocupação:
+Sociólogo
+    Motivações:
+Motivação principal é querer ajudar o próximo em situações de Desastres naturais
+     Frustrações:
+Dificuldade em ter confiança sobre o repasse dos fundos para ongs autorizadas com ajuda humanitária. 
+    
+     Aplicativos:
+ *twitter
+ *instagram
+ *facebook
+Como o aplicativo pode facilitar o trabalho ?
+Facilita com transparência e segurança o envio do dinheiro para ajudar nos desastres naturais
+
+
+
+
+
+
+
+
+
+
+
+Sabrina Yumi
+    Idade:
+25 Anos
+    Ocupação:
+Gerente de Projeto em uma ONG de Conservação Ambiental
+    Motivações:
+Sabrina é apaixonada pela preservação do meio ambiente e está empenhada em garantir o financiamento necessário para os projetos da sua organização
+     Frustrações:
+Sabrina muitas vezes se vê sobrecarregada com a burocracia associada à obtenção de financiamento para os projetos. 
+    
+     Aplicativos:
+*Instagram
+*Twitter
+*Linkedin
+ 
+Como o aplicativo pode facilitar o trabalho ?
+O sistema pode simplificar o processo de solicitação de financiamento, centralizando todas as informações necessárias em uma plataforma fácil de usar. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ayumi Kubo
+    Idade:
+55 anos
+    Ocupação:
+Coordenadora de Voluntariado em uma ONG de Saúde Pública
+    Motivações:
+Ela busca maneiras de aumentar o envolvimento dos voluntários e garantir que a ONG tenha os recursos necessários para realizar seus programas.
+     Frustrações:
+Muitas vezes se sente sobrecarregada com a falta de recursos e transparência pelas empresas parceiras
+    
+     Aplicativos:
+*Instagram
+*Facebook
+ 
+Como o aplicativo pode facilitar o trabalho ?
+Pode ajudar a ONG a arrecadar fundos para cobrir os custos associados à operação dos programas de saúde pública.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Camila Schneider
+    Idade:
+26 Anos
+    Ocupação:
+Empresária
+    Motivações:
+Camilas acredita firmemente na responsabilidade social das empresas e está comprometido em contribuir para causas que promovam o bem-estar social e ambiental
+     Frustrações:
+Camilas muitas vezes se sente sobrecarregado com a quantidade de solicitações de doações que recebe e luta para identificar as organizações confiáveis 
+    
+     Aplicativos:
+*Instagram
+*Facebook
+*Linkedin
+*twitter
+ 
+Como o aplicativo pode facilitar o trabalho ?
+O Sistema pode oferecer a Camila uma plataforma centralizada onde ele possa pesquisar e descobrir ONGs que atuam em áreas alinhadas com seus valores.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rami Opash
+    Idade:
+25 Anos
+    Ocupação:
+Profissional Liberal
+    Motivações:
+Rami acredita na importância de retribuir à comunidade e está comprometido em contribuir financeiramente para salvar vidas em desastres naturais.
+     Frustrações:
+Rami muitas vezes se sente sobrecarregado com o processo de encontrar organizações confiáveis para doar seu dinheiro e gostaria de um sistema centralizado para distribuições de recursos com ongs parceiras.
+    
+     Aplicativos:
+*Instagram
+*Facebook
+*Linkedin
+*twitter
+ 
+Como o aplicativo pode facilitar o trabalho ?
+ONGs que estão fazendo um impacto significativo em questões que Rami se preocupa, fornecendo transparência sobre como suas doações serão utilizadas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
 
