@@ -24,50 +24,50 @@ As personas levantadas durante o processo de entendimento do problema são apres
 
 As personas levantadas durante o processo de entendimento do problema são apresentadas a seguir:
 
-| <img src="./img/personas01.jpg"> | DAVID DIEGO | 
+| <img src="./img/personas01.jpg"> | Florentino Rossi| 
 |-----------|------------| 
-| **Idade:** | 33 anos |
-| **Ocupação:** | FreeLancer |
-| **Motivações:** | Ser capaz de gerenciar vários projetos simultaneamente, entregar trabalhos de qualidade, estabelecer prazos realistas|
-| **Frustrações:** | Tem dificuldade em manter o controle de diferentes projetos, falta de visibilidade sobre o fluxo de trabalho, prazos apertados |
+| **Idade:** | 29 anos |
+| **Ocupação:** | Sociólogo |
+| **Motivações:** |  Motivação principal é querer ajudar o próximo em situações de Desastres naturais |
+| **Frustrações:** | Dificuldade em ter confiança sobre o repasse dos fundos para ongs autorizadas com ajuda humanitária |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *LinkedIn |
-| **Como o sistema pode facilitar o trabalho?** | permitir o acompanhamento claro dos projetos, visualização de prazos e gestão mais eficaz do tempo |
+| **Como o sistema pode facilitar o trabalho?** | Facilita com transparência e segurança o envio do dinheiro para ajudar nos desastres naturais |
 
-| <img src="./img/personas02.jpg"> | ANDRÉ DORIZOTO | 
+| <img src="./img/personas02.jpg"> | Sabrina Yumi | 
 |-----------|------------| 
-| **Idade:** | 45 anos |
-| **Ocupação:** | Desenvolvedor |
-| **Motivações:** | Ser capaz de contribuir para o sucesso dos projetos da empresa, receber feedback construtivo e cuidar de sua carreira |
-| **Frustrações:** | Falta de clareza nas tarefas, dificuldade em acompanhar prioridades, falta de uma boa orientação para seus colegas de equipe |
-| **Aplicativos:** | *Instagram <br> *Facebook <br> *Zoom <br> *Visual Studio Code |
-| **Como o sistema pode facilitar o trabalho?** | Fornecer tarefas claras e bem definidas, priorização visível e receber feedback direto das atividades |
+| **Idade:** | 25 anos |
+| **Ocupação:** |Gerente de Projeto em uma ONG de Conservação Ambiental |
+| **Motivações:** | Sabrina é apaixonada pela preservação do meio ambiente e está empenhada em garantir o financiamento necessário para os projetos da sua organização |
+| **Frustrações:** | Sabrina muitas vezes se vê sobrecarregada com a burocracia associada à obtenção de financiamento para os projetos. |
+| **Aplicativos:** | *Instagram <br> *Facebook <br> *Zoom <br> * Twitter |
+| **Como o sistema pode facilitar o trabalho?** | O sistema pode simplificar o processo de solicitação de financiamento, centralizando todas as informações necessárias em uma plataforma fácil de usar. |
 
-| <img src="./img/personas03.jpg"> | SOFIA SANTOS | 
+| <img src="./img/personas03.jpg"> | Ayumi Kubo | 
 |-----------|------------| 
-| **Idade:** | 54 anos |
-| **Ocupação:** | Gerente de Recursos Humanos |
-| **Motivações:** | Poder agilizar o processo de recrutamento, acompanhar o desenvolvimento dos funcionários, garantir conformidade com treinamentos obrigatórios |
-| **Frustrações:** | Dificuldade em coordenar várias etapas do recrutamento, falta de clareza sobre a comunicação e progressão dos funcionários |
+| **Idade:** | 55 anos |
+| **Ocupação:** | Coordenadora de Voluntariado em uma ONG de Saúde Pública |
+| **Motivações:** | Ela busca maneiras de aumentar o envolvimento dos voluntários e garantir que a ONG tenha os recursos necessários para realizar seus programas. |
+| **Frustrações:** | Muitas vezes se sente sobrecarregada com a falta de recursos e transparência pelas empresas parceiras |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> LinkedIn <br> Vagas |
-| **Como o sistema pode facilitar o trabalho?** | Permitir criar quadros e tarefas personalizadas para monitorar o progresso dos funcionários em treinamentos |
+| **Como o sistema pode facilitar o trabalho?** | Pode ajudar a ONG a arrecadar fundos para cobrir os custos associados à operação dos programas de saúde pública. |
 
-| <img src="./img/personas04.jpg">| BIANCA AKANA | 
+| <img src="./img/personas04.jpg">| Camila Schneider | 
 |-----------|------------| 
-| **Idade:** | 35 anos |
-| **Ocupação:** | Arquiteta |
-| **Motivações:** |  Ter colaboração eficiente com sua equipe, otimizar seus projetos, manter prazos e entregar resultados de alta qualidade aos clientes |
-| **Frustrações:** | Sobrecarregamento por múltiplos projetos simultâneos, comunicação caotica entre os membros da equipe e falta de um acompanhamento claro do progresso dos projetos |
+| **Idade:** | 26 anos |
+| **Ocupação:** | Empresária |
+| **Motivações:** |  Camila acredita firmemente na responsabilidade social das empresas e está comprometido em contribuir para causas que promovam o bem-estar social e ambienta |
+| **Frustrações:** | Camila muitas vezes se sente sobrecarregado com a quantidade de solicitações de doações que recebe e luta para identificar as organizações confiáveis  |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *Microsoft Teams <br> *AutoCad |
-| **Como o sistema pode facilitar o trabalho?** | Permitir que ela crie quadros separados para cada projeto, uma atribuição clara de tarefas a membros da equipe e adicionar prazos |
+| **Como o sistema pode facilitar o trabalho?** | O Sistema pode oferecer a Camila uma plataforma centralizada onde ele possa pesquisar e descobrir ONGs que atuam em áreas alinhadas com seus valores |
 
-| <img src="./img/personas05.jpg"> | Florentino Rossi | 
+| <img src="./img/personas05.jpg"> | Rami Opash | 
 |-----------|------------| 
-| **Idade:** | 16 anos |
-| **Ocupação:** | Estudante |
-| **Motivações:** | Ser capaz de gerenciar tarefas acadêmicas, equilibrar estudos e vida pessoal, melhorar o desempenho acadêmico |
-| **Frustrações:** | Dificuldade em organizar tarefas de diferentes materias, procrastinação |
+| **Idade:** | 25 anos |
+| **Ocupação:** | Profissional Liberal |
+| **Motivações:** | Rami acredita na importância de retribuir à comunidade e está comprometido em contribuir financeiramente para salvar vidas em desastres naturais |
+| **Frustrações:** | Rami muitas vezes se sente sobrecarregado com o processo de encontrar organizações confiáveis para doar seu dinheiro e gostaria de um sistema centralizado para distribuições de recursos com ongs parceiras. |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *Whatsapp |
-| **Como o sistema pode facilitar o trabalho?** | Permitir estruturar tarefas por disciplina, definir prazos claros, identificar o progresso e separar momentos para estudo, trabalho e lazer, incentivando um planejamento mais eficiente |
+| **Como o sistema pode facilitar o trabalho?** | ONGs que estão fazendo um impacto significativo em questões que Rami se preocupa, fornecendo transparência sobre como suas doações serão utilizadas. |
 
 ## Histórias de Usuários
 
@@ -75,16 +75,16 @@ Com base na compreensão do dia-a-dia das funções identificadas para o projeto
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-| DAVID DIEGO | criar diferentes quadros para cada cliente ou projeto | acompanhar o progresso de várias atividades ao mesmo tempo |
-| DAVID DIEGO | visualizar claramente o fluxo de trabalho | melhorar a eficiência do desenvolvimento do projeto |
-| ANDRÉ DORIZOTO | poder ver todas as tarefas atribuídas aos menbros da equipe | ter uma visão clara das responsabilidades de cada membro |
-| ANDRÉ DORIZOTO |  adicionar e modificar o status de cada uma das tarefas | melhorar a comunicação com a equipe |
-| SOFIA SANTOS | criar quadros para o processos de recrutamento, com etapas bem definidas | manter o controle dos candidatos |
-| SOFIA SANTOS | gerenciar os status de cada tarefa dos quadros | monitorar o progresso dos recrutamentos |
-| BIANCA AKANA | poder criar quadros personalizáveis que me permitam adaptar as colunas e etapas do fluxo de trabalho de acordo com as necessidades de cada projeto | para uma experiência mais flexível e adaptavel |
-| BIANCA AKANA | atribuir tarefas específicas a membros da equipe no quadro | garantir que a carga de trabalho seja distribuída de forma eficiente |
-| LUÍS PAULO MARTINS | criar um quadro para cada disciplina | organizar as tarefas de estudo, projetos e prazos |
-| LUÍS PAULO MARTINS | marcar o status das tarefas no quadro | acompanhar o progresso acadêmico |
+| Florentino Rossi | Um aplicativo intuitivo e de facil entendimento | Facilitar as minhas doações em poucas etapas |
+| Florentino Rossi | Usar uma interface simples, mas que atenda minhas necessidades, sem anúncios | Ter uma usabilidade eficiente e sem erros |
+| Sabrina Yumi | Transparência para ongs onde facilitaria o planejamento do envio dos recursos | Facilitaria o meu trabalho para encaminhar para o setor de contabilidade. |
+| Sabrina Yumi |  Poder acessar o histórico das transações | Ter transparência para os doadores |
+| Ayumi Kubo | Aceitar cartões de créditos e pix | Facilitar os colaboradores enviarem os recursos |
+| Ayumi Kubo | Existir um regida segurança | Passar credibilidade para os usuários e evitar possíveis vazamentos de dados |
+| Camila Schneider | Funcionalidade que me permita ter facilmente acesso as ongs parceiras para passar mais segurança na hora da doação | Passaria um Ar de profissionalismo, algo que está faltando nesse tipo de ajuda |
+| Camila Schneider| A interface ser simples e funcional para o envio de recursos| Me ajudaria com doações mais rápidas e recomendação do aplicativo para amigos |
+| Rami Opash | Mostrar o Histórico e o repasse desses recursos | Transparência das doações |
+| Rami Opash | Um aplicativo com diversos parcerias | aUm aplicativo repassando os recursos para várias ongs facilitaria o meu dia dia|
 
 
 
@@ -110,17 +110,7 @@ Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos 
 > - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
 >
 Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
-
-## Histórias de Usuários
-
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
-
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
+órias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
 > **Links Úteis**:
 > - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
