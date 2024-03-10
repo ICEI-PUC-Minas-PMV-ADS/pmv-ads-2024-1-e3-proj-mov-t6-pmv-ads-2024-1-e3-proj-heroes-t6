@@ -195,6 +195,12 @@ De acordo com o PMBoK v6 as dez áreas que constituem os pilares para gerenciar 
 
 ## Gerenciamento de Tempo
 
+A gestão do tempo em um projeto é fundamental para garantir que todas as atividades sejam concluídas dentro do prazo estabelecido. É um processo que envolve a identificação e o planejamento das tarefas necessárias para atingir os objetivos do projeto, bem como a alocação eficiente dos recursos disponíveis.
+Em resumo, a gestão do tempo em um projeto envolve a definição clara de metas e prazos, a identificação e priorização das tarefas mais importantes e o acompanhamento constante do progresso. Com uma gestão eficaz do tempo, é possível aumentar a produtividade, reduzir custos e garantir a entrega do projeto dentro do prazo e do orçamento previstos.
+
+"O tempo é o recurso mais escasso e, a menos que seja gerenciado, nada mais pode ser gerenciado." - Peter Drucker
+
+
 | Nome da Tarefa |  Duração  |   Início   |  Término   |
 |----------------|-----------|------------|------------|
 |     Projeto    |  142 Dias | 01/02/2024 | 12/07/2024 |
@@ -206,7 +212,8 @@ De acordo com o PMBoK v6 as dez áreas que constituem os pilares para gerenciar 
 
 ## Gerenciamento de Equipe
 
-O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
+A gestão de equipe em um projeto de desenvolvimento é um processo complexo que exige habilidades de liderança, comunicação e organização. Com uma equipe bem gerenciada, é possível aumentar a produtividade, melhorar a qualidade do trabalho e alcançar os objetivos do projeto de forma eficaz.
+
 
 |        Equipe         |                  Função                     |
 |-----------------------|---------------------------------------------|
@@ -220,7 +227,7 @@ O gerenciamento adequado de tarefas contribuirá para que o projeto alcance alto
 
 ## Gestão de Orçamento
 
-O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo.
+A gestão do orçamento de um projeto é um processo contínuo que exige planejamento cuidadoso, monitoramento constante e comunicação eficaz. Com uma gestão eficiente do orçamento, é possível maximizar o uso dos recursos disponíveis e garantir o sucesso do projeto dentro das restrições financeiras estabelecidas..
 
 | Ações                        | Valores                         |
 |------------------------------|---------------------------------|
