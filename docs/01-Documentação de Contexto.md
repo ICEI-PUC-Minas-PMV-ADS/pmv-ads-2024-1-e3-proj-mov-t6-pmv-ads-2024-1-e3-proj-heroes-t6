@@ -10,24 +10,13 @@ A situação torna-se ainda mais crítica diante de desastres naturais, como enc
 
 Em síntese, combater a fome e suas ramificações exige uma abordagem coordenada que compreenda as nuances sociais, econômicas e ambientais. Somente através de esforços conjuntos, conscientização e implementação de políticas eficazes será possível avançar na erradicação desse desafio que impacta inúmeras vidas, transformando a luta contra a fome em um caminho mais próximo da superação.
 
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
-
 ## Objetivos
-
 
 O principal objetivo deste projeto é desenvolver uma aplicação que facilite a doação de alimentos para pessoas em situação de vulnerabilidade social e vítimas de desastres, promovendo uma ponte eficaz entre doadores (indivíduos, empresas, e organizações) e os beneficiários finais. Os objetivos específicos incluem:
 
 Conectar Doadores e Beneficiários: Criar uma plataforma que conecte os doadores com as instituições responsáveis pela arrecadação, garantindo uma distribuição eficiente e direcionada dos recursos.
 
 Promover a Conscientização: Usar o aplicativo como uma ferramenta de conscientização sobre as questões da fome e dos impactos causados por desastres, incentivando mais pessoas e empresas a contribuírem com doações.
-
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
 
 ## Justificativa
 
