@@ -20,12 +20,9 @@ Promover a Conscientização: Usar o aplicativo como uma ferramenta de conscient
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+De acordo com o relatório "O Estado da Segurança Alimentar e Nutrição no Mundo (SOFI)", publicado pela Organização das Nações Unidas para a Alimentação e a Agricultura (FAO) em 2023, o Brasil tem 21 milhões de pessoas que não têm o que comer todos os dias e 70,3 milhões em insegurança alimentar.  Isso, em conjunto com a escassez de iniciativas modernas de conscientização popular no Brasil, aponta uma demanda para ferramentas que visam apoiar e dar visibilidade para causas carentes.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Apesar de a maior parte dos desperdícios alimentícios ser de origem industrial, é possível causar grande impacto na crise alimentícia através do simples ato de conscientizar o cidadão comum. Diante desse cenário, o aplicativo proposto busca estender o acesso às situações de crise, permitindo que um cidadão comum consiga ajudar da conveniência do seu dispositivo móvel, seja através de doações ou da própria divulgação do aplicativo.
 
 ## Público-Alvo
 
