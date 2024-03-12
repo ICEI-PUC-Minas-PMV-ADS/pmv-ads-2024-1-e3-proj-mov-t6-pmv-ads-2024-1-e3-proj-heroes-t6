@@ -10,15 +10,15 @@ As personas levantadas durante o processo de entendimento do problema são apres
 |-----------|------------| 
 | **Idade:** | 29 anos |
 | **Ocupação:** | Sociólogo |
-| **Motivações:** |  Motivação principal é querer ajudar o próximo em situações de Desastres naturais |
-| **Frustrações:** | Dificuldade em ter confiança sobre o repasse dos fundos para ongs autorizadas com ajuda humanitária |
+| **Motivações:** |  Motivação principal é querer ajudar o próximo em situações de desastres  |
+| **Frustrações:** | Dificuldade em ter confiança sobre o repasse dos fundos para ocs autorizadas com ajuda humanitária |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *LinkedIn |
-| **Como o sistema pode facilitar o trabalho?** | Facilita com transparência e segurança o envio do dinheiro para ajudar nos desastres naturais |
+| **Como o sistema pode facilitar o trabalho?** | Facilita com transparência e segurança o envio do dinheiro para ajudar nos desastres |
 
 | <img src="./img/personas02.jpg"> | Sabrina Yumi | 
 |-----------|------------| 
 | **Idade:** | 25 anos |
-| **Ocupação:** |Gerente de Projeto em uma ONG de Conservação Ambiental |
+| **Ocupação:** |Gerente de Projeto em uma OSC de Conservação Ambiental |
 | **Motivações:** | Sabrina é apaixonada pela preservação do meio ambiente e está empenhada em garantir o financiamento necessário para os projetos da sua organização |
 | **Frustrações:** | Sabrina muitas vezes se vê sobrecarregada com a burocracia associada à obtenção de financiamento para os projetos. |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *Zoom <br> * Twitter |
@@ -27,29 +27,29 @@ As personas levantadas durante o processo de entendimento do problema são apres
 | <img src="./img/personas03.jpg"> | Ayumi Kubo | 
 |-----------|------------| 
 | **Idade:** | 55 anos |
-| **Ocupação:** | Coordenadora de Voluntariado em uma ONG de Saúde Pública |
-| **Motivações:** | Ela busca maneiras de aumentar o envolvimento dos voluntários e garantir que a ONG tenha os recursos necessários para realizar seus programas. |
-| **Frustrações:** | Muitas vezes se sente sobrecarregada com a falta de recursos e transparência pelas empresas parceiras |
+| **Ocupação:** | Coordenadora de Voluntariado em uma OSC de Saúde Pública |
+| **Motivações:** | Ela busca maneiras de aumentar o envolvimento dos voluntários e garantir que a OSCS tenha os recursos necessários para realizar seus programas. |
+| **Frustrações:** | Muitas vezes se sente frustada com a falta de recursos e transparência pelas empresas parceiras |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> LinkedIn <br> Vagas |
-| **Como o sistema pode facilitar o trabalho?** | Pode ajudar a ONG a arrecadar fundos para cobrir os custos associados à operação dos programas de saúde pública. |
+| **Como o sistema pode facilitar o trabalho?** | Pode ajudar a OSC a arrecadar fundos para cobrir os custos associados à operação dos programas de saúde pública. |
 
 | <img src="./img/personas04.jpg">| Camila Schneider | 
 |-----------|------------| 
 | **Idade:** | 26 anos |
 | **Ocupação:** | Empresária |
-| **Motivações:** |  Camila acredita firmemente na responsabilidade social das empresas e está comprometido em contribuir para causas que promovam o bem-estar social e ambienta |
-| **Frustrações:** | Camila muitas vezes se sente sobrecarregado com a quantidade de solicitações de doações que recebe e luta para identificar as organizações confiáveis  |
+| **Motivações:** |  Camila acredita firmemente na responsabilidade social das empresas e está comprometida em contribuir para causas que promovam o bem-estar social e ambiental |
+| **Frustrações:** | Camila muitas vezes se sente sobrecarregada com a quantidade de solicitações.  |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *Microsoft Teams <br> *AutoCad |
-| **Como o sistema pode facilitar o trabalho?** | O Sistema pode oferecer a Camila uma plataforma centralizada onde ele possa pesquisar e descobrir ONGs que atuam em áreas alinhadas com seus valores |
+| **Como o sistema pode facilitar o trabalho?** | O Sistema pode oferecer a Camila uma plataforma centralizada onde ele possa pesquisar e descobrir OSCS que atuam em áreas alinhadas com seus valores |
 
 | <img src="./img/personas05.jpg"> | Rami Opash | 
 |-----------|------------| 
 | **Idade:** | 25 anos |
 | **Ocupação:** | Profissional Liberal |
-| **Motivações:** | Rami acredita na importância de retribuir à comunidade e está comprometido em contribuir financeiramente para salvar vidas em desastres naturais |
-| **Frustrações:** | Rami muitas vezes se sente sobrecarregado com o processo de encontrar organizações confiáveis para doar seu dinheiro e gostaria de um sistema centralizado para distribuições de recursos com ongs parceiras. |
+| **Motivações:** | Rami acredita na importância de retribuir à comunidade e está comprometido em contribuir financeiramente para salvar vidas em desastres  |
+| **Frustrações:** | Rami muitas vezes se sente cansado com o processo de encontrar organizações confiáveis para doar seu dinheiro e gostaria de um sistema centralizado para distribuições de recursos com OSCS parceiras. |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *Whatsapp |
-| **Como o sistema pode facilitar o trabalho?** | ONGs que estão fazendo um impacto significativo em questões que Rami se preocupa, fornecendo transparência sobre como suas doações serão utilizadas. |
+| **Como o sistema pode facilitar o trabalho?** | OCS que estão fazendo um impacto significativo em questões que Rami se preocupa, fornecendo transparência sobre como suas doações serão utilizadas. |
 
 ## Histórias de Usuários
 
@@ -62,11 +62,11 @@ Com base na compreensão do dia-a-dia das funções identificadas para o projeto
 | Sabrina Yumi | Transparência para ongs onde facilitaria o planejamento do envio dos recursos | Facilitaria o meu trabalho para encaminhar para o setor de contabilidade. |
 | Sabrina Yumi |  Poder acessar o histórico das transações | Ter transparência para os doadores |
 | Ayumi Kubo | Aceitar cartões de créditos e pix | Facilitar os colaboradores enviarem os recursos |
-| Ayumi Kubo | Existir um regida segurança | Passar credibilidade para os usuários e evitar possíveis vazamentos de dados |
-| Camila Schneider | Funcionalidade que me permita ter facilmente acesso as ongs parceiras para passar mais segurança na hora da doação | Passaria um Ar de profissionalismo, algo que está faltando nesse tipo de ajuda |
-| Camila Schneider| A interface ser simples e funcional para o envio de recursos| Me ajudaria com doações mais rápidas e recomendação do aplicativo para amigos |
+| Ayumi Kubo | Existir um sistema seguro | Passar credibilidade para os usuários e evitar possíveis vazamentos de dados |
+| Camila Schneider | Funcionalidade que me permita ter facilmente acesso as OSCS parceiras para passar mais segurança na hora da doação | Passaria um Ar de profissionalismo, algo que está faltando nesse tipo de ajuda |
+| Camila Schneider| A interface ser simples e funcional para o envio de recursos| Ajudar com recomendaçãoes  |
 | Rami Opash | Mostrar o Histórico e o repasse desses recursos | Transparência das doações |
-| Rami Opash | Um aplicativo com diversos parcerias | aUm aplicativo repassando os recursos para várias ongs facilitaria o meu dia dia|
+| Rami Opash | Um aplicativo com diversos parcerias | aUm aplicativo repassando os recursos para várias O facilitaria o meu dia dia|
 
 ## Modelagem do Processo de Negócio 
 
