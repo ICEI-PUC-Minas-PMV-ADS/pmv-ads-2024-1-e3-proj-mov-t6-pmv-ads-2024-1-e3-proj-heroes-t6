@@ -18,7 +18,7 @@ As personas levantadas durante o processo de entendimento do problema são apres
 | <img src="./img/personas02.jpg"> | Sabrina Yumi | 
 |-----------|------------| 
 | **Idade:** | 25 anos |
-| **Ocupação:** |Gerente de Projeto em uma OSC de Conservação Ambiental |
+| **Ocupação:** |Gerente de Projeto em uma OSCS de Conservação Ambiental |
 | **Motivações:** | Sabrina é apaixonada pela preservação do meio ambiente e está empenhada em garantir o financiamento necessário para os projetos da sua organização |
 | **Frustrações:** | Sabrina muitas vezes se vê sobrecarregada com a burocracia associada à obtenção de financiamento para os projetos. |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *Zoom <br> * Twitter |
@@ -27,11 +27,11 @@ As personas levantadas durante o processo de entendimento do problema são apres
 | <img src="./img/personas03.jpg"> | Ayumi Kubo | 
 |-----------|------------| 
 | **Idade:** | 55 anos |
-| **Ocupação:** | Coordenadora de Voluntariado em uma OSC de Saúde Pública |
+| **Ocupação:** | Coordenadora de Voluntariado em uma OSCS de Saúde Pública |
 | **Motivações:** | Ela busca maneiras de aumentar o envolvimento dos voluntários e garantir que a OSCS tenha os recursos necessários para realizar seus programas. |
 | **Frustrações:** | Muitas vezes se sente frustada com a falta de recursos e transparência pelas empresas parceiras |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> LinkedIn <br> Vagas |
-| **Como o sistema pode facilitar o trabalho?** | Pode ajudar a OSC a arrecadar fundos para cobrir os custos associados à operação dos programas de saúde pública. |
+| **Como o sistema pode facilitar o trabalho?** | Pode ajudar a OSCS a arrecadar fundos para cobrir os custos associados à operação dos programas de saúde pública. |
 
 | <img src="./img/personas04.jpg">| Camila Schneider | 
 |-----------|------------| 
@@ -49,7 +49,7 @@ As personas levantadas durante o processo de entendimento do problema são apres
 | **Motivações:** | Rami acredita na importância de retribuir à comunidade e está comprometido em contribuir financeiramente para salvar vidas em desastres  |
 | **Frustrações:** | Rami muitas vezes se sente cansado com o processo de encontrar organizações confiáveis para doar seu dinheiro e gostaria de um sistema centralizado para distribuições de recursos com OSCS parceiras. |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *Whatsapp |
-| **Como o sistema pode facilitar o trabalho?** | OCS que estão fazendo um impacto significativo em questões que Rami se preocupa, fornecendo transparência sobre como suas doações serão utilizadas. |
+| **Como o sistema pode facilitar o trabalho?** | OSCS que estão fazendo um impacto significativo em questões que Rami se preocupa, fornecendo transparência sobre como suas doações serão utilizadas. |
 
 ## Histórias de Usuários
 
@@ -66,7 +66,7 @@ Com base na compreensão do dia-a-dia das funções identificadas para o projeto
 | Camila Schneider | Funcionalidade que me permita ter facilmente acesso as OSCS parceiras para passar mais segurança na hora da doação | Passaria um Ar de profissionalismo, algo que está faltando nesse tipo de ajuda |
 | Camila Schneider| A interface ser simples e funcional para o envio de recursos| Ajudar com recomendaçãoes  |
 | Rami Opash | Mostrar o histórico e o repasse desses recursos | Transparência das doações |
-| Rami Opash | Um aplicativo Com OSCS
+| Rami Opash | Um aplicativo Com OSCS 
 
 ## Modelagem do Processo de Negócio 
 
