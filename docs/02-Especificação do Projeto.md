@@ -65,7 +65,7 @@ Com base na compreensão do dia-a-dia das funções identificadas para o projeto
 | Ayumi Kubo | Existir um sistema seguro | Passar credibilidade para os usuários e evitar possíveis vazamentos de dados |
 | Camila Schneider | Funcionalidade que me permita ter facilmente acesso as OSCS parceiras para passar mais segurança na hora da doação | Passaria um Ar de profissionalismo, algo que está faltando nesse tipo de ajuda |
 | Camila Schneider| A interface ser simples e funcional para o envio de recursos| Ajudar com recomendaçãoes  |
-| Rami Opash | Mostrar o Histórico e o repasse desses recursos | Transparência das doações |
+| Rami Opash | Mostrar o histórico e o repasse desses recursos | Transparência das doações |
 | Rami Opash | Um aplicativo Com OSCS
 
 ## Modelagem do Processo de Negócio 
