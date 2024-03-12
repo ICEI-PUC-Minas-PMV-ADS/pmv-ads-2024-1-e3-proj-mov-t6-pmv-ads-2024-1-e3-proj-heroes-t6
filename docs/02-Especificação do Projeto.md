@@ -66,7 +66,7 @@ Com base na compreensão do dia-a-dia das funções identificadas para o projeto
 | Camila Schneider | Funcionalidade que me permita ter facilmente acesso as OSCS parceiras para passar mais segurança na hora da doação | Passaria um Ar de profissionalismo, algo que está faltando nesse tipo de ajuda |
 | Camila Schneider| A interface ser simples e funcional para o envio de recursos| Ajudar com recomendaçãoes  |
 | Rami Opash | Mostrar o Histórico e o repasse desses recursos | Transparência das doações |
-| Rami Opash | Um aplicativo com diversos parcerias | aUm aplicativo repassando os recursos para várias O facilitaria o meu dia dia|
+| Rami Opash | Um aplicativo Com OSCS
 
 ## Modelagem do Processo de Negócio 
 
