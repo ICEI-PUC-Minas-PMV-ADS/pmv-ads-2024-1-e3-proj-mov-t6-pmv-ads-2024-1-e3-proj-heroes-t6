@@ -40,7 +40,7 @@ As personas levantadas durante o processo de entendimento do problema são apres
 | **Motivações:** |  Camila acredita firmemente na responsabilidade social das empresas e está comprometida em contribuir para causas que promovam o bem-estar social e ambiental |
 | **Frustrações:** | Camila muitas vezes se sente sobrecarregada com a quantidade de solicitações.  |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *Microsoft Teams <br> *AutoCad |
-| **Como o sistema pode facilitar o trabalho?** | O Sistema pode oferecer a Camila uma plataforma centralizada onde ele possa pesquisar e descobrir OSCS que atuam em áreas alinhadas com seus valores |
+| **Como o sistema pode facilitar o trabalho?** | O sistema pode oferecer a Camila uma plataforma centralizada onde ele possa pesquisar e descobrir OSCS que atuam em áreas alinhadas com seus valores |
 
 | <img src="./img/personas05.jpg"> | Rami Opash | 
 |-----------|------------| 
@@ -66,7 +66,7 @@ Com base na compreensão do dia-a-dia das funções identificadas para o projeto
 | Camila Schneider | Funcionalidade que me permita ter facilmente acesso as OSCS parceiras para passar mais segurança na hora da doação | Passaria um Ar de profissionalismo, algo que está faltando nesse tipo de ajuda |
 | Camila Schneider| A interface ser simples e funcional para o envio de recursos| Ajudar com recomendaçãoes  |
 | Rami Opash | Mostrar o histórico e o repasse desses recursos | Transparência das doações |
-| Rami Opash | Um aplicativo Com OSCS 
+| Rami Opash | Um aplicativo Com OSCS     
 
 ## Modelagem do Processo de Negócio 
 
