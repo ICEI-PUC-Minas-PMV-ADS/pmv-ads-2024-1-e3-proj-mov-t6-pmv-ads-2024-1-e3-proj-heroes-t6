@@ -149,7 +149,7 @@ Em resumo, a gestão do tempo em um projeto envolve a definição clara de metas
 
 "O tempo é o recurso mais escasso e, a menos que seja gerenciado, nada mais pode ser gerenciado." - Peter Drucker
 
-![WhatsApp Image 2024-03-13 at 16 30 30](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/142539156/4a705bfb-4779-4ba2-a043-f9f969bc3651)
+<img src="./img/Fluxograma - Gerenciamento de Tempo.jpeg">
 
 | Nome da Tarefa |  Duração  |   Início   |  Término   |
 |----------------|-----------|------------|------------|
