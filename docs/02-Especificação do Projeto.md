@@ -149,6 +149,7 @@ Em resumo, a gestão do tempo em um projeto envolve a definição clara de metas
 
 "O tempo é o recurso mais escasso e, a menos que seja gerenciado, nada mais pode ser gerenciado." - Peter Drucker
 
+![WhatsApp Image 2024-03-13 at 16 30 30](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/142539156/4a705bfb-4779-4ba2-a043-f9f969bc3651)
 
 | Nome da Tarefa |  Duração  |   Início   |  Término   |
 |----------------|-----------|------------|------------|
@@ -158,6 +159,9 @@ Em resumo, a gestão do tempo em um projeto envolve a definição clara de metas
 |     Etapa 3    |  21 Dias  | 01/04/2024 | 21/04/2024 |
 |     Etapa 4    |  34 Dias  | 22/04/2024 | 26/05/2024 |
 |     Etapa 5    |  27 Dias  | 27/05/2024 | 23/06/2024 |
+
+O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
+
 
 ## Gerenciamento de Equipe
 
