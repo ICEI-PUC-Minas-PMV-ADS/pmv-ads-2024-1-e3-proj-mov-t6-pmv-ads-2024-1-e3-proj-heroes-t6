@@ -182,11 +182,11 @@ A gestão de equipe em um projeto de desenvolvimento é um processo complexo que
 
 A gestão do orçamento de um projeto é um processo contínuo que exige planejamento cuidadoso, monitoramento constante e comunicação eficaz. Com uma gestão eficiente do orçamento, é possível maximizar o uso dos recursos disponíveis e garantir o sucesso do projeto dentro das restrições financeiras estabelecidas..
 
-| Ações                        | Valores                         |
+| Ações                        | Valores totais                  |
 |------------------------------|---------------------------------|
 | Desenvolvimento              |          R$23.878,59            |
-| Licença Play Store           | U$25 – R$123,45 (Uma única vez) |
-| Licença Apple Store          |    U$99 – R$489,00 (Anuais)     |
-| 6 - Desenvolvedores Salário  |       R$15.700 (Mensal)         |
+| Licença Play Store           |           R$123,45              |
+| Hospedagem Azure             |           R$1.093,4             |
+| 6 - Desenvolvedores Salário  |           R$62.800              |
 | Registro de Patente          |           R$200,00              |
-| Total                        |          R$92.891,04            |
+| Total                        |          R$88.095,44            |
