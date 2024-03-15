@@ -11,7 +11,6 @@ Acesse o link do arquivo: [Miro](https://miro.com/app/board/uXjVNg5AUIo=/?share_
 
 ![alt text](img/Diagrama_fluxo.jpg) <sub> Figura 01 - Diagrama de Fluxo <sub>
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas de Fluxo”.
 
 ## Wireframes
 
