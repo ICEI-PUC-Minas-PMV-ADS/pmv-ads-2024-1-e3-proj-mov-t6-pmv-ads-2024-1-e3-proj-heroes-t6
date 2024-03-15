@@ -26,31 +26,45 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas d
 
 ## Tela Principal
 ![alt text](img/13_Tela_Principal.png)
-<br> Tela principal
 
+## Tela de doação
 ![alt text](img/5_Tela_doacao_1.png)
+
+## Tela forma de pagamentos
 ![alt text](img/3_Pagar_pix_cartao.png)
+
+## Tela valor da doação
 ![alt text](img/14_Tela_valor_doacao.png)
 
+## Tela Prtfil - Logar
 ![alt text](img/9_Tela_logar.png)
+
+## Tela login
 ![alt text](img/10_Tela_Login.png)
+
+## Tela cadastrar
 ![alt text](img/4_Tela_Cadastro.png)
 
+## Tela perfil - Logado
 ![alt text](img/12_Tela_Perfil.png)
+
+## Tela editar pefil
 ![alt text](img/6_Tela_Edit_usuario.png)
+
+## Tela adicionar cartão
 ![alt text](img/1_Add_Cartao.png)
+
+## Tela dados do cartão
 ![alt text](img/2_Dados_cartao.png)
+
+## Tela Pagamentos
 ![alt text](img/11_Tela_Pagamentos.png)
 
+## Tela instituições
 ![alt text](img/7_Tela_Instituicao1.png)
+
+## Tela detalhes da instituição
 ![alt text](img/8_Tela_instituicao2.png)
-
-
-
-
-
-
-## fim
 
 
 ![Exemplo de Wireframe](img/wireframe-example.png)
