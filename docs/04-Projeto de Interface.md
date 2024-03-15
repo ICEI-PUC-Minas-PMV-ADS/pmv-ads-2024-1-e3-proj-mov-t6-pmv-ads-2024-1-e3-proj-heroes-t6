@@ -23,7 +23,32 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas d
 ## Wireframes
 
 ## Telas
-[text](<04-Projeto de Interface.md>)
+
+## Tela Principal
+![alt text](img/13_Tela_Principal.png)
+<br> Tela principal
+
+![alt text](img/5_Tela_doacao_1.png)
+![alt text](img/3_Pagar_pix_cartao.png)
+![alt text](img/14_Tela_valor_doacao.png)
+
+![alt text](img/9_Tela_logar.png)
+![alt text](img/10_Tela_Login.png)
+![alt text](img/4_Tela_Cadastro.png)
+
+![alt text](img/12_Tela_Perfil.png)
+![alt text](img/6_Tela_Edit_usuario.png)
+![alt text](img/1_Add_Cartao.png)
+![alt text](img/2_Dados_cartao.png)
+![alt text](img/11_Tela_Pagamentos.png)
+
+![alt text](img/7_Tela_Instituicao1.png)
+![alt text](img/8_Tela_instituicao2.png)
+
+
+
+
+
 
 ## fim
 
