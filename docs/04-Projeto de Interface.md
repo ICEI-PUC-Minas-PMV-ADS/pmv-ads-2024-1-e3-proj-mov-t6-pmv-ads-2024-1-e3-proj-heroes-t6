@@ -80,7 +80,7 @@ Na tela de instituições, serão apresentadas todas as instituições parceiras
 ![alt text](img/7_Tela_Instituicao1.png) <sub> Figura 14 - Tela instituições <sub>
 
 ## Tela detalhes da instituição da aplicação
-O usuário poderá obter detalhes sobre a instituição na aplicação, incluindo endereço, contato, valor total arrecadado e motivações.
+O usuário poderá obter detalhes sobre a instituição da aplicação, incluindo endereço, contato, valor total arrecadado e motivações.
 
 ![alt text](img/8_Tela_instituicao2.png) <sub> Figura 15 - Tela instituição da aplicação <sub>
 
