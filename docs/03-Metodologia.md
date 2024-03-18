@@ -16,6 +16,7 @@ O projeto segue a seguinte convenção para o nome de branches:
 
 - `main`: versão estável já testada do software
 - `dev`: versão de desenvolvimento do software
+<img src="./img/gitflow.png">
 
 Quanto à gerência de issues, o projeto adota a seguinte convenção para
 etiquetas:
@@ -48,6 +49,8 @@ Backlog: todas as atividades que devem ser realizadas no projeto, desde a docume
 - `Paused`: Tarefas pausadas.
 - `In Review`: O que precisa ser revisado junto ao orientador.
 - `Done`: Tudo o que foi finalizado.
+
+  <img src="./img/Kanban_github.png">
 
 ### Ferramentas
 
