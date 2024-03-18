@@ -15,7 +15,7 @@ A ferramenta de controle de versão adotada no projeto foi o Git, sendo que o Gi
 O projeto segue a seguinte convenção para o nome de branches:
 
 - `main`: versão estável já testada do software
-- `dev`: versão de desenvolvimento do software
+- `develop`: versão de desenvolvimento do software
 <img src="./img/gitflow.png">
 
 Quanto à gerência de issues, o projeto adota a seguinte convenção para
