@@ -154,8 +154,8 @@ Em resumo, a gestão do tempo em um projeto envolve a definição clara de metas
 | Nome da Tarefa |  Duração  |   Início   |  Término   |
 |----------------|-----------|------------|------------|
 |     Projeto    |  142 Dias | 01/02/2024 | 12/07/2024 |
-|     Etapa 1    |  32 Dias  | 01/02/2024 | 03/03/2024 |
-|     Etapa 2    |  28 Dias  | 04/03/2024 | 31/03/2024 |
+|     Etapa 1    |  32 Dias  | 01/02/2024 | 10/03/2024 |
+|     Etapa 2    |  21 Dias  | 10/03/2024 | 31/03/2024 |
 |     Etapa 3    |  21 Dias  | 01/04/2024 | 21/04/2024 |
 |     Etapa 4    |  34 Dias  | 22/04/2024 | 26/05/2024 |
 |     Etapa 5    |  27 Dias  | 27/05/2024 | 23/06/2024 |
