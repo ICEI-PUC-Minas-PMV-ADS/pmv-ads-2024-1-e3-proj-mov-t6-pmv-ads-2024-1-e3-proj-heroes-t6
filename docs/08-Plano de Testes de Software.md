@@ -31,7 +31,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 |:---:|:---:|
 | Requisito Associado | RF-003 - A aplicação deve permitir o gerenciamento de cartão de crédito. |
 | Objetivo do Teste | Verificar se a aplicação permite o gerenciamento adequado de cartões de crédito. |
-| Instruções | - Acessar as configurações da conta do usuário na aplicação <br> - Selecionar a opção "Gerenciar Cartão de Crédito" <br> - Adicionar um novo cartão de crédito <br> - Editar informações de um cartão de crédito existente <br> - Excluir um cartão de crédito |
+| Instruções | - Acessar as configurações da conta do usuário na aplicação <br> - Selecionar a opção "Gerenciar Cartão de Crédito" <br> - Adicionar um novo cartão de crédito <br> - Editar informações de um cartão de crédito existente <br>  <br>Adicionar outros cartões de creditos </br> - Excluir o cartão de credito|
 | Critério de Êxito | Todas as operações de gerenciamento de cartão de crédito são realizadas com sucesso. |
 
 
