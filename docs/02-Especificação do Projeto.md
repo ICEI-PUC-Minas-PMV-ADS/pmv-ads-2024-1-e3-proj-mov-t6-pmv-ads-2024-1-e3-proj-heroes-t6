@@ -112,7 +112,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-003| A aplicação deve permitir o gerenciamento de cartão de crédito   | ALTA |
 |RF-004| A aplicação deve permitir inserir o valor a ser doado   | ALTA |
 |RF-005| A aplicação deve permitir que o usuário veja todas as instituições parceiras recebendo doações   | ALTA |
-|RF-006| A aplicação deve apresentar uma pagina sobre a instituição da aplicação   | ALTA |
+|RF-006| A aplicação deve apresentar uma pagina sobre o heroes  | ALTA |
 |RF-007| A aplicação deve apresentar o numero de contato das instituições parceiras   | ALTA |
 |RF-008| A aplicação deve permitir a doação por cartão de crédito, pix   | ALTA |
 |RF-009| A aplicação deverá mostrar a meta a ser arrecadada e quanto a instituição já arrecadou   | ALTA |
