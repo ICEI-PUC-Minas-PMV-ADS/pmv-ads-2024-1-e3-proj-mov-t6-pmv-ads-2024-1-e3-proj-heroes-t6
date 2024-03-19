@@ -66,7 +66,7 @@ Com base na compreensão do dia-a-dia das funções identificadas para o projeto
 | Camila Schneider | Necessidade de funcionalidades que permitam fácil acesso às OSCs parceiras | Para garantir segurança  |
 | Camila Schneider| A interface ser simples e funcional para o envio de recursos| Facilitando Pessoas com pouco conhecimento a doar |
 | Rami Opash | A importância de mostrar o histórico e o destino dos recursos doados |Promovendo transparência e confiança no processo de doação |
-| Rami Opash | Um aplicativo que inclua parcerias com OSCs | Priorizando Transparência.  
+| Rami Opash | Um aplicativo que inclua parcerias com OSCS | Priorizando Transparência.  
 
 ## Modelagem do Processo de Negócio 
 
