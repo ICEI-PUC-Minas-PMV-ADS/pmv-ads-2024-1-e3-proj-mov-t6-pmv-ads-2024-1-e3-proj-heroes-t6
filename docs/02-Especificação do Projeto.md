@@ -47,7 +47,7 @@ As personas levantadas durante o processo de entendimento do problema são apres
 | **Idade:** | 25 anos |
 | **Ocupação:** | Profissional Liberal |
 | **Motivações:** | Rami acredita na importância de retribuir à comunidade e está comprometido em contribuir financeiramente para ajuda com desastres |
-| **Frustrações:** | Rami frequentemente se sente chatedo devido à dificuldade em encontrar organizações parceiras que ofereçam assistência em situações de desastre. |
+| **Frustrações:** | Rami frequentemente experimenta frustração devido à dificuldade em localizar organizações parceiras que prestem assistência em situações de desastre. |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *Whatsapp |
 | **Como o sistema pode facilitar o trabalho?** | OSCS que estão fazendo um impacto significativo em questões que Rami se preocupa, fornecendo transparência sobre como suas doações serão utilizadas. |
 
