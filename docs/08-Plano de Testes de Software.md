@@ -31,7 +31,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 |:---:|:---:|
 | Requisito Associado | RF-003 - A aplicação deve permitir o gerenciamento de cartão de crédito. |
 | Objetivo do Teste | Verificar se a aplicação permite o gerenciamento adequado de cartões de crédito. |
-| Instruções | - Acessar as configurações da conta do usuário na aplicação <br> - Selecionar a opção "Gerenciar Cartão de Crédito" <br> - Adicionar um novo cartão de crédito <br> - Editar informações de um cartão de crédito existente <br>  <br> - Adicionar outros cartões de creditos </br> <br>- Excluir o cartão de credito</br>|
+| Instruções | - Acessar as configurações da conta do usuário na aplicação <br> - Selecionar a opção "Gerenciar Cartão de Crédito" <br> - Adicionar um novo cartão de crédito <br> - Editar informações de um cartão de crédito existente </br> <br> - Adicionar outros cartões de creditos </br> <br>- Excluir o cartão de credito</br>|
 | Critério de Êxito | Todas as operações de gerenciamento de cartão de crédito são realizadas com sucesso. |
 
 
@@ -53,7 +53,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 
 | **Caso de Teste** | **CT-06 – Visualizar Página sobre os Heróis** |
 |:---:|:---:|
-| Requisito Associado | RF-006 - A aplicação deve apresentar uma página sobre os heróis. |
-| Objetivo do Teste | Verificar se a aplicação apresenta corretamente a página sobre os heróis. |
-| Instruções | - Acessar a seção "Sobre" ou "Página de Heróis" na aplicação <br> - Verificar se as informações sobre os heróis estão presentes e corretas |
+| Requisito Associado | RF-006 - A aplicação deve apresentar uma página sobre os Heroes. |
+| Objetivo do Teste | Verificar se a aplicação apresenta corretamente a página sobre os Heroes. |
+| Instruções | - Acessar a seção "Sobre" ou "Página de Heroes" na aplicação <br> - Verificar se as informações sobre os Heroes estão presentes e corretas |
 | Critério de Êxito | A página sobre os Heroes é apresentada corretamente e contém informações precisas sobre os Heroes. |
