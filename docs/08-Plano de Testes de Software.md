@@ -51,7 +51,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | Critério de Êxito | Todas as instituições parceiras são exibidas corretamente na aplicação. |
 
 
-| **Caso de Teste** | **CT-06 – Visualizar Página sobre os Heróis** |
+| **Caso de Teste** | **CT-06 – Visualizar Página sobre os Heroes** |
 |:---:|:---:|
 | Requisito Associado | RF-006 - A aplicação deve apresentar uma página sobre os Heroes. |
 | Objetivo do Teste | Verificar se a aplicação apresenta corretamente a página sobre os Heroes. |
