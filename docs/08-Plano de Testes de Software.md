@@ -9,6 +9,8 @@ Os requisitos para realização dos testes são:
 Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 
 
+
+
 | **Caso de Teste** | **CT-01 – Gerenciamento de Usuários** |
 |:---:|:---:|
 | Requisito Associado | RF-001 - A aplicação deve oferecer gerenciamento de usuários. |
