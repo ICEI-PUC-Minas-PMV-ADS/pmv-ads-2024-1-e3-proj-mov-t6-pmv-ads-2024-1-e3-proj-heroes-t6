@@ -67,21 +67,13 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 
 | **Caso de Teste** | **CT-08 – Visualizar Página "Sobre"** |
 |:---:|:---:|
-| Requisito Associado | RF-006 - A aplicação deve apresentar uma página sobre os heróis. |
-| Objetivo do Teste | Verificar se a aplicação apresenta corretamente a página sobre os heróis. |
+| Requisito Associado | RF-006 - A aplicação deve apresentar uma página sobre os heróis; <br> RF-007 - A aplicação deve apresentar o numero de contato das instituições parceiras. |
+| Objetivo do Teste | Verificar se a aplicação apresenta corretamente a página sobre os heróis e suas instituições parceiras. |
 | Instruções | - Acessar a aplicação pelo dispositivo <br> - Informar o e-mail e senha cadastrados <br> - Clicar em "Entrar" <br> - Clicar no botão "Sobre" |
-| Critério de Êxito | A página sobre os Heroes é apresentada corretamente e contém informações precisas sobre os Heroes. |
+| Critério de Êxito | Visualizar corretamente todas as informações presentes na página. |
 
 
-| **Caso de Teste** | **CT-09 – Visualizar Contatos das Instituições Parceiras** |
-|:---:|:---:|
-| Requisito Associado | RF-007 - A aplicação deve apresentar o numero de contato das instituições parceiras. |
-| Objetivo do Teste | Verificar se o usuário é capaz de acessar as informações de contato. |
-| Instruções | - Acessar a aplicação pelo dispositivo <br> - Informar o e-mail e senha cadastrados <br> - Clicar em "Entrar" <br> - Clicar no botão "Sobre" |
-| Critério de Êxito | Visualizar as informações de contato com sucesso. |
-
-
-| **Caso de Teste** | **CT-10 – Doação por Cartão de Crédito** |
+| **Caso de Teste** | **CT-09 – Doação por Cartão de Crédito** |
 |:---:|:---:|
 | Requisito Associado | RF-008 - A aplicação deve permitir a doação por cartão de crédito, pix. |
 | Objetivo do Teste | Verificar se o usuário é capaz de realizar doações via cartão de crédito. |
@@ -89,7 +81,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | Critério de Êxito | A doação por meio de cartão de crédito é realizada com sucesso. |
 
 
-| **Caso de Teste** | **CT-11 – Doação por Pix** |
+| **Caso de Teste** | **CT-10 – Doação por Pix** |
 |:---:|:---:|
 | Requisito Associado | RF-008 - A aplicação deve permitir a doação por cartão de crédito, pix. |
 | Objetivo do Teste | Verificar se o usuário é capaz de realizar doações via pix. |
@@ -97,7 +89,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | Critério de Êxito | A doação por meio de pix é realizada com sucesso. |
 
 
-| **Caso de Teste** | **CT-12 – Visualizar a Meta e o Valor Arrecadado pela Instituição** |
+| **Caso de Teste** | **CT-11 – Visualizar a Meta e o Valor Arrecadado pela Instituição** |
 |:---:|:---:|
 | Requisito Associado | RF-009 - A aplicação deverá mostrar a meta a ser arrecadada e quanto a instituição já arrecadou. |
 | Objetivo do Teste | Verificar se o usuário é capaz de visualizar a meta a ser arrecadada e quanto a instituição já arrecadou. |
