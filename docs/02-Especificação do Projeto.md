@@ -121,7 +121,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| A aplicação deve ser compatível com Android | ALTA | 
+|RNF-001| A aplicação deve utilizar um framework multiplataformas | ALTA | 
 |RNF-002| A aplicação deve ter interface intuitiva e amigável, mesmo para usuários não técnicos |  ALTA |
 |RNF-003| A aplicação deve ter Navegação clara e lógica, facilitando o acesso às informações |  MÉDIA |
 |RNF-004| A aplicação deve ter bom nível de contraste entre os elementos da tela em conformidade |  MÉDIA |
