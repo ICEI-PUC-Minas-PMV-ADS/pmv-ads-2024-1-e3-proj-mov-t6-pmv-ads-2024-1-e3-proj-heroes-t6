@@ -23,7 +23,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 |:---:|:---:|
 | Requisito Associado | RF-002 - A aplicação deve permitir que usuários pré-cadastrados realizem login. |
 | Objetivo do Teste | Verificar se a aplicação permite que usuários pré-cadastrados realizem login com sucesso. |
-| Instruções | - Abrir o aplicativo Heroes <br> - Informar o e-mail e senha cadastrados <br> - Clicar em Logar |
+| Instruções | - Abrir o aplicativo Heroes <br> - Na pagina inicial </br>- Informar o e-mail e senha cadastrados <br> - Clicar em Logar |
 | Critério de Êxito | O usuário é redirecionado para a página inicial após efetuar o login com sucesso. |
 
 
