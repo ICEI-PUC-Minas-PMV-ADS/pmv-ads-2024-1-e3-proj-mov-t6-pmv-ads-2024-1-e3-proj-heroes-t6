@@ -37,17 +37,17 @@ As personas levantadas durante o processo de entendimento do problema são apres
 |-----------|------------| 
 | **Idade:** | 26 anos |
 | **Ocupação:** | Empresária |
-| **Motivações:** |  Camila acredita firmemente na responsabilidade social das empresas e está comprometida em contribuir para causas que promovam o bem-estar social e ambiental |
-| **Frustrações:** | Camila muitas vezes se sente sobrecarregada com a quantidade de solicitações.  |
+| **Motivações:** |  Camila Schneider acredita que um aplicativo móvel destinado a facilitar doações para situações de desastres reside na sua convicção de que a tecnologia pode ser uma ferramenta poderosa para canalizar ajuda de forma eficiente e rápida em momentos de crise.
+| **Frustrações:** | Ela sente frustrada com os obstáculos técnicos e burocráticos que surgem ao tentar fazer uma simples doação.  |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *Microsoft Teams <br> *AutoCad |
-| **Como o sistema pode facilitar o trabalho?** | O sistema pode oferecer a Camila uma plataforma centralizada onde ele possa pesquisar e descobrir OSCS que atuam em áreas alinhadas com seus valores |
+| **Como o sistema pode facilitar o trabalho?** | O sistema pode oferecer a Camila uma plataforma centralizada onde ele possa pesquisar e descobrir OSCS que atuam diretamente com ajudas com desastres |
 
 | <img src="./img/personas05.jpg"> | Rami Opash | 
 |-----------|------------| 
 | **Idade:** | 25 anos |
 | **Ocupação:** | Profissional Liberal |
-| **Motivações:** | Rami acredita na importância de retribuir à comunidade e está comprometido em contribuir financeiramente para salvar vidas em desastres  |
-| **Frustrações:** | Rami muitas vezes se sente cansado com o processo de encontrar organizações confiáveis para doar seu dinheiro e gostaria de um sistema centralizado para distribuições de recursos com OSCS parceiras. |
+| **Motivações:** | Rami acredita na importância de retribuir à comunidade e está comprometido em contribuir financeiramente para ajuda com desastres |
+| **Frustrações:** | Rami frequentemente se sente chatedo devido à dificuldade em encontrar organizações parceiras que ofereçam assistência em situações de desastre. |
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *Whatsapp |
 | **Como o sistema pode facilitar o trabalho?** | OSCS que estão fazendo um impacto significativo em questões que Rami se preocupa, fornecendo transparência sobre como suas doações serão utilizadas. |
 
@@ -57,16 +57,16 @@ Com base na compreensão do dia-a-dia das funções identificadas para o projeto
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-| Florentino Rossi | Um aplicativo intuitivo e de facil entendimento | Facilitar as minhas doações em poucas etapas |
-| Florentino Rossi | Usar uma interface simples, mas que atenda minhas necessidades, sem anúncios | Ter uma usabilidade eficiente e sem erros |
-| Sabrina Yumi | Transparência para ongs onde facilitaria o planejamento do envio dos recursos | Facilitaria o meu trabalho para encaminhar para o setor de contabilidade. |
-| Sabrina Yumi |  Poder acessar o histórico das transações | Ter transparência para os doadores |
-| Ayumi Kubo | Aceitar cartões de créditos e pix | Facilitar os colaboradores enviarem os recursos |
-| Ayumi Kubo | Existir um sistema seguro | Passar credibilidade para os usuários e evitar possíveis vazamentos de dados |
-| Camila Schneider | Funcionalidade que me permita ter facilmente acesso as OSCS parceiras para passar mais segurança na hora da doação | Passaria um Ar de profissionalismo, algo que está faltando nesse tipo de ajuda |
-| Camila Schneider| A interface ser simples e funcional para o envio de recursos| Ajudar com recomendaçãoes  |
-| Rami Opash | Mostrar o histórico e o repasse desses recursos | Transparência das doações |
-| Rami Opash | Um aplicativo Com OSCS     
+| Florentino Rossi | Um aplicativo de doações intuitivo e de fácil compreensão | Projetado para simplificar o processo de contribuição em poucas etapas |
+| Florentino Rossi | Preferência por uma interface simples, porém abrangente | Livre de anúncios, garantindo usabilidade eficiente |
+| Sabrina Yumi | A necessidade de transparência para as OSCS, facilitando o planejamento e envio dos recursos | Otimizando assim meu trabalho de envio. |
+| Sabrina Yumi |  A possibilidade de acessar o histórico das transações | Promovendo transparência e confiança para os doadores |
+| Ayumi Kubo | A inclusão de opções de pagamento como cartões de crédito e PIX | Visando facilitar o envio de recursos pelos colaboradores. |
+| Ayumi Kubo | A importância de um sistema seguro para transmitir credibilidade aos usuários | Um sistema Robusto dando prioridade a segurança dos doadores |
+| Camila Schneider | Necessidade de funcionalidades que permitam fácil acesso às OSCs parceiras | Para garantir segurança  |
+| Camila Schneider| A interface ser simples e funcional para o envio de recursos| Facilitando Pessoas com pouco conhecimento a doar |
+| Rami Opash | A importância de mostrar o histórico e o destino dos recursos doados |Promovendo transparência e confiança no processo de doação |
+| Rami Opash | Um aplicativo que inclua parcerias com OSCs | Priorizando Transparência.  
 
 ## Modelagem do Processo de Negócio 
 
