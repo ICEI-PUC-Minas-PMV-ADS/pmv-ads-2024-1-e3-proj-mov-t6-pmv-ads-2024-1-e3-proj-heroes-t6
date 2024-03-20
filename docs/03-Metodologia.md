@@ -34,7 +34,7 @@ Apresente a divisão de papéis entre os membros do grupo.
 
 Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
 - `Scrum Master` - Pedro Ferreira Andrade
-- `Product Owner` - Bruno Henrique Arantes Dias
+- `Product Owner` - Wesley Correa Gomes
 - `Dev Team` - Wesley, Bruno, Pedro, Marcos, Gustavo, Renan
 - `Design Team` - Marcos Teixeira Dias
 
