@@ -43,7 +43,7 @@ O usuário poderá se cadastrar no aplicativo fornecendo seus dados pessoais, co
 ## Tela perfil 
 Após realizar o login, os dados do usuário serão exibidos, permitindo a adição de um meio de pagamento, edição de seus dados pessoais, excluir sua conta e efetuar logout.
 
-![alt text](img/03_Perfil.png)<sub> Figura 09 - Tela logado <sub>
+![alt text](img/03_Perfil.png) <sub> Figura 09 - Tela logado <sub>
 
 ## Tela editar pefil
 O usuário poderá editar seus dados pessoais simplesmente fornecendo as informações solicitadas nos campos correspondentes.
