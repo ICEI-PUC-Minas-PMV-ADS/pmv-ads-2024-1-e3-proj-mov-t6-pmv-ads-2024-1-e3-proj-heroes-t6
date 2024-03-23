@@ -26,11 +26,6 @@ Na tela de doação, o usuário terá a oportunidade de compreender detalhes sob
 ![alt text](img/02_Doacao.png) <sub> Figura 03 - Tela doação <sub>
 
 
-## Tela Perfil
-
-
-![alt text](img/9_Tela_logar.png) <sub> Figura 06 - Tela perfil - logar <sub>
-
 ## Tela login
 Na tela de login, o usuário fornecerá seu email e senha da conta e, em seguida, poderá clicar em "Entrar". Se o usuário ainda não tiver uma conta, ele terá a opção de se cadastrar clicando no botão indicativo.
 
