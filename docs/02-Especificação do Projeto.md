@@ -72,11 +72,11 @@ Com base na compreensão do dia-a-dia das funções identificadas para o projeto
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+Atualmente, muitas pessoas desejam contribuir com causas humanitárias, mas frequentemente enfrentam a falta de tempo como obstáculo. Nossa aplicação visa simplificar e agilizar o processo de doação, permitindo que seja feito de forma rápida e conveniente através do celular.
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+A proposta da nossa aplicação seria facilitar a arrecadação de ajuda solidária para pessoas em situações difíceis e ajudar instituições para causas humanitarias
 
 ### Processo 1 – NOME DO PROCESSO
 
