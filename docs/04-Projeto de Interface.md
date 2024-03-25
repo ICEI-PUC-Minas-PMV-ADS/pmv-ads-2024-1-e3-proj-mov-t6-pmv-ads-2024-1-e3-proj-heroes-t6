@@ -9,7 +9,7 @@ O diagrama de fluxo foi elaborado para representar de forma visual e sistemátic
 
 Acesse o link do arquivo: [Miro](https://miro.com/app/board/uXjVNg5AUIo=/?share_link_id=200163446410)
 
-![alt text](img/Diagrama_fluxo.jpg) <sub> Figura 01 - Diagrama de Fluxo <sub>
+![alt text](img/diagrama-fluxo.jpg) <sub> Figura 01 - Diagrama de Fluxo <sub>
 
 
 ## Wireframes
