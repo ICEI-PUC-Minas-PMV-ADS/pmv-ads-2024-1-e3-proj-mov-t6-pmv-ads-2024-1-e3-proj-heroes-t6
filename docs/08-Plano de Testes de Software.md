@@ -1,13 +1,6 @@
 # Plano de Testes de Software
 
-Os requisitos para realização dos testes são:
-
-- Um celular com o sistema Android
-- Conectividade de internet para acesso ao aplicativo
-
-
 Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
-
 
 | **Caso de Teste** | **CT-01 – Cadastrar Usuário** |
 |:---:|:---:|
