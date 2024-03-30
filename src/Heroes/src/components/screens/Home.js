@@ -2,10 +2,9 @@ import {View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground} from '
 export default function Home(props){
     return(
         <View>
-                <View>
+                <View style={estilos.background}>
                     <TouchableOpacity style={estilos.cards}>
                         <Text style={estilos.texto}>{props.tituloCard}</Text>
-                        <ImageBackground source={require('../../../assets/Image/Thumb_Alagamentos1.jpg')} style={estilos.imageCard}></ImageBackground>
                     </TouchableOpacity>
                 </View>
         </View>
@@ -15,13 +14,17 @@ export default function Home(props){
 
 const estilos = StyleSheet.create({
     cards:{
-        borderWidth:1,
-        borderColor:'black',
         borderRadius:20,
-        margin:20,
-        height:150,
-        backgroundColor:'#eee',
-        overflow: 'hidden'
+        marginTop:20,
+        marginLeft: 20,
+        marginRight:20,
+        height:110,
+        backgroundColor:'#ffff',
+        overflow: 'hidden',
+        elevation: 10
+    },
+    background:{
+        height:140,
     },
     texto:{
         alignSelf:'center',
@@ -36,9 +39,4 @@ const estilos = StyleSheet.create({
         paddingRight: 15,
         borderRadius: 5
       },
-      imageCard:{
-        flex:1,
-        resizeMode: 'cover',
-        opacity:0.7
-      }
 })

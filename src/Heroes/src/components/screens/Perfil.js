@@ -7,43 +7,45 @@ import { RadioButton } from 'react-native-paper';
 const TelaUsuario=({navigation})=> {
   return (
     <View style={estilos.background}>
+      <View style={estilos.background1}>
 
-        <View>
-          <Image
-            source={require('../../../assets/Image/user.png')}
-            style={estilos.imagemUser}/>
+          <View>
+            <Image
+              source={require('../../../assets/Image/user.png')}
+              style={estilos.imagemUser}/>
           </View>
 
-          <View style={estilos.ContainerInfoUser}>
-             <TouchableOpacity
-                onPress={()=>{navigation.navigate('EditInfoUser')}}>
-                <Text style={estilos.txtEditInfo}>Editar informações</Text>
-             </TouchableOpacity>
+            <View style={estilos.ContainerInfoUser}>
+              <TouchableOpacity
+                  onPress={()=>{navigation.navigate('EditInfoUser')}}>
+                  <Text style={estilos.txtEditInfo}>Editar informações</Text>
+              </TouchableOpacity>
 
-             <TouchableOpacity
-                onPress={()=>{navigation.navigate('CartaoCredito')}}>
-                <Text style={estilos.txtEditInfo}>Cartões</Text>
-             </TouchableOpacity>
+              <TouchableOpacity
+                  onPress={()=>{navigation.navigate('CartaoCredito')}}>
+                  <Text style={estilos.txtEditInfo}>Cartões</Text>
+              </TouchableOpacity>
 
-             <TouchableOpacity
-                onPress={()=>{ModalRemoverConta()}}>
-                <Text style={estilos.txtEditInfo}>Remover minha conta</Text>
-             </TouchableOpacity>
-        </View>
+              <TouchableOpacity
+                  onPress={()=>{ModalRemoverConta()}}>
+                  <Text style={estilos.txtEditInfo2}>Remover minha conta</Text>
+              </TouchableOpacity>
+          </View>
 
-        <View>
-            <TouchableOpacity style={estilos.containerBtnLogoft}>
-              <Image
-                source={require('../../../assets/Image/logout.png')}
-                style={estilos.imgLogoft}/>
-              <Text style={estilos.btnLogoft}>Sair da conta</Text>
-            </TouchableOpacity>
-        </View>
+          <View>
+              <TouchableOpacity style={estilos.containerBtnLogoft}>
+                <Image
+                  source={require('../../../assets/Image/logout.png')}
+                  style={estilos.imgLogoft}/>
+                <Text style={estilos.btnLogoft}>Sair da conta</Text>
+              </TouchableOpacity>
+          </View>
 
-        <View>
-          <Text style={estilos.txtVersao}>Versão 1.0.0</Text>
-        </View>
+          <View>
+            <Text style={estilos.txtVersao}>Versão 1.0.0</Text>
+          </View>
 
+      </View>
     </View>
   );
 }
@@ -58,22 +60,24 @@ const EditarPerfil=({navigation})=>{
 
   const EditarcartaoCredito=({navigation})=>{
     return(
-      <View>
-          <View>
-            <Image source={require('../../../assets/Image/Card_credit.png')} style={estilos.imagemCardCredit}/>
-          </View>
-
-          <View>
-            <Text style={estilos.textoGerenciarCard}>Gerenciar cartoes</Text>
-          </View>
-
-          <View>
-            <View style={estilos.ContainerInfoUser}>
-              <TouchableOpacity style={estilos.btnAddcard} onPress={()=>{navigation.navigate('AddcartaoCredito')}}>
-                <Text style={estilos.txtBtnAddCard}>+  Adicionar novo cartao</Text>
-              </TouchableOpacity>
+      <View style={estilos.GerenciarCard}>
+        <View style={estilos.GerenciarCard1}>
+            <View>
+              <Image source={require('../../../assets/Image/Card_credit.png')} style={estilos.imagemCardCredit}/>
             </View>
-          </View>
+
+            <View>
+              <Text style={estilos.textoGerenciarCard}>Gerenciar cartoes</Text>
+            </View>
+
+            <View>
+              <View style={estilos.ContainerInfoUser}>
+                <TouchableOpacity style={estilos.btnAddcard} onPress={()=>{navigation.navigate('AddcartaoCredito')}}>
+                  <Text style={estilos.txtBtnAddCard}>+  Adicionar novo cartao</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+        </View>
       </View>
     )
     }
@@ -111,7 +115,8 @@ const AddCartaoCredito=({navigation})=>{
   const [cvv, setCvv]=useState('')
   const[checked, setChecked]=useState('')
     return(
-        <View>
+      <View style={estilos.AddCreditCard}>
+        <View style={estilos.AddCreditCard1}>
            <View>
             <Image source={require('../../../assets/Image/Card_credit.png')} style={estilos.imagemCardCredit}></Image>
            </View>
@@ -121,6 +126,7 @@ const AddCartaoCredito=({navigation})=>{
                   <View style={estilos.radioCard}>
                     <RadioButton
                         value='first'
+                        color={'#236B8E'}
                         status={checked === 'first' ? 'checked' : 'unchecked'}
                         onPress={()=>{setChecked('first')}}>
                     </RadioButton>
@@ -128,6 +134,7 @@ const AddCartaoCredito=({navigation})=>{
 
                           <RadioButton
                               value='first'
+                              color={'#236B8E'}
                               status={checked === 'second' ? 'checked' : 'unchecked'}
                               onPress={()=>{setChecked('second')}}>
                           </RadioButton>
@@ -135,53 +142,55 @@ const AddCartaoCredito=({navigation})=>{
 
                     <RadioButton
                         value='first'
+                        color={'#236B8E'}
                         status={checked === 'third' ? 'checked' : 'unchecked'}
                         onPress={()=>{setChecked('third')}}>
                     </RadioButton>
                       <Text style={estilos.txtRadioCard}>MasterCard</Text>
                 </View>
 
-        <View>
-              <TextInput 
-                style={estilos.InputsAddCard}
-                placeholder='Nome do titular'
-                onChangeText={text=>{setTitular(text)}}>
-              </TextInput>
+          <View>
+                <TextInput 
+                  style={estilos.InputsAddCard}
+                  placeholder='Nome do titular'
+                  onChangeText={text=>{setTitular(text)}}>
+                </TextInput>
 
-                  <TextInput 
-                    style={estilos.InputsAddCard}
-                    placeholder='Numero do cartao'
-                    onChangeText={text=>{setNumeroCartao(text)}}
-                    keyboardType='numeric'>
-                  </TextInput>
+                    <TextInput 
+                      style={estilos.InputsAddCard}
+                      placeholder='Numero do cartao'
+                      onChangeText={text=>{setNumeroCartao(text)}}
+                      keyboardType='numeric'>
+                    </TextInput>
 
-                  <TextInput 
-                    style={estilos.InputsAddCard}
-                    placeholder='Data de validade'
-                    onChangeText={text=>{setdataValidade(text)}}
-                    keyboardType='numeric'>
-                  </TextInput>
+                    <TextInput 
+                      style={estilos.InputsAddCard}
+                      placeholder='Data de validade'
+                      onChangeText={text=>{setdataValidade(text)}}
+                      keyboardType='numeric'>
+                    </TextInput>
 
-              <TextInput 
-                style={estilos.InputsAddCard}
-                placeholder='CVV'
-                onChangeText={text=>{setCvv(text)}}
-                keyboardType='numeric'>
-              </TextInput>
-         </View>
-            
-            <View style={estilos.containerBtn}>
-                <TouchableOpacity style={estilos.btnCancelar} onPress={()=>{navigation.navigate('AddcartaoCredito')}}>
-                  <Text style={estilos.txtBtnCancelar}>Cancelar</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={estilos.btnAdd} onPress={()=>{navigation.navigate('AddcartaoCredito')}}>
-                  <Text style={estilos.txtBtnAdd}>Adicionar</Text>
-                </TouchableOpacity>
-            </View>
-           
+                <TextInput 
+                  style={estilos.InputsAddCard}
+                  placeholder='CVV'
+                  onChangeText={text=>{setCvv(text)}}
+                  keyboardType='numeric'>
+                </TextInput>
           </View>
-        </View>
+              
+              <View style={estilos.containerBtn}>
+                  <TouchableOpacity style={estilos.btnCancelar} onPress={()=>{navigation.navigate('AddcartaoCredito')}}>
+                    <Text style={estilos.txtBtnCancelar}>Cancelar</Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={estilos.btnAdd} onPress={()=>{navigation.navigate('AddcartaoCredito')}}>
+                    <Text style={estilos.txtBtnAdd}>Adicionar</Text>
+                  </TouchableOpacity>
+              </View>
+            
+            </View>
+          </View>
+      </View>
     </View>
   )
 }
@@ -198,25 +207,25 @@ export default function NavegarTelasUser(){
             <Pilha.Screen
                 name='user'
                 component={TelaUsuario}
-                options={{title:'Dados do usuário'}}>
+                options={{headerShown: false}}>
             </Pilha.Screen>
 
                   <Pilha.Screen
                       name='EditInfoUser'
                       component={EditarPerfil}
-                      options={{title:'Editar Usuario'}}>
+                      options={{headerShown: false}}>
                   </Pilha.Screen>
 
                   <Pilha.Screen
                       name='CartaoCredito'
                       component={EditarcartaoCredito}
-                      options={{title:'Editar cartão de crédito'}}>
+                      options={{headerShown: false}}>
                   </Pilha.Screen>
 
             <Pilha.Screen
                 name='AddcartaoCredito'
                 component={AddCartaoCredito}
-                options={{title:'Adicionar cartão'}}>
+                options={{headerShown: false}}>
             </Pilha.Screen>
 
       </Pilha.Navigator>
@@ -232,8 +241,39 @@ const estilos = StyleSheet.create({
     fontWeight:'bold',
   },
 
+  GerenciarCard: {
+    backgroundColor: '#236B8E',
+    flex: 1,
+  },
+
+  GerenciarCard1: {
+    backgroundColor: '#F0F0F0',
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    flex: 1,
+  },
+
+  AddCreditCard: {
+    backgroundColor: '#236B8E',
+    flex: 1,
+  },
+
+  AddCreditCard1: {
+    backgroundColor: '#F0F0F0',
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    flex: 1,
+  },
+
   background: {
-    backgroundColor: '#eee',
+    backgroundColor: '#236B8E',
+    flex: 1,
+  },
+
+  background1: {
+    backgroundColor: '#F0F0F0',
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
     flex: 1,
   },
 
@@ -256,7 +296,7 @@ const estilos = StyleSheet.create({
     backgroundColor: '#fff',
     margin: 20,
     borderRadius: 10,
-    height: 430,
+    height: 450,
     elevation: 8,
   },
 
@@ -264,15 +304,27 @@ const estilos = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 20,
     color: '#555',
-    margin: 15,
+    marginBottom: 10,
+    marginTop: 10,
+    paddingBottom: 10,
     marginLeft: 30,
     borderBottomColor: '#555',
     borderBottomWidth: 1,
     marginRight: 30,
   },
 
+  txtEditInfo2: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    color: '#555',
+    marginBottom: 10,
+    marginTop: 10,
+    marginLeft: 30,
+    marginRight: 30,
+  },
+
   btnLogoft: {
-    color: '#337593',
+    color: '#236B8E',
     fontSize: 20,
     fontWeight: 'bold',
   },
@@ -286,11 +338,12 @@ const estilos = StyleSheet.create({
 
   txtVersao: {
     alignSelf: 'center',
-    marginTop: 100,
+    marginTop: 20,
   },
 
   imgLogoft: {
     marginRight: 10,
+    tintColor: '#236B8E'
   },
 
 imagemCardCredit:{
@@ -300,7 +353,7 @@ imagemCardCredit:{
 },
 
 btnAddcard:{
-  backgroundColor:'#f4693a',
+  backgroundColor:'#F26430',
   marginTop:120,
   margin:30,
   borderRadius:10,
@@ -329,7 +382,7 @@ alignSelf:'center',
 },
 
 txtBtnCancelar:{
-  color:'#f4693a',
+  color:'#F26430',
   fontSize:17,
   alignSelf:'center',
 
@@ -338,7 +391,7 @@ btnCancelar:{
   backgroundColor:'white',
   width:100,
   borderRadius:25,
-  borderColor:'#f4693a',
+  borderColor:'#F26430',
   borderWidth:1,
   width:110,
   height:35, 
@@ -347,7 +400,7 @@ btnCancelar:{
 },
 
 btnAdd:{
-  backgroundColor:'#f4693a',
+  backgroundColor:'#F26430',
   width:100,
   borderRadius:25,
   width:110,
@@ -371,9 +424,13 @@ InputsAddCard: {
 radioCard:{
   flexDirection:'row',
   alignItems:'center',
+  justifyContent: 'center',
+  padding: 10,
 },
 
 txtRadioCard:{
-  fontSize:16
+  fontSize:20,
+  paddingRight: 10,
+  fontWeight: 'bold',
 }
 });

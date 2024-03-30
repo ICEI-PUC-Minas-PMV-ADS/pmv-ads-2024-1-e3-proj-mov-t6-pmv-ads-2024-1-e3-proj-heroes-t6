@@ -6,6 +6,10 @@ import Info from './src/components/screens/Info';
 import Perfil from './src/components/screens/Perfil';
 import LinearGradient from 'react-native-linear-gradient';
 
+
+
+import infoIcon from './assets/Image/info.png';
+
 //***************************** Funções *************************************/
 
 const TelaInfo = ({navigation}) => {
@@ -18,7 +22,7 @@ const TelaHome = ({navigation}) => {
   return(
     <View>
         <ScrollView>
-           <LinearGradient colors={['#337593','#99bacc']}>
+           <LinearGradient colors={['#236B8E','#FFFFFF']}>
              <View>
                 <Text style={estilos.titulo}>Principais acontecimentos</Text>
              </View>
@@ -26,6 +30,10 @@ const TelaHome = ({navigation}) => {
                     <Home tituloCard='Alagamentos em SP'/>
                     <Home tituloCard='Secas no Nordeste'/>
                     <Home tituloCard='Familias desabrigadas no RJ'/>
+                    <Home tituloCard='Bairro mais pobre de BH'/>
+                    <Home tituloCard='Bairro mais pobre de BH'/>
+                    <Home tituloCard='Bairro mais pobre de BH'/>
+                    <Home tituloCard='Bairro mais pobre de BH'/>
                     <Home tituloCard='Bairro mais pobre de BH'/>
                 </View>
              </LinearGradient>
@@ -40,6 +48,7 @@ const TelaPerfil = ({navigation}) => {
   )
 }
 
+
 //************************** Estrutura de navegação ************************/
 const Guias = createBottomTabNavigator();
 
@@ -48,22 +57,29 @@ export default function App() {
     <NavigationContainer>
       <Guias.Navigator
         screenOptions={{
-           tabBarLabelStyle: {
-             fontSize: 15
-            },
-                tabBarActiveTintColor: '#f4693a'
-      }}
-                initialRouteName='Home'>
+           tabBarLabelStyle: {fontSize: 20, marginBottom: 10},
+           tabBarStyle: { height: 80, elevation: 5},
+
+            tabBarActiveTintColor: '#F26430'}}
+
+            initialRouteName='Home'>
 
         <Guias.Screen
           name="Info"
             component={TelaInfo}
               options={{
                   title: 'Sobre',
+                    tabBarIcon: ({ color, focused }) => (
+                      <Image
+                      source={focused ? require('./assets/Image/infoFill.png') : require('./assets/Image/info.png')}
+                      style={{ width: 30, height: 30, tintColor: color, marginTop: 10 }}
+                      />
+                      ),
                     headerStyle: {
-                      backgroundColor: '000',
+                      backgroundColor: '#236B8E',
+                      height:110,
                       },
-                      headerTintColor: 'red',
+                      headerTintColor: '#ffff',
                   headerTitleStyle: {
               fontSize: 25,
             fontWeight: 'bold',
@@ -74,17 +90,14 @@ export default function App() {
         <Guias.Screen
           name='Home'
            component={TelaHome}
-             options={{
-                title: 'Home',
-                  headerStyle: {
-                    backgroundColor: '000',
-                  },
-                   headerTintColor: 'red',
-                 headerTitleStyle: {
-              fontSize: 25,
-            fontWeight: 'bold',
-          alignSelf: 'center',
-            }}}>
+             options={{  
+              tabBarIcon: ({ color, focused }) => (
+                <Image
+                source={focused ? require('./assets/Image/homeFill.png') : require('./assets/Image/home.png')}
+                style={{ width: 30, height: 30, tintColor: color, marginTop: 10 }}
+                />
+                ),
+              headerShown: false   }}>
         </Guias.Screen>
 
         <Guias.Screen
@@ -92,10 +105,17 @@ export default function App() {
             component={TelaPerfil}
               options={{
                 title: 'Perfil',
+                  tabBarIcon: ({ color, focused }) => (
+                    <Image
+                    source={focused ? require('./assets/Image/personFill.png') : require('./assets/Image/person.png')}
+                    style={{ width: 30, height: 30, tintColor: color, marginTop: 10 }}
+                    />
+                    ),
                    headerStyle: {
-                     backgroundColor: '000',
+                     backgroundColor: '#236B8E',
+                     height:110,
                     },
-                    headerTintColor: 'red',
+                    headerTintColor: '#ffff',
                  headerTitleStyle: {
               fontSize: 25,
             fontWeight: 'bold',
@@ -117,4 +137,5 @@ const estilos = StyleSheet.create({
       fontWeight:'bold',
       marginTop:10
   }
+
 })

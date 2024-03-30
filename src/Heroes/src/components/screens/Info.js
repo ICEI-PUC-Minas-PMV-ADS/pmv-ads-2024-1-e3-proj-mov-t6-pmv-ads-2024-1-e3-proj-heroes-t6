@@ -3,7 +3,7 @@ import {View, StyleSheet, Image } from 'react-native'
 export default function Perfil(){
     return(
         <View style={estilos.background}>
-           <View>
+           <View style={estilos.background1}>
                 <Image source={require('../../../assets/Image/heroLogobyDesigner.png')} style={estilos.imgLogo}/> 
            </View>
         </View>
@@ -12,8 +12,14 @@ export default function Perfil(){
 
 const estilos = StyleSheet.create({
     background:{
-        backgroundColor:'#eee',
-        flex:1
+        backgroundColor:'#236B8E',
+        flex:1,
+    },
+    background1:{
+        backgroundColor:'#F0F0F0',
+        flex:1,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
     },
     imgLogo:{
         width:200,
