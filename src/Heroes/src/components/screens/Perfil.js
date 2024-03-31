@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, Image, TouchableOpacity, Modal, TouchableHighlight, Alert, TextInput} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity, Modal, TouchableHighlight, Alert, TextInput, Button} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { useState } from 'react';
 import { RadioButton } from 'react-native-paper';
@@ -43,6 +43,14 @@ const TelaUsuario=({navigation})=> {
 
           <View>
             <Text style={estilos.txtVersao}>Versão 1.0.0</Text>
+          </View>
+
+          <View>
+            <Button onPress={()=>{navigation.navigate('Telalogin')}} title='(Teste) Ir para login'/>
+          </View>
+
+          <View>
+            <Button onPress={()=>{navigation.navigate('TelaCadastro')}} title='(Teste) Ir para Cadastro'/>
           </View>
 
       </View>
@@ -114,6 +122,7 @@ const AddCartaoCredito=({navigation})=>{
   const [dataValidade, setdataValidade]=useState('')
   const [cvv, setCvv]=useState('')
   const[checked, setChecked]=useState('')
+
     return(
       <View style={estilos.AddCreditCard}>
         <View style={estilos.AddCreditCard1}>
@@ -228,6 +237,18 @@ export default function NavegarTelasUser(){
                 options={{headerShown: false}}>
             </Pilha.Screen>
 
+            <Pilha.Screen
+                name='Telalogin'
+                component={TelaLogin}
+                options={{headerShown: false}}>
+            </Pilha.Screen>
+
+            <Pilha.Screen
+                name='TelaCadastro'
+                component={TelaCadastro}
+                options={{headerShown: false}}>
+            </Pilha.Screen>
+
       </Pilha.Navigator>
        
     )
@@ -338,7 +359,7 @@ const estilos = StyleSheet.create({
 
   txtVersao: {
     alignSelf: 'center',
-    marginTop: 20,
+    marginTop: -20, //20
   },
 
   imgLogoft: {
@@ -434,3 +455,153 @@ txtRadioCard:{
   fontWeight: 'bold',
 }
 });
+
+
+// Teste tela Login
+
+const TelaLogin=({navigation})=>{
+
+  const [email, setEmail]=useState('')
+  const [senha, setSenha]=useState('')
+
+  return(
+     <View>
+      <View>
+          <TextInput 
+              placeholder='Email'
+              style={estilos2.inputs}
+              value={email}
+              onChangeText={text=>setEmail(text)}>
+          </TextInput>
+
+          <TextInput 
+              placeholder='Senha'
+              style={estilos2.inputs}
+              value={senha}
+              onChangeText={text=>setSenha(text)}>
+          </TextInput>
+          </View>
+
+          <View>
+          <TouchableOpacity>
+              <Text  style={estilos2.btnEsqueciSenha}>Esqueci minha senha</Text>
+          </TouchableOpacity>
+          </View>
+
+          <View>
+          <TouchableOpacity
+              style={estilos2.btnEntrar}>
+              <Text  style={estilos2.txtBotao}>Entrar</Text>
+          </TouchableOpacity>
+          </View>
+     </View>
+  )
+}
+
+const TelaCadastro=({navigation})=>{
+  const [nomeCompleto, setNomeCompleto] = useState('')
+  const [email, setEmail]=useState('')
+  const [senha, setSenha]=useState('')
+  const [confirmaSenha, setConfirmaSenha] = useState('')
+
+
+  return(
+     <View>
+
+      <View>
+          <TextInput 
+              placeholder='Nome Completo'
+              style={estilos3.inputs}
+              value={nomeCompleto}
+              onChangeText={text=>setNomeCompleto(text)}>
+          </TextInput>
+
+          <TextInput 
+              placeholder='E-mail'
+              style={estilos3.inputs}
+              value={email}
+              onChangeText={text=>setEmail(text)}>
+          </TextInput>
+
+          <TextInput 
+              placeholder='Senha'
+              style={estilos3.inputs}
+              value={senha}
+              onChangeText={text=>setSenha(text)}>
+          </TextInput>
+
+          <TextInput 
+            placeholder='Confirmar Senha'
+              style={estilos3.inputs}
+              value={confirmaSenha}
+              onChangeText={text=>setConfirmaSenha(text)}>
+          </TextInput>
+          </View>
+
+          <View>
+          <TouchableOpacity style={estilos3.btnCadastrar}>
+              <Text style={estilos3.TxtbtnCadastrar}>Cadastrar</Text>
+          </TouchableOpacity>
+          </View>
+     </View>
+  )
+}
+
+const estilos2=StyleSheet.create({
+  inputs:{
+    borderBottomWidth:1,
+    fontSize:18,
+    width:330,
+    alignSelf:'center'
+  },
+
+  btnEsqueciSenha:{
+    borderBottomWidth:1,
+    fontSize:20,
+    alignSelf:'flex-end',
+    marginRight:20,
+    marginTop:30
+  },
+  btnEntrar:{
+    backgroundColor:'green',
+    justifyContent:'center',
+    alignItems:'center',
+    width:350,
+    marginTop:100,
+    borderRadius:20,
+    height:50,
+    alignSelf:'center'
+  },
+  txtBotao:{
+    fontSize:20,
+    alignSelf:'center'
+  
+    
+  },
+
+})
+
+const estilos3=StyleSheet.create({
+  inputs:{
+    borderBottomWidth:1,
+    fontSize:18,
+    width:330,
+    alignSelf:'center'
+  },
+
+  TxtbtnCadastrar:{
+    fontSize:20,
+    alignSelf:'center'
+  },
+  btnCadastrar:{
+    backgroundColor:'green',
+    justifyContent:'center',
+    alignItems:'center',
+    width:350,
+    marginTop:100,
+    borderRadius:20,
+    height:50,
+    alignSelf:'center',
+    fontSize:60
+  }
+})

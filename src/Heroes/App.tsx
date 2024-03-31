@@ -6,10 +6,6 @@ import Info from './src/components/screens/Info';
 import Perfil from './src/components/screens/Perfil';
 import LinearGradient from 'react-native-linear-gradient';
 
-
-
-import infoIcon from './assets/Image/info.png';
-
 //***************************** Funções *************************************/
 
 const TelaInfo = ({navigation}) => {
@@ -18,7 +14,18 @@ const TelaInfo = ({navigation}) => {
   )
 }
 
+
 const TelaHome = ({navigation}) => {
+
+  const ImagemDoCard=[
+      require('../../src/Heroes/assets/Image/card01.png'),
+      require('../../src/Heroes/assets/Image/card02.png'),
+      require('../../src/Heroes/assets/Image/card03.png'),
+      require('../../src/Heroes/assets/Image/card01.png'),
+      require('../../src/Heroes/assets/Image/card02.png'),
+      require('../../src/Heroes/assets/Image/card03.png'),
+  ]
+
   return(
     <View>
         <ScrollView>
@@ -27,14 +34,12 @@ const TelaHome = ({navigation}) => {
                 <Text style={estilos.titulo}>Principais acontecimentos</Text>
              </View>
                 <View>
-                    <Home tituloCard='Alagamentos em SP'/>
-                    <Home tituloCard='Secas no Nordeste'/>
-                    <Home tituloCard='Familias desabrigadas no RJ'/>
-                    <Home tituloCard='Bairro mais pobre de BH'/>
-                    <Home tituloCard='Bairro mais pobre de BH'/>
-                    <Home tituloCard='Bairro mais pobre de BH'/>
-                    <Home tituloCard='Bairro mais pobre de BH'/>
-                    <Home tituloCard='Bairro mais pobre de BH'/>
+                    <Home ImagemDoCard={ImagemDoCard[0]}/>
+                    <Home ImagemDoCard={ImagemDoCard[0]}/>
+                    <Home ImagemDoCard={ImagemDoCard[0]}/>
+                    <Home ImagemDoCard={ImagemDoCard[0]}/>
+                    <Home ImagemDoCard={ImagemDoCard[0]}/>
+                    <Home ImagemDoCard={ImagemDoCard[5]}/>
                 </View>
              </LinearGradient>
           </ScrollView>

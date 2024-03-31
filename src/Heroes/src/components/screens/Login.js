@@ -1,32 +1,19 @@
 import { useState } from 'react'
-import {View, Text, StyleSheet, Button, TextInput, TouchableOpacity} from 'react-native'
+import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-export default function Login(){
-    const [email, setEmail]=useState('')
-    const [senha, setSenha]=useState('')
 
+// Incompleto *****
+
+export default function NavLogin(){
+    const Pilha = createNativeStackNavigator()
     return(
-       <View>
-            <TextInput 
-                style={estilos.input}
-                value={email}
-                onChangeText={text=>setEmail(text)}>
-            </TextInput>
-
-            <TextInput 
-                style={estilos.input}
-                value={senha}
-                onChangeText={text=>setEmail(text)}>
-            </TextInput>
-
-            <TouchableOpacity>
-                <Text>Esqueci minha senha</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity>
-                <Text>Entrar</Text>
-            </TouchableOpacity>
-       </View>
+        <Pilha.Navigator initialRouteName="Login">
+            <Pilha.Screen
+                component={TelaLogin}
+                name='Login'>
+            </Pilha.Screen>
+        </Pilha.Navigator>
     )
 }
 const estilos = StyleSheet.create({

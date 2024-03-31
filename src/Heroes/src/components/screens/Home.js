@@ -1,10 +1,10 @@
-import {View, Text, StyleSheet, TouchableOpacity, Image, ImageBackground} from 'react-native'
+import {View, StyleSheet, TouchableOpacity, ImageBackground} from 'react-native'
 export default function Home(props){
     return(
         <View>
                 <View style={estilos.background}>
                     <TouchableOpacity style={estilos.cards}>
-                        <Text style={estilos.texto}>{props.tituloCard}</Text>
+                        <ImageBackground source={props.ImagemDoCard} style={estilos.ImgCard}></ImageBackground> 
                     </TouchableOpacity>
                 </View>
         </View>
@@ -39,4 +39,8 @@ const estilos = StyleSheet.create({
         paddingRight: 15,
         borderRadius: 5
       },
+      ImgCard:{
+        flex: 1,
+        resizeMode:"cover"
+      }
 })

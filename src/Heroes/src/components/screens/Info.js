@@ -1,4 +1,5 @@
-import {View, StyleSheet, Image } from 'react-native'
+import {View, StyleSheet, Image, Button } from 'react-native'
+import NavLogin from './Login'
 
 export default function Perfil(){
     return(
