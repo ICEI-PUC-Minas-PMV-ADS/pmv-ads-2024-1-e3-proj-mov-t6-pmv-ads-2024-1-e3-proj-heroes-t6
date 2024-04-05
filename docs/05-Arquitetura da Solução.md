@@ -1,10 +1,9 @@
 # Arquitetura da Solução
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
+Com o objetivo de se conceber um projeto completo, é preciso vizualiza-lo desde as formas mais simples até as mais complexas.
+A imagem abaixo ilustra de forma simples os componentes básicos e suas relações.
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
-
-![Arquitetura da Solução](img/02-mob-arch.png)
+![Arquitetura de Contexto Heroes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/adcac5ba-de34-4446-a43d-b3586464981c)
 
 ## Diagrama de Classes
 
