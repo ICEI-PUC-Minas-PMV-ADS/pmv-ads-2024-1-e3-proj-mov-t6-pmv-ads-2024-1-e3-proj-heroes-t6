@@ -86,7 +86,7 @@ Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em segu
 
 ### PROCESSO DOAÇÃO
 
-![Processo 2](img/Faculdade2.png)
+![Processo 2](img/Faculdade5.png)
 
 
 
