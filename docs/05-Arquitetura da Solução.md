@@ -29,8 +29,10 @@ O Esquema Relacional corresponde à representação dos dados em tabelas juntame
 
 ## Modelo Físico
 
-Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
+Segue abaixo um print do modelo físico das tabelas do projeto, o arquivo SQL pode ser encontrado em src/bd.
+![db_Heroes_print](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/efe5160c-7e35-4368-aff0-1301c32ee354)
 
+<sub> Figura 05 - Print de modelo físico - Produzido com Visual Studio Code <sub>
 
 ## Tecnologias Utilizadas
 
@@ -70,7 +72,7 @@ A hospedagem do aplicativo será feita pelo Azure.
 
 Para padronizar a avaliação da qualidade do software em nosso projeto, iremos adotar os padrões da norma ISO/IEC 9216, atualizada pela norma ISO/IEC 25010. Essas normas propõem atributos de qualidade divididos em características principais e subcaracterísticas, como os apresentados a seguir:
 
-![Diagrama de Qualidade](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/5f8a4786-4a13-4898-9d48-04c3b785e71b) <sub> Figura 05 - Diagrama de Qualidade - Produzido com Lucidchart <sub>
+![Diagrama de Qualidade](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/5f8a4786-4a13-4898-9d48-04c3b785e71b) <sub> Figura 06 - Diagrama de Qualidade - Produzido com Lucidchart <sub>
 
 **Funcionalidade**:
  - *Interoperabilidade*: O sistema cumpre esse critério com a sua capacidade de interagir com sistemas Android.
