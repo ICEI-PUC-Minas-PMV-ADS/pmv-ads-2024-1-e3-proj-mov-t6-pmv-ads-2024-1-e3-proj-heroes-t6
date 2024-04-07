@@ -78,16 +78,13 @@ Atualmente, muitas pessoas desejam contribuir com causas humanitárias, mas freq
 
 A proposta da nossa aplicação seria facilitar a arrecadação de ajuda solidária para pessoas em situações difíceis e ajudar instituições para causas humanitarias
 
-### 2 PROCESSO PAGINA INICIAL
-
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
+### Processo - Página Inicial
 
 ![Processo 1](img/Faculdade4.png)
 
-### PROCESSO DOAÇÃO
+### Processo - Doação
 
 ![Processo 2](img/Faculdade5.png)
-
 
 
 ## Indicadores de Desempenho
