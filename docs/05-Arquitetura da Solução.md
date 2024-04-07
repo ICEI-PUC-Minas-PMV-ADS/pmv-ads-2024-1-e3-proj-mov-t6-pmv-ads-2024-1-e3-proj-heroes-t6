@@ -4,17 +4,20 @@ O diagrama de arquitetura de solução é uma representação visual das estrutu
 
 ![Arquitetura de Contexto Heroes jpeg](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/76eebd66-f008-49a2-8ec8-b319d559af6d) <sub> Figura 01 - Diagrama de Arquitetura da Solução - Produzido com Microsoft Excel <sub>
 
+
 ## Diagrama de Classes
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
 
 ![Diagramas UML (3)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/5fc26a8a-74dd-40f6-8647-69218e793f16) <sub> Figura 02 - Diagrama de Classes - Produzido com Lucidchart <sub>
 
+
 ## Modelo ER
 
 O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.
 
 ![Diagrama ER 1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/758e34ae-2d83-49d2-a1f9-b61d514601be) <sub> Figura 03 - Modelo ER - Produzido com Lucidchart <sub>
+
 
 ## Esquema Relacional
 
@@ -23,9 +26,11 @@ O Esquema Relacional corresponde à representação dos dados em tabelas juntame
 ![Esquema Relacional](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/95a9df99-13fe-4ef2-ab56-e7f742f20210)       
 <sub> Figura 04 - Esquema Relacional - Produzido com dbdiagram.io <sub>
 
+
 ## Modelo Físico
 
 Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
+
 
 ## Tecnologias Utilizadas
 
@@ -58,12 +63,25 @@ Nossa solução abrange diversas tecnologias para desenvolvimento web e móvel, 
 
 ## Hospedagem
 
-A hospedagem do aplicativo será feita na Azure.
+A hospedagem do aplicativo será feita pelo Azure.
+
 
 ## Qualidade de Software
 
-Conceituar qualidade de fato é uma tarefa complexa, mas ela pode ser vista como um método gerencial que através de procedimentos disseminados por toda a organização, busca garantir um produto final que satisfaça às expectativas dos stakeholders.
-
-No contexto de desenvolvimento de software, qualidade pode ser entendida como um conjunto de características a serem satisfeitas, de modo que o produto de software atenda às necessidades de seus usuários. Entretanto, tal nível de satisfação nem sempre é alcançado de forma espontânea, devendo ser continuamente construído. Assim, a qualidade do produto depende fortemente do seu respectivo processo de desenvolvimento.
+Para padronizar a avaliação da qualidade do software em nosso projeto, iremos adotar os padrões da norma ISO/IEC 9216, atualizada pela norma ISO/IEC 25010. Essas normas propõem atributos de qualidade divididos em características principais e subcaracterísticas, como os apresentados a seguir:
 
 ![Diagrama de Qualidade](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/5f8a4786-4a13-4898-9d48-04c3b785e71b) <sub> Figura 05 - Diagrama de Qualidade - Produzido com Lucidchart <sub>
+
+**Funcionalidade**:
+ - *Interoperabilidade*: O sistema cumpre esse critério com a sua capacidade de interagir com sistemas Android.
+ - *Segurança de acesso*: O sistema implementa esse critério a partir da autenticação de usuários, com senha criptografada no banco de dados.
+
+**Confiabilidade**:
+ - *Tolerância a falhas*: O sistema implementa esse critério através das avaliações pelos testes de usabilidade.
+
+**Usabilidade**:
+ - *Inteligibilidade*: O sistema implementa esse critério através das avaliações pelos testes de usabilidade.
+ - *Apreensibilidade*: O sistema implementa esse critério através das avaliações pelos testes de usabilidade.
+
+**Manutenibilidade**:
+ - *Modificabilidade*: O sistema cumpre esse critério através da implementação e ajuste de funcionalidades.
