@@ -29,7 +29,7 @@ Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do ba
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+Nossa solução abrange diversas tecnologias para desenvolvimento web e móvel, design de interface, gerenciamento de banco de dados, controle de versão e mais. Algumas das principais tecnologias que estamos utilizando incluem:
 
 ## Hospedagem
 
