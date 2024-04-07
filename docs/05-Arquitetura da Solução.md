@@ -31,30 +31,29 @@ Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do ba
 
 Nossa solução abrange diversas tecnologias para desenvolvimento web e móvel, design de interface, gerenciamento de banco de dados, controle de versão e mais. Algumas das principais tecnologias que estamos utilizando incluem:
 
-**Ambiente de Desenvolvimento:**
+- Visual Studio Code - Um editor de código leve e altamente personalizável para desenvolvimento de software.
 
-Visual Studio Code - Um editor de código leve e altamente personalizável para desenvolvimento de software.
-Android Studio - IDE oficial para desenvolvimento de aplicativos Android.
+- Android Studio - IDE oficial para desenvolvimento de aplicativos Android.
 
- **Ferramentas:**
+- Excel - Um software de planilha eletrônica amplamente utilizado para análise de dados e criação de gráficos.
 
-Excel - Um software de planilha eletrônica amplamente utilizado para análise de dados e criação de gráficos.
-Banco de Dados:
+- MySQL - Um sistema de gerenciamento de banco de dados relacional de código aberto.
 
-**Banco de Dados:**
+- Azure - Uma plataforma de computação em nuvem da Microsoft que oferece uma variedade de serviços, incluindo hospedagem de aplicativos.
 
-MySQL - Um sistema de gerenciamento de banco de dados relacional de código aberto.
-Hospedagem em Nuvem:
+- Git - Um sistema de controle de versão distribuído amplamente utilizado para rastrear mudanças no código fonte durante o desenvolvimento de software.
 
-Azure - Uma plataforma de computação em nuvem da Microsoft que oferece uma variedade de serviços, incluindo hospedagem de aplicativos.
-Controle de Versão:
+- GitHub - Uma plataforma de hospedagem de código fonte baseada em Git que oferece controle de versão e colaboração para projetos de software.
 
-**Controle de versao:**
+- Miro Design - Uma ferramenta colaborativa de quadro branco online para brainstorming, fluxos de trabalho visuais e design thinking.
 
-Git - Um sistema de controle de versão distribuído amplamente utilizado para rastrear mudanças no código fonte durante o desenvolvimento de software.
+- LucidChart - Uma ferramenta de diagramação e visualização de dados baseada na web para criar diagramas, wireframes e fluxogramas.
 
-GitHub - Uma plataforma de hospedagem de código fonte baseada em Git que oferece controle de versão e colaboração para projetos de software.
-Ferramentas de Design:
+- React Native - Um framework JavaScript para desenvolvimento de aplicativos móveis multiplataforma.
+
+- Node.js - Um ambiente de execução JavaScript que permite executar código JavaScript no servidor.
+
+- JavaScript - Uma linguagem de programação amplamente usada para criar interatividade em páginas da web.
 
 **Design:**
 
