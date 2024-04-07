@@ -1,9 +1,8 @@
 # Arquitetura da Solução
 
-Com o objetivo de se conceber um projeto completo, é preciso vizualiza-lo desde as formas mais simples até as mais complexas.
-A imagem abaixo ilustra de forma simples os componentes básicos e suas relações.
+O diagrama de arquitetura de solução é uma representação visual das estruturas básicas do software afim de ilustrar seu sistema como um todo.
 
-![Arquitetura de Contexto Heroes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/adcac5ba-de34-4446-a43d-b3586464981c)
+![Arquitetura de Contexto Heroes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/adcac5ba-de34-4446-a43d-b3586464981c) <sub> Figura 01 - Diagrama de Arquitetura da Solução - Produzido com Microsoft Excel <sub>
 
 ## Diagrama de Classes
 
@@ -11,14 +10,11 @@ O diagrama de classes ilustra graficamente como será a estrutura do software, e
 
 As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Classes”.
 
-> - [Diagramas de Classes - Documentação da IBM](https://www.ibm.com/docs/pt-br/rational-soft-arch/9.6.1?topic=diagrams-class)
-> - [O que é um diagrama de classe UML? | Lucidchart](https://www.lucidchart.com/pages/pt/o-que-e-diagrama-de-classe-uml)
+![Diagramas UML (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/45c58237-3abe-4cf7-a1d0-42394b3cd094) <sub> Figura 02 - Diagrama de Classes - Produzido com Lucidchart <sub>
 
 ## Modelo ER
 
 O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
 
 > - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
 
