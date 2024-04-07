@@ -52,6 +52,7 @@ Controle de Versão:
 **Controle de versao:**
 
 Git - Um sistema de controle de versão distribuído amplamente utilizado para rastrear mudanças no código fonte durante o desenvolvimento de software.
+
 GitHub - Uma plataforma de hospedagem de código fonte baseada em Git que oferece controle de versão e colaboração para projetos de software.
 Ferramentas de Design:
 
