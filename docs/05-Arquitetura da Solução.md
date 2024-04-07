@@ -8,13 +8,13 @@ O diagrama de arquitetura de solução é uma representação visual das estrutu
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
 
-![Diagramas UML (2)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/e53b6f42-0953-4cf6-a53c-4b2cc95e987f) <sub> Figura 02 - Diagrama de Classes - Produzido com Lucidchart <sub>
+![Diagramas UML (3)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/5fc26a8a-74dd-40f6-8647-69218e793f16) <sub> Figura 02 - Diagrama de Classes - Produzido com Lucidchart <sub>
 
 ## Modelo ER
 
 O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.
 
-![Diagrama ER](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/7211715a-0758-4f07-9650-421b2c631d44) <sub> Figura 03 - Modelo ER - Produzido com Lucidchart <sub>
+![Diagrama ER 1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/758e34ae-2d83-49d2-a1f9-b61d514601be) <sub> Figura 03 - Modelo ER - Produzido com Lucidchart <sub>
 
 ## Esquema Relacional
 
