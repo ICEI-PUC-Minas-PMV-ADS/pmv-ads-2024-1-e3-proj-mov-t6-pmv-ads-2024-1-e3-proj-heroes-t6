@@ -55,24 +55,10 @@ Nossa solução abrange diversas tecnologias para desenvolvimento web e móvel, 
 
 - JavaScript - Uma linguagem de programação amplamente usada para criar interatividade em páginas da web.
 
-**Design:**
-
-Miro Design - Uma ferramenta colaborativa de quadro branco online para brainstorming, fluxos de trabalho visuais e design thinking.
-LucidChart - Uma ferramenta de diagramação e visualização de dados baseada na web para criar diagramas, wireframes e fluxogramas.
-
-
-**Linguagens de Programação:**
-
-React Native - Um framework JavaScript para desenvolvimento de aplicativos móveis multiplataforma.
-Node.js - Um ambiente de execução JavaScript que permite executar código JavaScript no servidor.
-JavaScript - Uma linguagem de programação amplamente usada para criar interatividade em páginas da web.
-MySQL - Um sistema de gerenciamento de banco de dados relacional de código aberto.
-
-
 
 ## Hospedagem
 
-Azure
+A hospedagem do aplicativo será feita na Azure.
 
 ## Qualidade de Software
 
