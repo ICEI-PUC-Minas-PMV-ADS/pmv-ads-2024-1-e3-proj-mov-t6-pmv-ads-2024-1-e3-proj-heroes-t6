@@ -29,9 +29,8 @@ O Esquema Relacional corresponde à representação dos dados em tabelas juntame
 
 ## Modelo Físico
 
-Segue abaixo um print do modelo físico das tabelas do projeto, o arquivo SQL pode ser encontrado em src/bd.
-![db_Heroes_print](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/efe5160c-7e35-4368-aff0-1301c32ee354)
-
+Segue abaixo um print do modelo físico das tabelas do projeto, o arquivo SQL pode ser encontrado em src/bd. <br>
+![db_Heroes_print](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/efe5160c-7e35-4368-aff0-1301c32ee354) <br>
 <sub> Figura 05 - Print de modelo físico - Produzido com Visual Studio Code <sub>
 
 ## Tecnologias Utilizadas
