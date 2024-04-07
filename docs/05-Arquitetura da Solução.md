@@ -8,7 +8,7 @@ O diagrama de arquitetura de solução é uma representação visual das estrutu
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
 
-![Diagramas UML (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/45c58237-3abe-4cf7-a1d0-42394b3cd094) <sub> Figura 02 - Diagrama de Classes - Produzido com Lucidchart <sub>
+![Diagramas UML (2)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/e53b6f42-0953-4cf6-a53c-4b2cc95e987f) <sub> Figura 02 - Diagrama de Classes - Produzido com Lucidchart <sub>
 
 ## Modelo ER
 
