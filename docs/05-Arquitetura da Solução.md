@@ -2,13 +2,11 @@
 
 O diagrama de arquitetura de solução é uma representação visual das estruturas básicas do software afim de ilustrar seu sistema como um todo.
 
-![Arquitetura de Contexto Heroes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/adcac5ba-de34-4446-a43d-b3586464981c) <sub> Figura 01 - Diagrama de Arquitetura da Solução - Produzido com Microsoft Excel <sub>
+![Arquitetura de Contexto Heroes jpeg](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/76eebd66-f008-49a2-8ec8-b319d559af6d) <sub> Figura 01 - Diagrama de Arquitetura da Solução - Produzido com Microsoft Excel <sub>
 
 ## Diagrama de Classes
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Classes”.
 
 ![Diagramas UML (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6/assets/131215140/45c58237-3abe-4cf7-a1d0-42394b3cd094) <sub> Figura 02 - Diagrama de Classes - Produzido com Lucidchart <sub>
 
