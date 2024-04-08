@@ -64,7 +64,7 @@ Nossa solução abrange diversas tecnologias para desenvolvimento web e móvel, 
 
 ## Hospedagem
 
-A hospedagem do aplicativo será feita pelo Azure.
+A aplicação não será hospedada.
 
 
 ## Qualidade de Software
