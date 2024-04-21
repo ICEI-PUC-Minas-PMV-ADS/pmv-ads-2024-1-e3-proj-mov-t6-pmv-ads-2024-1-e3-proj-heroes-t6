@@ -1,18 +1,29 @@
-import {View, StyleSheet, TouchableOpacity, ImageBackground} from 'react-native'
-export default function Home(props){
+import {View, StyleSheet, TouchableOpacity, ImageBackground, Text, ScrollView} from 'react-native'
+import { useAuth } from '../services/AuthProvider'
+import LinearGradient from 'react-native-linear-gradient';
+import Title from '../component/Title'
+
+export default function Home(){
+    const { user } = useAuth();
     return(
         <View>
-                <View style={estilos.background}>
-                    <TouchableOpacity style={estilos.cards}>
-                        <ImageBackground source={props.ImagemDoCard} style={estilos.ImgCard}></ImageBackground> 
-                    </TouchableOpacity>
-                </View>
-        </View>
-        
+            <LinearGradient colors={['#236B8E','#FFFFFF']} style={style.gradient}>
+                <ScrollView>
+                    <View style={style.background}>
+                        <TouchableOpacity style={style.cards}>
+                            <Text>testando o nosso card</Text>
+                        </TouchableOpacity>
+                    </View>
+                </ScrollView>
+            </LinearGradient>
+        </View>                
     )
 }
 
-const estilos = StyleSheet.create({
+const style = StyleSheet.create({
+    gradient: {
+        height: 800,
+    },
     cards:{
         borderRadius:20,
         marginTop:20,

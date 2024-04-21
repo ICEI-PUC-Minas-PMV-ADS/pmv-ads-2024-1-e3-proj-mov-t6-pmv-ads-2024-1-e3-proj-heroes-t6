@@ -2,59 +2,55 @@ import {View, Text, StyleSheet, Image, TouchableOpacity, Modal, TouchableHighlig
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { useState } from 'react';
 import { RadioButton } from 'react-native-paper';
+import Title from '../component/Title';
+import { useAuth } from '../services/AuthProvider'
 
 //**************************** Telas ************************************ */
 const TelaUsuario=({navigation})=> {
-  return (
-    <View style={estilos.background}>
-      <View style={estilos.background1}>
+    const { signOut } = useAuth()
+    return (
+        <View style={estilos.background}>
+        <View style={estilos.background1}>
 
-          <View>
-            <Image
-              source={require('../../../assets/Image/user.png')}
-              style={estilos.imagemUser}/>
-          </View>
-
-            <View style={estilos.ContainerInfoUser}>
-              <TouchableOpacity
-                  onPress={()=>{navigation.navigate('EditInfoUser')}}>
-                  <Text style={estilos.txtEditInfo}>Editar informações</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                  onPress={()=>{navigation.navigate('CartaoCredito')}}>
-                  <Text style={estilos.txtEditInfo}>Cartões</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                  onPress={()=>{ModalRemoverConta()}}>
-                  <Text style={estilos.txtEditInfo2}>Remover minha conta</Text>
-              </TouchableOpacity>
-          </View>
-
-          <View>
-              <TouchableOpacity style={estilos.containerBtnLogoft}>
+            <View>
                 <Image
-                  source={require('../../../assets/Image/logout.png')}
-                  style={estilos.imgLogoft}/>
-                <Text style={estilos.btnLogoft}>Sair da conta</Text>
-              </TouchableOpacity>
-          </View>
+                source={require('../../../assets/Image/user.png')}
+                style={estilos.imagemUser}/>
+            </View>
 
-          <View>
-            <Text style={estilos.txtVersao}>Versão 1.0.0</Text>
-          </View>
+                <View style={estilos.ContainerInfoUser}>
+                <TouchableOpacity
+                    onPress={()=>{navigation.navigate('EditInfoUser')}}>
+                    <Text style={estilos.txtEditInfo}>Editar informações</Text>
+                </TouchableOpacity>
 
-          <View>
-            <Button onPress={()=>{navigation.navigate('Telalogin')}} title='(Teste) Ir para login'/>
-          </View>
+                <TouchableOpacity
+                    onPress={()=>{navigation.navigate('CartaoCredito')}}>
+                    <Text style={estilos.txtEditInfo}>Cartões</Text>
+                </TouchableOpacity>
 
-          <View>
-            <Button onPress={()=>{navigation.navigate('TelaCadastro')}} title='(Teste) Ir para Cadastro'/>
-          </View>
+                <TouchableOpacity
+                    onPress={()=>{ModalRemoverConta()}}>
+                    <Text style={estilos.txtEditInfo2}>Remover minha conta</Text>
+                </TouchableOpacity>
+            </View>
 
-      </View>
-    </View>
+            <View>
+                <TouchableOpacity style={estilos.containerBtnLogoft} onPress={() => signOut()}>
+                    <Image
+                    source={require('../../../assets/Image/logout.png')}
+                    style={estilos.imgLogoft}/>
+                    <Text style={estilos.btnLogoft}>Sair da conta</Text>
+                </TouchableOpacity>
+            </View>
+
+            <View>
+                <Text style={estilos.txtVersao}>Versão 1.0.0</Text>
+            </View>
+
+
+        </View>
+        </View>
   );
 }
 
@@ -211,45 +207,35 @@ const Pilha = createNativeStackNavigator()
 export default function NavegarTelasUser(){
   
     return(
-    
-      <Pilha.Navigator initialRouteName="user">
-            <Pilha.Screen
-                name='user'
-                component={TelaUsuario}
-                options={{headerShown: false}}>
-            </Pilha.Screen>
+        <>
+        <Title title='Home'/>
+        <Pilha.Navigator initialRouteName="user">
+                <Pilha.Screen
+                    name='user'
+                    component={TelaUsuario}
+                    options={{headerShown: false}}>
+                </Pilha.Screen>
 
-                  <Pilha.Screen
-                      name='EditInfoUser'
-                      component={EditarPerfil}
-                      options={{headerShown: false}}>
-                  </Pilha.Screen>
+                    <Pilha.Screen
+                        name='EditInfoUser'
+                        component={EditarPerfil}
+                        options={{headerShown: false}}>
+                    </Pilha.Screen>
 
-                  <Pilha.Screen
-                      name='CartaoCredito'
-                      component={EditarcartaoCredito}
-                      options={{headerShown: false}}>
-                  </Pilha.Screen>
+                    <Pilha.Screen
+                        name='CartaoCredito'
+                        component={EditarcartaoCredito}
+                        options={{headerShown: false}}>
+                    </Pilha.Screen>
 
-            <Pilha.Screen
-                name='AddcartaoCredito'
-                component={AddCartaoCredito}
-                options={{headerShown: false}}>
-            </Pilha.Screen>
+                <Pilha.Screen
+                    name='AddcartaoCredito'
+                    component={AddCartaoCredito}
+                    options={{headerShown: false}}>
+                </Pilha.Screen>
 
-            <Pilha.Screen
-                name='Telalogin'
-                component={TelaLogin}
-                options={{headerShown: false}}>
-            </Pilha.Screen>
-
-            <Pilha.Screen
-                name='TelaCadastro'
-                component={TelaCadastro}
-                options={{headerShown: false}}>
-            </Pilha.Screen>
-
-      </Pilha.Navigator>
+        </Pilha.Navigator>
+      </>
        
     )
 }
@@ -302,12 +288,13 @@ const estilos = StyleSheet.create({
     width: 100,
     height: 100,
     alignSelf: 'center',
-    marginTop: 20,
+    marginTop: 50,
   },
 
   ContainerInfoUser: {
     backgroundColor: '#fff',
     margin: 20,
+    marginTop: 60,
     borderRadius: 10,
     height: 180,
     elevation: 8,
@@ -354,12 +341,12 @@ const estilos = StyleSheet.create({
     flexDirection: 'row',
     alignSelf: 'center',
     alignItems: 'center',
-    marginTop: 150,
+    marginTop: 100,
   },
 
   txtVersao: {
     alignSelf: 'center',
-    marginTop: -20, //20
+    marginTop: 20
   },
 
   imgLogoft: {
@@ -457,151 +444,5 @@ txtRadioCard:{
 });
 
 
-// Teste tela Login
-
-const TelaLogin=({navigation})=>{
-
-  const [email, setEmail]=useState('')
-  const [senha, setSenha]=useState('')
-
-  return(
-     <View>
-      <View>
-          <TextInput 
-              placeholder='Email'
-              style={estilos2.inputs}
-              value={email}
-              onChangeText={text=>setEmail(text)}>
-          </TextInput>
-
-          <TextInput 
-              placeholder='Senha'
-              style={estilos2.inputs}
-              value={senha}
-              onChangeText={text=>setSenha(text)}>
-          </TextInput>
-          </View>
-
-          <View>
-          <TouchableOpacity>
-              <Text  style={estilos2.btnEsqueciSenha}>Esqueci minha senha</Text>
-          </TouchableOpacity>
-          </View>
-
-          <View>
-          <TouchableOpacity
-              style={estilos2.btnEntrar}>
-              <Text  style={estilos2.txtBotao}>Entrar</Text>
-          </TouchableOpacity>
-          </View>
-     </View>
-  )
-}
-
-const TelaCadastro=({navigation})=>{
-  const [nomeCompleto, setNomeCompleto] = useState('')
-  const [email, setEmail]=useState('')
-  const [senha, setSenha]=useState('')
-  const [confirmaSenha, setConfirmaSenha] = useState('')
 
 
-  return(
-     <View>
-
-      <View>
-          <TextInput 
-              placeholder='Nome Completo'
-              style={estilos3.inputs}
-              value={nomeCompleto}
-              onChangeText={text=>setNomeCompleto(text)}>
-          </TextInput>
-
-          <TextInput 
-              placeholder='E-mail'
-              style={estilos3.inputs}
-              value={email}
-              onChangeText={text=>setEmail(text)}>
-          </TextInput>
-
-          <TextInput 
-              placeholder='Senha'
-              style={estilos3.inputs}
-              value={senha}
-              onChangeText={text=>setSenha(text)}>
-          </TextInput>
-
-          <TextInput 
-            placeholder='Confirmar Senha'
-              style={estilos3.inputs}
-              value={confirmaSenha}
-              onChangeText={text=>setConfirmaSenha(text)}>
-          </TextInput>
-          </View>
-
-          <View>
-          <TouchableOpacity style={estilos3.btnCadastrar}>
-              <Text style={estilos3.TxtbtnCadastrar}>Cadastrar</Text>
-          </TouchableOpacity>
-          </View>
-     </View>
-  )
-}
-
-const estilos2=StyleSheet.create({
-  inputs:{
-    borderBottomWidth:1,
-    fontSize:18,
-    width:330,
-    alignSelf:'center'
-  },
-
-  btnEsqueciSenha:{
-    borderBottomWidth:1,
-    fontSize:20,
-    alignSelf:'flex-end',
-    marginRight:20,
-    marginTop:30
-  },
-  btnEntrar:{
-    backgroundColor:'green',
-    justifyContent:'center',
-    alignItems:'center',
-    width:350,
-    marginTop:100,
-    borderRadius:20,
-    height:50,
-    alignSelf:'center'
-  },
-  txtBotao:{
-    fontSize:20,
-    alignSelf:'center'
-  
-    
-  },
-
-})
-
-const estilos3=StyleSheet.create({
-  inputs:{
-    borderBottomWidth:1,
-    fontSize:18,
-    width:330,
-    alignSelf:'center'
-  },
-
-  TxtbtnCadastrar:{
-    fontSize:20,
-    alignSelf:'center'
-  },
-  btnCadastrar:{
-    backgroundColor:'green',
-    justifyContent:'center',
-    alignItems:'center',
-    width:350,
-    marginTop:100,
-    borderRadius:20,
-    height:50,
-    alignSelf:'center',
-    fontSize:60
-  }
-})
