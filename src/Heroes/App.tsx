@@ -1,10 +1,10 @@
-import {Image, View, Text, StyleSheet, ScrollView} from 'react-native';
-import Home from './src/components/screens/Home';
-import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Info from './src/components/screens/Info';
-import Perfil from './src/components/screens/Perfil';
-import LinearGradient from 'react-native-linear-gradient';
+import {Image, View, Text, StyleSheet, ScrollView} from 'react-native'
+import Home from './src/components/screens/Home'
+import {NavigationContainer} from '@react-navigation/native'
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
+import Info from './src/components/screens/Info'
+import Perfil from './src/components/screens/Perfil'
+import LinearGradient from 'react-native-linear-gradient'
 
 //***************************** Funções *************************************/
 
