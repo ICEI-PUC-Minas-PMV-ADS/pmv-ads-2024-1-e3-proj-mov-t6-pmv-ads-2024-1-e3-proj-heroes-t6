@@ -1,6 +1,7 @@
 import { useState, useEffect, createContext } from 'react'
 import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
 import { useAuth } from '../services/AuthProvider'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 // Incompleto *****
 
@@ -8,6 +9,8 @@ export default function Login(){
     const { signIn } = useAuth();
     const [email, setEmail]=useState('wesley@gmail.com')
     const [senha, setSenha]=useState('1234')
+    const [passwordEye, setPasswordEye]= useState(true)
+
 
     const handleSignIn = () => {
       signIn({ email, senha });
@@ -20,65 +23,74 @@ export default function Login(){
         <View>
             <TextInput 
                 placeholder='Email'
-                style={estilos2.inputs}
+                style={style.inputs}
                 value={email}
                 onChangeText={text=>setEmail(text)}>
             </TextInput>
 
             <TextInput 
                 placeholder='Senha'
-                style={estilos2.inputs}
+                style={style.inputs}
                 value={senha}
+                secureTextEntry={passwordEye}
                 onChangeText={text=>setSenha(text)}>
             </TextInput>
+            <TouchableOpacity onPress={() => setPasswordEye(!passwordEye)}>
+              <Icon style={style.icon} name={passwordEye ? 'eye-outline' : 'eye-off-outline'} size={28} color='gray' />
+            </TouchableOpacity>
             </View>
 
             <View>
             <TouchableOpacity>
-                <Text  style={estilos2.btnEsqueciSenha}>Esqueci minha senha</Text>
+                <Text  style={style.btnEsqueciSenha}>Esqueci minha senha</Text>
             </TouchableOpacity>
             </View>
 
             <View>
             <TouchableOpacity
-                style={estilos2.btnEntrar} onPress={handleSignIn}>
-                <Text  style={estilos2.txtBotao}>Entrar</Text>
+                style={style.btnEntrar} onPress={handleSignIn}>
+                <Text  style={style.txtBotao}>Entrar</Text>
             </TouchableOpacity>
             </View>
      </View>
     )
 }
 
-const estilos2=StyleSheet.create({
-    inputs:{
-      borderBottomWidth:1,
-      fontSize:18,
-      width:330,
-      alignSelf:'center'
-    },
-  
-    btnEsqueciSenha:{
-      borderBottomWidth:1,
-      fontSize:20,
-      alignSelf:'flex-end',
-      marginRight:20,
-      marginTop:30
-    },
-    btnEntrar:{
-      backgroundColor:'green',
-      justifyContent:'center',
-      alignItems:'center',
-      width:350,
-      marginTop:100,
-      borderRadius:20,
-      height:50,
-      alignSelf:'center'
-    },
-    txtBotao:{
-      fontSize:20,
-      alignSelf:'center'
-    
-      
-    },
+const style=StyleSheet.create({
+  icon:{
+    position: 'absolute',
+    marginLeft: '82%',
+    marginTop: -40,
+  },
+  inputs:{
+    borderBottomWidth: 1,
+    fontSize: 20,
+    width: 330,
+    height: 60,
+    alignSelf: 'center'
+  },
+
+  btnEsqueciSenha:{
+    borderBottomWidth:1,
+    fontSize:20,
+    alignSelf:'flex-end',
+    marginRight:20,
+    marginTop:30
+  },
+  btnEntrar:{
+    backgroundColor:'#F26430',
+    justifyContent:'center',
+    alignItems:'center',
+    width:350,
+    marginTop: 60,
+    borderRadius:20,
+    height:50,
+    alignSelf:'center'
+  },
+  txtBotao:{
+    fontSize:20,
+    alignSelf:'center',
+    color: 'white'
+  },
   
   })

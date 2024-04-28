@@ -125,14 +125,15 @@ const styles = StyleSheet.create({
   TxtbtnCadastrar: {
     fontSize: 20,
     alignSelf: 'center',
+    color: 'white'
   },
 
   btnCadastrar: {
-    backgroundColor: 'green',
+    backgroundColor: '#F26430',
     justifyContent: 'center',
     alignItems: 'center',
     width: 350,
-    marginTop: 100,
+    marginTop: 60,
     borderRadius: 20,
     height: 50,
     alignSelf: 'center',
