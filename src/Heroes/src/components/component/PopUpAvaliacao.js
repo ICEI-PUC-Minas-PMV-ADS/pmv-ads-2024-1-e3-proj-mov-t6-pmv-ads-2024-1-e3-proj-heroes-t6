@@ -4,8 +4,8 @@ import RatingBar from './RatingBar';
 
 export default function PopUpAvaliacao() {
     const [modalAvaliacao, setModalAvaliacao] = useState(false);
-    const defaultRating = 3; 
-    const maxRating = [1, 2, 3, 4, 5]; 
+    const [defaultRating, setDefaultRating] = useState(2);
+    const [maxRating, setMaxRating] = useState([1, 2, 3, 4, 5]);
 
     return (
         <View>
@@ -15,16 +15,17 @@ export default function PopUpAvaliacao() {
                     <Text style={styles.textStyle}>
                         Classifique a sua experiência
                     </Text>
-                    <RatingBar />
+                    <RatingBar defaultRating={defaultRating} setDefaultRating={setDefaultRating} maxRating={maxRating} />
                     <Text style={styles.textStyle}>
-                        {defaultRating} / {Math.max.apply(null, maxRating)}
+                        {defaultRating} / {Math.max(...maxRating)}
                     </Text>
                     <TouchableOpacity
                         activeOpacity={0.7}
                         style={styles.buttonStyle}
-                        onPress={() =>{ alert(defaultRating),setModalAvaliacao(false)}}>
+                        onPress={() => { alert(`Avaliação atual: ${defaultRating}`); setModalAvaliacao(false); }}>
                         <Text style={styles.buttonTextStyle}>
                             Obter Valor Selecionado
+            
                         </Text>
                     </TouchableOpacity>
                 </View>
@@ -32,6 +33,7 @@ export default function PopUpAvaliacao() {
         </View>
     );
 }
+
 
 const styles = StyleSheet.create({
     container: {
