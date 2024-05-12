@@ -1,6 +1,6 @@
 import {View, StyleSheet, Image } from 'react-native'
 import Title from '../component/Title'
-
+import CardInstitution from '../component/CardsInstitution'
 export default function About(){
     return(
         <>
@@ -8,6 +8,7 @@ export default function About(){
             <View style={estilos.background}>
                 <View style={estilos.background1}>
                         <Image source={require('../../../assets/Image/heroLogobyDesigner.png')} style={estilos.imgLogo}/> 
+                        <CardInstitution/>
                 </View>
             </View>
         </>
