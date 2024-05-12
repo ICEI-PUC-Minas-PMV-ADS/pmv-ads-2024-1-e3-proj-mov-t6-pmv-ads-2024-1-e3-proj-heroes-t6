@@ -2,6 +2,7 @@ import { useState } from 'react'
 import {View, Text, TouchableOpacity, StyleSheet, Image} from 'react-native'
 import Login from './Login'
 import Sign_up from './Sign_up'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useAuth } from '../services/AuthProvider'
 
 
@@ -42,9 +43,7 @@ export default function Teste () {
         <View style={styles.container2}> 
           {isLoginSelected ? <Login /> : <Sign_up />}
         </View>
-      
-</View>
-
+      </View>
       )}
     </>
       

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   View,
   Text,
@@ -6,65 +6,22 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import SQLite from 'react-native-sqlite-storage';
+
 
 export default function Sign_up() {
-  const [db, setDB] = useState(null);
   const [nomeCompleto, setNomeCompleto] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [confirmaSenha, setConfirmaSenha] = useState('');
 
-  // Abrir o banco de dados e criar a tabela de usuários na inicialização
-  useEffect(() => {
-    const initializeDatabase = async () => {
-      try {
-        const dbInstance = await SQLite.openDatabase({
-          name: 'UserDatabase.db',
-          location: 'default',
-        });
-
-        console.log('Banco de dados aberto com sucesso');
-
-        dbInstance.transaction((tx) => {
-          tx.executeSql(
-            'CREATE TABLE IF NOT EXISTS Users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT, password TEXT)',
-            [],
-            () => console.log('Tabela de usuários criada com sucesso'),
-            (error) => console.error('Erro ao criar a tabela de usuários: ', error)
-          );
-        });
-
-        setDB(dbInstance);
-      } catch (error) {
-        console.error('Erro ao abrir o banco de dados: ', error);
-      }
-    };
-
-  initializeDatabase();
-
-  // Não há necessidade de retornar uma função de limpeza aqui
-}, []);
-
-
   const addUser = () => {
     if (!nomeCompleto || !email || !senha) return;
-
-    db.transaction((tx) => {
-      tx.executeSql(
-        'INSERT INTO Users (name, email, password) VALUES (?, ?, ?)',
-        [nomeCompleto, email, senha],
-        () => {
-          console.log('Usuário adicionado com sucesso');
-          setNomeCompleto('');
-          setEmail('');
-          setSenha('');
-          fetchUsers();
-        },
-        (error) => console.error('Erro ao adicionar usuário: ', error)
-      );
-    });
-  };
+    insertUser({
+      name: nomeCompleto,
+      email: email,
+      password: senha
+    })
+  }
 
   const onPressVerification = () => {
     if (senha != confirmaSenha) {
@@ -72,6 +29,12 @@ export default function Sign_up() {
     } else {
       addUser();
     }
+  };
+
+  const del = () => {
+    dellUsers().then((dados) => {
+      console.log(dados)
+    })
   };
 
   return (
@@ -107,6 +70,12 @@ export default function Sign_up() {
           style={styles.btnCadastrar}
           onPress={onPressVerification}>
           <Text style={styles.TxtbtnCadastrar}>Cadastrar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.btnCadastrar}
+          onPress={del}>
+          <Text style={styles.TxtbtnCadastrar}>Deletar tabela</Text>
         </TouchableOpacity>
       </View>
     </View>

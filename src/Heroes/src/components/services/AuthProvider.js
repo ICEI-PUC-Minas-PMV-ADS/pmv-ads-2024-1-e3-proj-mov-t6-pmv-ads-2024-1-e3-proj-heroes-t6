@@ -1,23 +1,54 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import api from '../../api/api'
+import { Alert } from 'react-native'
 
-const AuthContext = createContext();
+
+const AuthContext = createContext()
 
 export function useAuth() {
-  return useContext(AuthContext);
+  return useContext(AuthContext)
 }
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
+  const [id, setId] = useState(null)
+  const [token, setToken] = useState('')
+  const [user, setUser] = useState(null)
 
-  const signIn = ({ email, senha }) => {
-    if (email == 'wesley@gmail.com' && senha == '1234') {
+  const validation = async () => {
+    if (token) {
+      try{
+        await api.get('/', {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        })
         setUser(true)
-        console.log('Usuario altenticado')
+      } catch (e){
+        setUser(false)
+        console.log(e)
+      }
+    } else {setUser(false)}
+  }
+  
+  const signIn = async ({ email, senha }) => {
+
+    const {data} = await api.post('/login', {
+      email: email,
+      password: senha
+    }).catch(error => {console.error(error)});
+
+    setToken(data.token)
+    if (!data.token){
+      Alert.alert('Email ou senha incorreto')
     }
+
+    validation()
+
   };
 
   const signOut = () => {
-    setUser(null);
+    setUser(false);
   };
 
   return (

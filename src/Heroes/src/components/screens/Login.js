@@ -3,20 +3,16 @@ import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
 import { useAuth } from '../services/AuthProvider'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
-// Incompleto *****
-
 export default function Login(){
     const { signIn } = useAuth();
-    const [email, setEmail]=useState('wesley@gmail.com')
-    const [senha, setSenha]=useState('1234')
+    const [email, setEmail]=useState('guilherme.gomes@gmail.com')
+    const [senha, setSenha]=useState('')
     const [passwordEye, setPasswordEye]= useState(true)
 
 
     const handleSignIn = () => {
       signIn({ email, senha });
     };
-
-    // Abrir o banco de dados e criar a tabela de usuários na inicialização
    
     return(
     <View>
