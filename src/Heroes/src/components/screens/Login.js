@@ -5,8 +5,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 export default function Login(){
     const { signIn } = useAuth();
-    const [email, setEmail]=useState('guilherme.gomes@gmail.com')
-    const [senha, setSenha]=useState('')
+    const [email, setEmail]=useState('guilherme@gmail.com')
+    const [senha, setSenha]=useState('12345')
     const [passwordEye, setPasswordEye]= useState(true)
 
 
@@ -63,6 +63,7 @@ const style=StyleSheet.create({
     fontSize: 20,
     width: 330,
     height: 60,
+    marginTop: 10,
     alignSelf: 'center'
   },
 

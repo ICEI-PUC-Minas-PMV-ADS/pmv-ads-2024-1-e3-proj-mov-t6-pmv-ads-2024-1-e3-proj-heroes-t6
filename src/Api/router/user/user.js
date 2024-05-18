@@ -1,7 +1,7 @@
 import express from 'express';
 const routerUser = express.Router();
 import jwt from 'jsonwebtoken';
-import { createUser, deleteTable, loginUser } from './userDb.js';
+import { createUser, loginUser, User, updateUser, deleteUser } from './userDb.js';
 import cors from 'cors'; 
 
 const SECRET_KEY = 'j8tqIstNhVNWQuDIM6640719fb2d16';
@@ -24,5 +24,26 @@ routerUser.post('/login', cors(), (req, res) => {
     } else {res.json('Email ou senha incorretos')}
   })
 });
+
+// Rota para puchar dados do usuário
+routerUser.post('/user', cors(), (req, res) => {
+  User(req.body)
+  .then(result => {
+      res.json(result);
+  })
+});
+
+// Rota para ataualizar usuario
+routerUser.post('/updateUser', cors(), (req, res) => {
+  updateUser(req.body)
+  res.json('result');
+});
+
+// Rota para deletar usuario
+routerUser.post('/delUser', cors(), (req, res) => {
+  deleteUser(req.body)
+  res.json('result');
+});
+
 
   export {routerUser, SECRET_KEY}

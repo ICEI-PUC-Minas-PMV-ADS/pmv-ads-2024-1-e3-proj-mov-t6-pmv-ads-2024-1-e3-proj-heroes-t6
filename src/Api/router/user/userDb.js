@@ -16,6 +16,15 @@ export async function createUser(params) {
     }
 }
 
+export async function deleteUser(params) {
+    try {
+        const db = await openDb();
+        await db.run(`DELETE FROM Users WHERE id = ?`, params.userid);
+    } catch (error) {
+        console.error('Error creating user:', error);
+    }
+}
+
 export async function loginUser(params) {
     try {
         await createTable();
@@ -30,11 +39,24 @@ export async function loginUser(params) {
 }
 
 
-export async function deleteTable() {
+export async function updateUser(params) {
     try {
         const db = await openDb();
-        await db.exec('DROP TABLE Users');
-        console.log('User created successfully');
+        if (params.password === ''){
+            await db.run(`UPDATE Users SET name = ?, email = ? WHERE id = ?`, params.name, params.email, params.userid);
+        } else {
+            await db.run(`UPDATE Users SET name = ?, email = ?, password = ? WHERE id = ?`, params.name, params.email, params.password, params.userid);
+        }
+    } catch (error) {
+        console.error('Error creating user:', error);
+    }
+}
+
+export async function User(params) {
+    try {
+        const db = await openDb();
+        let result = await db.get(`SELECT name, email, password FROM Users WHERE id=?`, params.userid);
+        return result
     } catch (error) {
         console.error('Error creating user:', error);
     }

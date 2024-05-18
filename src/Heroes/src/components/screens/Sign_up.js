@@ -5,7 +5,9 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
+import api from '../../api/api';
 
 
 export default function Sign_up() {
@@ -13,14 +15,19 @@ export default function Sign_up() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [confirmaSenha, setConfirmaSenha] = useState('');
+  const [perguntaSecreta, setPerguntaSecreta] = useState('');
 
   const addUser = () => {
     if (!nomeCompleto || !email || !senha) return;
-    insertUser({
+    api.post('/signup', {
       name: nomeCompleto,
       email: email,
       password: senha
-    })
+    }).then(Alert.alert('Cadastro realizado com sucesso.'))
+    setNomeCompleto('');
+    setEmail('');
+    setSenha('');
+    setConfirmaSenha('');
   }
 
   const onPressVerification = () => {
@@ -29,12 +36,6 @@ export default function Sign_up() {
     } else {
       addUser();
     }
-  };
-
-  const del = () => {
-    dellUsers().then((dados) => {
-      console.log(dados)
-    })
   };
 
   return (
@@ -63,6 +64,12 @@ export default function Sign_up() {
           style={styles.inputs}
           value={confirmaSenha}
           onChangeText={(text) => setConfirmaSenha(text)}></TextInput>
+
+        <TextInput
+          placeholder="Qual o nome do seu primeiro animal"
+          style={styles.inputs}
+          value={confirmaSenha}
+          onChangeText={(text) => setPerguntaSecreta(text)}></TextInput>
       </View>
 
       <View>
@@ -71,23 +78,19 @@ export default function Sign_up() {
           onPress={onPressVerification}>
           <Text style={styles.TxtbtnCadastrar}>Cadastrar</Text>
         </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.btnCadastrar}
-          onPress={del}>
-          <Text style={styles.TxtbtnCadastrar}>Deletar tabela</Text>
-        </TouchableOpacity>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+
   inputs: {
     borderBottomWidth: 1,
     fontSize: 20,
     width: 330,
     height: 60,
+    marginTop: 10,
     alignSelf: 'center',
   },
 

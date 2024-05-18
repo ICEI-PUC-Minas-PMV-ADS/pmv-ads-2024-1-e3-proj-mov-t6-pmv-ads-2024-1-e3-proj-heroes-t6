@@ -1,13 +1,23 @@
-import {View, Text, StyleSheet, Image, TouchableOpacity, Modal, TouchableHighlight, Alert, TextInput, Button} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity, Modal, TouchableHighlight, Alert, TextInput} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { RadioButton } from 'react-native-paper';
 import Title from '../component/Title';
 import { useAuth } from '../services/AuthProvider'
+import api from '../../api/api';
 
 //**************************** Telas ************************************ */
 const TelaUsuario=({navigation})=> {
-    const { signOut } = useAuth()
+  const { id, signOut } = useAuth()
+
+    const delet = () => {
+      try {
+        api.post('/delUser', {userid: id});
+        signOut()
+      } catch (error) {
+        console.error('Erro ao deletar o usuário:', error);
+      }
+    }
     return (
         <View style={estilos.background}>
         <View style={estilos.background1}>
@@ -30,7 +40,26 @@ const TelaUsuario=({navigation})=> {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={()=>{ModalRemoverConta()}}>
+                    onPress={()=>{
+                      Alert.alert(
+                        "Remover Usuario", 
+                          "Você tem certeza que deseja remover o usuario?", 
+                            [
+                          // Botões do Alert
+                              {
+                                text: "Voltar",
+                                   onPress: () => {
+                                     console.log("Usuário escolheu Voltar");
+                                   },
+                                     style: "cancel"
+                              },
+                              { 
+                                text: "Confirmar", 
+                                onPress: () => delet()
+                              }
+                           ]
+                              )
+                    }}>
                     <Text style={estilos.txtEditInfo2}>Remover minha conta</Text>
                 </TouchableOpacity>
             </View>
@@ -55,12 +84,125 @@ const TelaUsuario=({navigation})=> {
 }
 
 const EditarPerfil=({navigation})=>{
+  const [nomeCompleto, setNomeCompleto] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [confirmaSenha, setConfirmaSenha] = useState('');
+  const { id, signOut } = useAuth()
+
+  const fetchData = async () => {
+    try {
+      const {data} = await api.post('/user', {userid: id});
+      setNomeCompleto(data.name)
+      setEmail(data.email)
+    } catch (error) {
+      console.error('Erro ao buscar os dados:', error);
+    }
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const updateUser = () => {
+    if (senha === confirmaSenha) {
+      api.post('/updateUser', {
+        userid: id,
+        name: nomeCompleto,
+        email: email,
+        password: senha
+      })
+      Alert.alert('Usuario', 'Cadastro atualizado com sucesso')
+      if (senha !== '' && confirmaSenha !== ''){
+        signOut()
+      } else {
+        fetchData()
+      }
+    }
+  }
+
   return(
-    <View>
-      <Text>Tela editar perfil</Text>
+    <View style={styles.container}>
+      <View>
+        <Text style={styles.label}>Nome completo</Text>
+        <TextInput
+          placeholder="Nome Completo"
+          style={styles.inputs}
+          value={nomeCompleto}
+          onChangeText={(text) => setNomeCompleto(text)}></TextInput>
+
+        <Text style={styles.label}>E-mail</Text>
+        <TextInput
+          placeholder="E-mail"
+          style={styles.inputs}
+          value={email}
+          onChangeText={(text) => setEmail(text)}></TextInput>
+
+        <Text style={styles.label}>Senha</Text>
+        <TextInput
+          placeholder="Digite a nova senha"
+          style={styles.inputs}
+          value={senha}
+          onChangeText={(text) => setSenha(text)}></TextInput>
+
+        <Text style={styles.label}>Confirmar senha</Text>
+        <TextInput
+          placeholder="Confirmar nova senha"
+          style={styles.inputs}
+          value={confirmaSenha}
+          onChangeText={(text) => setConfirmaSenha(text)}></TextInput>
+      </View>
+
+      <View>
+        <TouchableOpacity
+          style={styles.btnCadastrar}
+          onPress={updateUser}>
+          <Text style={styles.TxtbtnCadastrar}>Editar</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   )
   }
+  const styles = StyleSheet.create({
+    container: {
+      display: 'flex',
+      justifyContent: 'center',
+      height: '100%'
+    },
+
+    label: {
+      fontSize: 18,
+      width: 330,
+      height: 20,
+      alignSelf: 'center',
+    },
+
+    inputs: {
+      borderBottomWidth: 1,
+      fontSize: 20,
+      width: 330,
+      height: 60,
+      marginBottom: 20,
+      alignSelf: 'center',
+    },
+  
+    TxtbtnCadastrar: {
+      fontSize: 20,
+      alignSelf: 'center',
+      color: 'white'
+    },
+  
+    btnCadastrar: {
+      backgroundColor: '#F26430',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: 350,
+      marginTop: 60,
+      borderRadius: 20,
+      height: 50,
+      alignSelf: 'center',
+      fontSize: 60,
+    },
+  });
 
   const EditarcartaoCredito=({navigation})=>{
     return(
@@ -85,31 +227,6 @@ const EditarPerfil=({navigation})=>{
       </View>
     )
     }
-
-    const ModalRemoverConta=()=>{
-      return(
-        Alert.alert(
-          "Remover Usuario", 
-            "Você tem certeza que deseja remover o usuario?", 
-              [
-            // Botões do Alert
-                {
-                  text: "Voltar",
-                     onPress: () => {
-                       console.log("Usuário escolheu Voltar");
-                     },
-                       style: "cancel"
-                },
-                 { 
-              text: "Confirmar", 
-            onPress: () => {
-          console.log("Usuário escolheu Confirmar");
-              }
-                 }
-             ]
-                )
-            )
-     }
 
 const AddCartaoCredito=({navigation})=>{
 
@@ -208,7 +325,7 @@ export default function NavegarTelasUser(){
   
     return(
         <>
-        <Title title='Home'/>
+        <Title title='Perfil'/>
         <Pilha.Navigator initialRouteName="user">
                 <Pilha.Screen
                     name='user'
@@ -233,7 +350,6 @@ export default function NavegarTelasUser(){
                     component={AddCartaoCredito}
                     options={{headerShown: false}}>
                 </Pilha.Screen>
-
         </Pilha.Navigator>
       </>
        
