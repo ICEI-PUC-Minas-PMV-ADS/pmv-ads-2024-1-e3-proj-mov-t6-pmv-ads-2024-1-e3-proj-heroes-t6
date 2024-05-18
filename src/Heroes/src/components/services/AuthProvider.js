@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import api from '../../api/api'
 import { Alert } from 'react-native'
 
@@ -18,11 +17,13 @@ export function AuthProvider({ children }) {
   const validation = async () => {
     if (token) {
       try{
-        await api.get('/', {
+        const {data} = await api.get('/', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
         })
+        const userID = data.userId.toString()
+        setId(userID)
         setUser(true)
       } catch (e){
         setUser(false)
@@ -52,7 +53,7 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, signIn, signOut }}>
+    <AuthContext.Provider value={{ user, signIn, signOut, id }}>
       {children}
     </AuthContext.Provider>
   );

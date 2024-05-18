@@ -68,7 +68,7 @@ export default function Sign_up() {
         <TextInput
           placeholder="Qual o nome do seu primeiro animal"
           style={styles.inputs}
-          value={confirmaSenha}
+          value={perguntaSecreta}
           onChangeText={(text) => setPerguntaSecreta(text)}></TextInput>
       </View>
 
