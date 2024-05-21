@@ -158,6 +158,11 @@ const EditarPerfil=({navigation})=>{
           onPress={updateUser}>
           <Text style={styles.TxtbtnCadastrar}>Editar</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.btnCadastrar2}
+          onPress={() => navigation.goBack()}>
+          <Text style={styles.TxtbtnCadastrar}>Voltar</Text>
+        </TouchableOpacity>
       </View>
     </View>
   )
@@ -197,6 +202,17 @@ const EditarPerfil=({navigation})=>{
       alignItems: 'center',
       width: 350,
       marginTop: 60,
+      borderRadius: 20,
+      height: 50,
+      alignSelf: 'center',
+      fontSize: 60,
+    },
+    btnCadastrar2: {
+      backgroundColor: '#236B8E',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: 350,
+      marginTop: 20,
       borderRadius: 20,
       height: 50,
       alignSelf: 'center',

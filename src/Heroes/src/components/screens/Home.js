@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, ScrollView, Alert, Image, ImageBackground, TextInput } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, ScrollView, Alert, Image, ImageBackground, TextInput, Switch } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LinearGradient from 'react-native-linear-gradient';
 import Title from '../component/Title';
@@ -17,7 +17,6 @@ const Home = ({ navigation }) => {
     const fetchCamps = async () => {
         try {
             const { data } = await api.get('/getAllCamp');
-            console.log('Dados recebidos:', data);
             setCamps(data);
         } catch (error) {
             Alert.alert('Erro ao buscar campanhas.', error.message);
@@ -47,7 +46,7 @@ const Home = ({ navigation }) => {
                             <Text style={styles.emptyText}>Nenhuma campanha disponível.</Text>
                         ) : (
                             camps.map(camp => (
-                                <TouchableOpacity key={camp.id} style={styles.cards}>
+                                <TouchableOpacity key={camp.id} style={styles.cards} onPress={() => navigation.navigate('Doacoes', { camp })}>
                                     <ImageBackground
                                         source={require('../../../assets/Image/fundo1.png')}
                                         imageStyle={styles.cardImage}
@@ -177,9 +176,9 @@ const CampanhaModal = ({ navigation, route }) => {
                         onChangeText={(text) => setDescricao(text)}
                     />
 
-                    <Text style={styles.label}>Valor - R$</Text>
+                    <Text style={styles.label}>Valor</Text>
                     <TextInput
-                        placeholder="Valor"
+                        placeholder="Valor(R$)"
                         style={styles.inputs}
                         keyboardType="numeric"
                         value={valor}
@@ -212,31 +211,111 @@ const CampanhaModal = ({ navigation, route }) => {
         </>
     );
 };
+
+const Doacoes = ({ navigation, route }) => {
+    const { id } = useAuth();
+    const [doacao, setDoacao] = useState('');
+    const { camp } = route.params || {};
+    const [idcamp, setIdcamp] = useState(camp.id);
+    const [titulo, setTitulo] = useState(camp.title);
+    const [subtitulo, setSubtitulo] = useState(camp.subtitle);
+    const [descricao, setDescricao] = useState(camp.description);
+    const [valor, setValor] = useState(camp.value.toFixed(2));
+    const [empresa, setEmpresa] = useState(camp.company);
+    const [isPix, setIsPix] = useState(true);
+
+    const totalDoacoes = 275;
+    const progresso = Math.min((totalDoacoes / valor).toFixed(2), 1);
+
+    const toggleSwitch = () => {
+        setIsPix(previousState => !previousState);
+    };
+
+    return (
+        <>
+            <Title title={titulo} />
+            <View style={styles.background1}>
+                <ScrollView style={styles.background2}>
+                    <View style={styles.container2}>
+                        <Text style={styles.label2}>Descrição</Text>
+                        <Text style={styles.txtDonation}>{descricao}</Text>
+                        <Text style={styles.label2}>Empresa Responsável</Text>
+                        <Text style={styles.txtDonation}>{empresa}</Text>
+                        <Text style={styles.label2}>Meta</Text>
+                        <Text style={styles.txtDonation}>{valor}</Text>
+
+                        <View style={styles.progressBarContainer}>
+                            <View style={[styles.progressBar, { width: `${progresso * 100}%` }]} />
+                        </View>
+                        <Text style={styles.progressText}>{`${(progresso * 100).toFixed(2)}%`}</Text>
+
+                        <Text style={styles.label2}>Doação</Text>
+                        <TextInput
+                            placeholder="Valor(R$)"
+                            style={styles.inputs}
+                            keyboardType="numeric"
+                            value={doacao}
+                            onChangeText={(text) => setDoacao(text)}
+                        />
+
+                        <Text style={styles.label2}>Método de Pagamento</Text>
+                        <View style={styles.switchContainer}>
+                            <Text style={styles.switchLabel}>Pix</Text>
+                            <Switch
+                                onValueChange={toggleSwitch}
+                                value={!isPix}
+                            />
+                            <Text style={styles.switchLabel}>Cartão</Text>
+                        </View>
+
+                        <TouchableOpacity style={styles.btnCadastrar1}>
+                            <Text style={styles.TxtbtnCadastrar}>Doar</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.btnCadastrar2}
+                            onPress={() => navigation.goBack()}
+                        >
+                            <Text style={styles.TxtbtnCadastrar}>Voltar</Text>
+                        </TouchableOpacity>
+                    </View>
+                </ScrollView>
+            </View>
+        </>
+    );
+};
+
 // -------------- Navegação ------------//
-const Pilha = createNativeStackNavigator()
+const Pilha = createNativeStackNavigator();
 
 export default function NavegarTelasCamp(){
   
     return(
         <>
-        <Pilha.Navigator initialRouteName="Home">
+        <Pilha.Navigator initialRouteName="Campaigns">
                 <Pilha.Screen
-                    name='Home'
+                    name='Campaigns'
                     component={Home}
                     options={{headerShown: false}}>
                 </Pilha.Screen>
 
-                    <Pilha.Screen
-                        name='CampanhaModal'
-                        component={CampanhaModal}
-                        options={{headerShown: false}}>
-                    </Pilha.Screen>
+                <Pilha.Screen
+                    name='CampanhaModal'
+                    component={CampanhaModal}
+                    options={{headerShown: false}}>
+                </Pilha.Screen>
+
+                <Pilha.Screen
+                    name='Doacoes'
+                    component={Doacoes}
+                    options={{headerShown: false}}>
+                </Pilha.Screen>
         </Pilha.Navigator>
       </> 
     )
-}
+};
 
 const styles = StyleSheet.create({
+    // ... outros estilos ...
     gradient: {
         height: 680,
     },
@@ -257,7 +336,17 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     background: {
-        height: 680,
+        height: '100%',
+    },
+    background1: {
+        backgroundColor: '#236B8E',
+        flex: 1,
+    },
+    background2: {
+        backgroundColor: '#F0F0F0',
+        flex: 1,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
     },
     button: {
         position: 'absolute',
@@ -273,7 +362,7 @@ const styles = StyleSheet.create({
     buttonText: {
         fontSize: 15,
         alignSelf: 'center',
-        color: 'white'
+        color: 'white',
     },
     cardTitle: {
         marginTop: 30,
@@ -314,8 +403,21 @@ const styles = StyleSheet.create({
         height: '100%',
         marginTop: '-15%',
     },
+    container2: {
+        display: 'flex',
+        justifyContent: 'center',
+        height: '100%',
+        paddingTop: '5%',
+    },
     label: {
         fontSize: 18,
+        width: 330,
+        height: 20,
+        alignSelf: 'center',
+    },
+    label2: {
+        fontSize: 18,
+        fontWeight: 'bold',
         width: 330,
         height: 20,
         alignSelf: 'center',
@@ -331,7 +433,12 @@ const styles = StyleSheet.create({
     TxtbtnCadastrar: {
         fontSize: 20,
         alignSelf: 'center',
-        color: 'white'
+        color: 'white',
+    },
+    btnCadastrarContainer: {
+        position: 'absolute',
+        top: '90%',
+        alignSelf: 'center',
     },
     btnCadastrar1: {
         backgroundColor: '#F26430',
@@ -354,5 +461,42 @@ const styles = StyleSheet.create({
         height: 50,
         alignSelf: 'center',
         fontSize: 60,
+    },
+    txtDonation: {
+        fontSize: 20,
+        textAlign: 'justify',
+        marginBottom: 10,
+        marginTop: 10,
+        marginLeft: 45,
+        marginRight: 45,
+    },
+    switchContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: 10,
+    },
+    switchLabel: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginHorizontal: 10,
+    },
+    progressBarContainer: {
+        height: 20,
+        width: '90%',
+        backgroundColor: '#e0e0e0',
+        borderRadius: 5,
+        overflow: 'hidden',
+        alignSelf: 'center',
+        marginVertical: 20,
+    },
+    progressBar: {
+        height: '100%',
+        backgroundColor: 'green',
+    },
+    progressText: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        textAlign: 'center',
     },
 });
