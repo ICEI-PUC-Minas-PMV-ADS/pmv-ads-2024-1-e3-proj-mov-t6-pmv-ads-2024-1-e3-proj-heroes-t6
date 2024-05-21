@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 export default function Login(){
     const { signIn } = useAuth();
-    const [email, setEmail]=useState('guilherme@gmail.com')
+    const [email, setEmail]=useState('wesley.gomes@gmail.com')
     const [senha, setSenha]=useState('12345')
     const [passwordEye, setPasswordEye]= useState(true)
 

@@ -21,10 +21,10 @@ export default function NavBar() {
     
                     tabBarActiveTintColor: '#F26430'}}
     
-                    initialRouteName='Home'>
+                    initialRouteName="Home">
                     
                     <Tab.Screen
-                    name="Sobre"
+                    name='Sobre'
                     component={About}
                     options={{  
                         tabBarIcon: ({ color, focused }) => (
@@ -38,7 +38,7 @@ export default function NavBar() {
                     />
                     
                     <Tab.Screen
-                    name="Início"
+                    name='Home'
                     component={Home}
                     options={{  
                         tabBarIcon: ({ color, focused }) => (
@@ -52,7 +52,7 @@ export default function NavBar() {
                     />
 
                     <Tab.Screen
-                    name="Perfil"
+                    name='Perfil'
                     component={Profile}
                     options={{  
                         tabBarIcon: ({ color, focused }) => (

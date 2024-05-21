@@ -50,6 +50,8 @@ export function AuthProvider({ children }) {
 
   const signOut = () => {
     setUser(false);
+    setId(null);
+    setToken('');
   };
 
   return (
