@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, ScrollView, Alert, Image, ImageBackground, TextInput, Switch } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, ScrollView, Alert, Image, ImageBackground, TextInput } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useFocusEffect } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
+import Clipboard from '@react-native-clipboard/clipboard';
 import Title from '../component/Title';
 import { useAuth } from '../services/AuthProvider';
 import api from '../../api/api';
 
+// -------------- Home ------------//
 const Home = ({ navigation }) => {
     const { id } = useAuth();
     const [camps, setCamps] = useState([]);
 
-    useEffect(() => {
-        fetchCamps();
-    }, []);
+    useFocusEffect(
+        React.useCallback(() => {
+            fetchCamps();
+        }, [])
+    );
 
     const fetchCamps = async () => {
         try {
@@ -93,9 +98,10 @@ const Home = ({ navigation }) => {
     );
 };
 
+// -------------- Modal: Edit e Create ------------//
 const CampanhaModal = ({ navigation, route }) => {
     const { id } = useAuth();
-    const { camp, fetchCamps } = route.params || {};
+    const { camp } = route.params || {};
     const [titulo, setTitulo] = useState(camp ? camp.title : '');
     const [subtitulo, setSubtitulo] = useState(camp ? camp.subtitle : '');
     const [descricao, setDescricao] = useState(camp ? camp.description : '');
@@ -117,7 +123,7 @@ const CampanhaModal = ({ navigation, route }) => {
                     description: descricao,
                     value: valor,
                     company: empresa,
-                    userId : id,
+                    userId: id,
                 });
                 Alert.alert('Campanha atualizada com sucesso.');
             } else {
@@ -131,11 +137,6 @@ const CampanhaModal = ({ navigation, route }) => {
                 });
                 Alert.alert('Campanha criada com sucesso.');
             }
-
-            if (fetchCamps) {
-                await fetchCamps();
-            }
-
             setTitulo('');
             setSubtitulo('');
             setDescricao('');
@@ -147,102 +148,200 @@ const CampanhaModal = ({ navigation, route }) => {
         }
     };
 
+    const handleValueChange = (text) => {
+        // Filtra para permitir apenas números e um ponto decimal
+        let filteredText = text.replace(/[^0-9.]/g, '');
+
+        // Se houver mais de um ponto decimal, remova os pontos extras
+        const firstDecimalIndex = filteredText.indexOf('.');
+        if (firstDecimalIndex !== -1) {
+            filteredText = filteredText.slice(0, firstDecimalIndex + 1) + filteredText.slice(firstDecimalIndex + 1).replace(/\./g, '');
+        }
+
+        // Limita a precisão decimal a duas casas
+        if (filteredText.includes('.')) {
+            const [integerPart, decimalPart] = filteredText.split('.');
+            if (decimalPart.length > 2) {
+                filteredText = `${integerPart}.${decimalPart.slice(0, 2)}`;
+            }
+        }
+
+        setValor(filteredText);
+    };
+
     return (
         <>
             <Title title={camp ? 'Editar Campanha' : 'Nova Campanha'} />
-            <View style={styles.container}>
-                <View>
-                    <Text style={styles.label}>Título</Text>
-                    <TextInput
-                        placeholder="Título"
-                        style={styles.inputs}
-                        value={titulo}
-                        onChangeText={(text) => setTitulo(text)}
-                    />
+            <View>
+                <ScrollView>
+                    <View style={styles.container}>
+                        <Text style={styles.label}>Título</Text>
+                        <TextInput
+                            placeholder="Título"
+                            style={styles.inputs}
+                            value={titulo}
+                            onChangeText={(text) => setTitulo(text)}
+                        />
 
-                    <Text style={styles.label}>Subtítulo</Text>
-                    <TextInput
-                        placeholder="Subtítulo"
-                        style={styles.inputs}
-                        value={subtitulo}
-                        onChangeText={(text) => setSubtitulo(text)}
-                    />
+                        <Text style={styles.label}>Subtítulo</Text>
+                        <TextInput
+                            placeholder="Subtítulo"
+                            style={styles.inputs}
+                            value={subtitulo}
+                            onChangeText={(text) => setSubtitulo(text)}
+                        />
 
-                    <Text style={styles.label}>Descrição</Text>
-                    <TextInput
-                        placeholder="Descrição"
-                        style={styles.inputs}
-                        value={descricao}
-                        onChangeText={(text) => setDescricao(text)}
-                    />
+                        <Text style={styles.label}>Descrição</Text>
+                        <TextInput
+                            placeholder="Descrição"
+                            style={styles.inputs}
+                            value={descricao}
+                            onChangeText={(text) => setDescricao(text)}
+                        />
 
-                    <Text style={styles.label}>Valor</Text>
-                    <TextInput
-                        placeholder="Valor(R$)"
-                        style={styles.inputs}
-                        keyboardType="numeric"
-                        value={valor}
-                        onChangeText={(text) => setValor(text)}
-                    />
+                        <Text style={styles.label}>Valor</Text>
+                        <TextInput
+                            placeholder="Valor(R$)"
+                            style={styles.inputs}
+                            keyboardType="numeric"
+                            value={valor}
+                            onChangeText={handleValueChange}
+                        />
 
-                    <Text style={styles.label}>Empresa</Text>
-                    <TextInput
-                        placeholder="Empresa"
-                        style={styles.inputs}
-                        value={empresa}
-                        onChangeText={(text) => setEmpresa(text)}
-                    />
-                </View>
-                <View>
-                    <TouchableOpacity
-                        style={styles.btnCadastrar1}
-                        onPress={addOrUpdateCamp}
-                    >
-                        <Text style={styles.TxtbtnCadastrar}>{camp ? 'Atualizar' : 'Salvar'}</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={styles.btnCadastrar2}
-                        onPress={() => navigation.goBack()}
-                    >
-                        <Text style={styles.TxtbtnCadastrar}>Voltar</Text>
-                    </TouchableOpacity>
-                </View>
+                        <Text style={styles.label}>Empresa</Text>
+                        <TextInput
+                            placeholder="Empresa"
+                            style={styles.inputs}
+                            value={empresa}
+                            onChangeText={(text) => setEmpresa(text)}
+                        />
+
+                        <TouchableOpacity
+                            style={[styles.btnCadastrar1, { backgroundColor: '#F26430' }]}
+                            onPress={addOrUpdateCamp}>
+                            <Text style={styles.TxtbtnCadastrar}>{camp ? 'Atualizar' : 'Salvar'}</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.btnCadastrar2}
+                            onPress={() => navigation.goBack()}>
+                            <Text style={styles.TxtbtnCadastrar}>Voltar</Text>
+                        </TouchableOpacity>
+                    </View>
+                </ScrollView>
             </View>
         </>
     );
 };
 
+// --------------Doações ------------//
 const Doacoes = ({ navigation, route }) => {
     const { id } = useAuth();
+    const [name, setName] = useState('');
     const [doacao, setDoacao] = useState('');
+    const [pixKey, setPixKey] = useState('');
     const { camp } = route.params || {};
-    const [idcamp, setIdcamp] = useState(camp.id);
-    const [titulo, setTitulo] = useState(camp.title);
-    const [subtitulo, setSubtitulo] = useState(camp.subtitle);
-    const [descricao, setDescricao] = useState(camp.description);
-    const [valor, setValor] = useState(camp.value.toFixed(2));
-    const [empresa, setEmpresa] = useState(camp.company);
-    const [isPix, setIsPix] = useState(true);
+    const [totalDoacoes, setTotalDoacoes] = useState(0);
 
-    const totalDoacoes = 275;
-    const progresso = Math.min((totalDoacoes / valor).toFixed(2), 1);
+    const progresso = Math.min((totalDoacoes / camp.value).toFixed(2), 1);
+    console.log(progresso);
 
-    const toggleSwitch = () => {
-        setIsPix(previousState => !previousState);
+    useEffect(() => {
+        fetchAllDonations();
+        fetchName();
+    }, []);
+
+    const fetchName = async () => {
+        try {
+          const {data} = await api.post('/user', {userid: id});
+          setName(data.name)
+        } catch (error) {
+          console.error('Erro ao buscar o nome do usuário:', error);
+        }
+    };
+
+    const fetchAllDonations = async () => {
+        try {
+            const response = await api.get('/getAllDonations', { params: { campId: camp.id } });
+            console.log(response.data.totalDonations);
+            setTotalDoacoes(response.data.totalDonations);
+        } catch (error) {
+            console.error('Erro ao buscar as doações da campanha:', error);
+        }
+    };
+    
+    const addDonate = async () => {
+        if (!doacao) {
+            Alert.alert('Informe o valor à ser doado.');
+            return;
+        }if (!pixKey) {
+            Alert.alert('Gere a chave pix.');
+            return;
+        }
+        try {
+             await api.post('/createDonations', {
+                    campid: camp.id,
+                    userid: id,
+                    name: name,
+                    donate: doacao,
+                });
+                Alert.alert('Doação feita com sucesso!');
+                fetchAllDonations();
+                setDoacao('');
+                setPixKey('');
+            }
+        catch (error) {
+            Alert.alert('Erro ao salvar doação.', error.message);
+        }
+    };
+
+    const generateNewPixKey = () => {
+        if (doacao) {
+            const newPixKey = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+                const r = Math.random() * 16 | 0,
+                    v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+            setPixKey(newPixKey);
+        }
+    };
+
+    const copyToClipboard = () => {
+        Clipboard.setString(pixKey);
+    };
+
+    const handleDoacaoChange = (text) => {
+        // Filtra para permitir apenas números e um ponto decimal
+        let filteredText = text.replace(/[^0-9.]/g, '');
+
+        // Se houver mais de um ponto decimal, remova os pontos extras
+        const firstDecimalIndex = filteredText.indexOf('.');
+        if (firstDecimalIndex !== -1) {
+            filteredText = filteredText.slice(0, firstDecimalIndex + 1) + filteredText.slice(firstDecimalIndex + 1).replace(/\./g, '');
+        }
+
+        // Limita a precisão decimal a duas casas
+        if (filteredText.includes('.')) {
+            const [integerPart, decimalPart] = filteredText.split('.');
+            if (decimalPart.length > 2) {
+                filteredText = `${integerPart}.${decimalPart.slice(0, 2)}`;
+            }
+        }
+
+        setDoacao(filteredText);
     };
 
     return (
         <>
-            <Title title={titulo} />
+            <Title title={camp.title} />
             <View style={styles.background1}>
                 <ScrollView style={styles.background2}>
-                    <View style={styles.container2}>
+                    <View style={styles.container}>
                         <Text style={styles.label2}>Descrição</Text>
-                        <Text style={styles.txtDonation}>{descricao}</Text>
+                        <Text style={styles.txtDonation}>{camp.description}</Text>
                         <Text style={styles.label2}>Empresa Responsável</Text>
-                        <Text style={styles.txtDonation}>{empresa}</Text>
+                        <Text style={styles.txtDonation}>{camp.company}</Text>
                         <Text style={styles.label2}>Meta</Text>
-                        <Text style={styles.txtDonation}>{valor}</Text>
+                        <Text style={styles.txtDonation}>R${camp.value.toFixed(2)}</Text>
 
                         <View style={styles.progressBarContainer}>
                             <View style={[styles.progressBar, { width: `${progresso * 100}%` }]} />
@@ -255,26 +354,33 @@ const Doacoes = ({ navigation, route }) => {
                             style={styles.inputs}
                             keyboardType="numeric"
                             value={doacao}
-                            onChangeText={(text) => setDoacao(text)}
+                            onChangeText={handleDoacaoChange}
                         />
 
-                        <Text style={styles.label2}>Método de Pagamento</Text>
-                        <View style={styles.switchContainer}>
-                            <Text style={styles.switchLabel}>Pix</Text>
-                            <Switch
-                                onValueChange={toggleSwitch}
-                                value={!isPix}
+                        <Text style={styles.label2}>Chave Pix</Text>
+                        <View style={styles.pixContainer}>
+                            <TextInput
+                                style={styles.pixKeyInput}
+                                value={pixKey}
+                                editable={false}
                             />
-                            <Text style={styles.switchLabel}>Cartão</Text>
+                            <TouchableOpacity style={styles.pixButton} onPress={generateNewPixKey}>
+                            <Image source={require('../../../assets/Image/refresh_icon.png')} style={styles.iconImage} />
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.pixButton} onPress={copyToClipboard}>
+                            <Image source={require('../../../assets/Image/copy_icon.png')} style={styles.iconImage} />
+                            </TouchableOpacity>
                         </View>
 
-                        <TouchableOpacity style={styles.btnCadastrar1}>
+                        <TouchableOpacity 
+                            style={[styles.btnCadastrar1, progresso >= 1 ? styles.btnCadastrar1Disabled : styles.btnCadastrar1Enabled]}
+                            onPress={addDonate}
+                            disabled={progresso >= 1}>
                             <Text style={styles.TxtbtnCadastrar}>Doar</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             style={styles.btnCadastrar2}
-                            onPress={() => navigation.goBack()}
-                        >
+                            onPress={() => navigation.goBack()}>
                             <Text style={styles.TxtbtnCadastrar}>Voltar</Text>
                         </TouchableOpacity>
                     </View>
@@ -314,8 +420,8 @@ export default function NavegarTelasCamp(){
     )
 };
 
+// -------------- Estilos ------------//
 const styles = StyleSheet.create({
-    // ... outros estilos ...
     gradient: {
         height: 680,
     },
@@ -401,12 +507,6 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         height: '100%',
-        marginTop: '-15%',
-    },
-    container2: {
-        display: 'flex',
-        justifyContent: 'center',
-        height: '100%',
         paddingTop: '5%',
     },
     label: {
@@ -441,7 +541,6 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     btnCadastrar1: {
-        backgroundColor: '#F26430',
         justifyContent: 'center',
         alignItems: 'center',
         width: 350,
@@ -450,6 +549,12 @@ const styles = StyleSheet.create({
         height: 50,
         alignSelf: 'center',
         fontSize: 60,
+    },
+    btnCadastrar1Enabled: {
+        backgroundColor: '#F26430',
+    },
+    btnCadastrar1Disabled: {
+        backgroundColor: '#999999',
     },
     btnCadastrar2: {
         backgroundColor: '#236B8E',
@@ -470,33 +575,46 @@ const styles = StyleSheet.create({
         marginLeft: 45,
         marginRight: 45,
     },
-    switchContainer: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginVertical: 10,
-    },
-    switchLabel: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        marginHorizontal: 10,
-    },
     progressBarContainer: {
         height: 20,
-        width: '90%',
-        backgroundColor: '#e0e0e0',
+        width: '80%',
+        backgroundColor: '#e0e0df',
         borderRadius: 5,
         overflow: 'hidden',
         alignSelf: 'center',
-        marginVertical: 20,
+        marginVertical: 10,
     },
     progressBar: {
         height: '100%',
-        backgroundColor: 'green',
+        backgroundColor: '#3b5998',
     },
     progressText: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        textAlign: 'center',
+        alignSelf: 'center',
+        fontSize: 16,
+    },
+    pixContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginBottom: 20,
+        width: 330,
+        alignSelf: 'center',
+    },
+    pixKeyInput: {
+        borderBottomWidth: 1,
+        fontSize: 20,
+        flex: 1,
+        marginRight: 10,
+    },
+    pixButton: {
+        backgroundColor: '#999999',
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 5,
+        marginRight: 3,
+    },
+    pixButtonText: {
+        color: 'white',
+        fontSize: 16,
     },
 });

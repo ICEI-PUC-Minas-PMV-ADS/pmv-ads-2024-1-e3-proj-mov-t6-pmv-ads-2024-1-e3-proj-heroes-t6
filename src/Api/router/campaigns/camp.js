@@ -1,6 +1,6 @@
 import express from 'express';
-import {createCamp, updateCamp, deleteCamp, getCamp, getAllCamp} from './campDb.js';
 import cors from 'cors';
+import { createCamp, updateCamp, deleteCamp, getCamp, getAllCamp } from './campDb.js';
 
 const routerCamp = express.Router();
 
@@ -22,7 +22,7 @@ routerCamp.post('/deleteCamp', cors(), (req, res) => {
   res.json('result');
 });
 
-// Rota para puxar dados das campanhas
+// Rota para puxar dados da campanha
 routerCamp.get('/getCamp', cors(), (req, res) => {
   getCamp(req.body)
   .then(result => {
@@ -31,7 +31,6 @@ routerCamp.get('/getCamp', cors(), (req, res) => {
 });
 
 // Rota para puxar todos os dados das campanhas
-
 routerCamp.get('/getAllCamp', cors(), async (req, res) => {
   try {
       const result = await getAllCamp();
@@ -41,4 +40,4 @@ routerCamp.get('/getAllCamp', cors(), async (req, res) => {
   }
 });
 
-  export {routerCamp}
+  export {routerCamp};
