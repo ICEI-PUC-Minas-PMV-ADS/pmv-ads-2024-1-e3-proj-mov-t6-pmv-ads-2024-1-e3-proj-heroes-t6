@@ -1,116 +1,184 @@
-import {useState} from 'react';
-import {View, StyleSheet, Image, Text, TouchableOpacity, ScrollView, Modal, Button} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, StyleSheet, Text, TouchableOpacity, Modal, TextInput, Button, FlatList, Image, Alert } from 'react-native';
 import CommentCards from './CommentCards';
+import api from '../../api/api';
 
-export default function ModalAboltInstituition(props) {
+export default function ModalAboltInstituition() {
+    const [modalVisible, setModalVisible] = useState(false);
+    const [institutionName, setInstitutionName] = useState('');
+    const [institutionDesc, setInstitutionDesc] = useState('');
+    const [institutions, setInstitutions] = useState([]);
+    const [selectedInstitution, setSelectedInstitution] = useState(null);
+    const [isEditing, setIsEditing] = useState(false);
 
-  const [ModalInstitution, setModalInstitution] = useState(false);
+    useEffect(() => {
+        loadInstitutions();
+    }, []);
 
-  const OpenModalInstitution = () => {
-    setModalInstitution(true);
-  };
+    const loadInstitutions = () => {
+        api.get('/getAllInstituicoes')
+            .then(response => setInstitutions(response.data))
+            .catch(error => console.error('Erro ao carregar instituições:', error));
+    };
 
-  return (
-    <ScrollView>
-         
-        <View style={estilos.container}>
-          <TouchableOpacity
-              style={estilos.cardInstituicao}
-                onPress={() => {
-                  OpenModalInstitution()}}>
-                  <Image source={props.imageCard}
-                style={estilos.imagemCard}/>
-              <Text style={estilos.txtCard}>{props.institution}</Text>
-          </TouchableOpacity>
+    const addOrUpdateInstitution = () => {
+        if (institutionName && institutionDesc) {
+            if (isEditing) {
+                api.post('/updateInstituicao', { id: selectedInstitution.id, name: institutionName, description: institutionDesc })
+                    .then(() => {
+                        setInstitutionName('');
+                        setInstitutionDesc('');
+                        setIsEditing(false);
+                        setModalVisible(false)
+                        setSelectedInstitution(null);
+                        loadInstitutions();
+                    })
+                    .catch(error => console.error('Erro ao atualizar instituição:', error));
+            } else {
+                api.post('/addInstituicao', { name: institutionName, description: institutionDesc })
+                    .then(() => {
+                        setInstitutionName('');
+                        setInstitutionDesc('');
+                        setModalVisible(false);
+                        loadInstitutions();
+                    })
+                    .catch(error => console.error('Erro ao adicionar instituição:', error));
+            }
+        } else {
+            alert('Preencha todos os campos');
+        }
+    };
+
+    const deleteInstitution = (id) => {
+        Alert.alert(
+            'Confirmar exclusão',
+            'Tem certeza que deseja excluir esta instituição?',
+            [
+                { text: 'Cancelar', style: 'cancel' },
+                {
+                    text: 'Confirmar', onPress: () => {
+                        api.post('/deleteInstituicao', { id })
+                            .then(() => loadInstitutions())
+                            .catch(error => console.error('Erro ao excluir instituição:', error));
+                    }
+                },
+            ]
+        );
+    };
+
+    const renderInstitutionDetails = (institution) => {
+        setSelectedInstitution(institution);
+    };
+
+    const startEditing = (institution) => {
+        setInstitutionName(institution.name);
+        setInstitutionDesc(institution.description);
+        setSelectedInstitution(institution);
+        setIsEditing(true);
+        setModalVisible(true);
+    };
+
+    return (
+        <View style={styles.container}>
+            <Button title="Adicionar Instituição" onPress={() => setModalVisible(true)} />
+            <FlatList
+                data={institutions}
+                keyExtractor={(item) => item.id.toString()}
+                renderItem={({ item }) => (
+                    <View style={styles.institutionCard}>
+                        <TouchableOpacity onPress={() => renderInstitutionDetails(item)}>
+                            <Text style={styles.institutionTitle}>{item.name}</Text>
+                        </TouchableOpacity>
+                        <View style={styles.buttonsContainer}>
+                            <TouchableOpacity onPress={() => startEditing(item)}>
+                                <Image source={require('../../../assets/Image/edit.png')} style={styles.buttonImage} />
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => deleteInstitution(item.id)}>
+                                <Image source={require('../../../assets/Image/delete.png')} style={styles.buttonImage} />
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                )}
+            />
+            {selectedInstitution && (
+                <Modal visible={!!selectedInstitution} animationType="slide">
+                    <View style={styles.modal}>
+                        <TouchableOpacity onPress={() => setSelectedInstitution(null)}>
+                            <Text style={styles.closeButton}>Fechar</Text>
+                        </TouchableOpacity>
+                        <Text style={styles.institutionTitle}>{selectedInstitution.name}</Text>
+                        <Text>{selectedInstitution.description}</Text>
+                        <CommentCards institutionId={selectedInstitution.id} />
+                    </View>
+                </Modal>
+            )}
+            <Modal visible={modalVisible} animationType="slide">
+                <View style={styles.modal}>
+                    <TextInput
+                        placeholder="Nome da Instituição"
+                        value={institutionName}
+                        onChangeText={setInstitutionName}
+                        style={styles.input}
+                    />
+                    <TextInput
+                        placeholder="Descrição"
+                        value={institutionDesc}
+                        onChangeText={setInstitutionDesc}
+                        style={styles.input}
+                    />
+                    <Button title={isEditing ? "Atualizar" : "Salvar"} onPress={addOrUpdateInstitution} />
+                    <Button title="Cancelar" onPress={() => {
+                        setModalVisible(false);
+                        setIsEditing(false);
+                        setInstitutionName('');
+                        setInstitutionDesc('');
+                    }} />
+                </View>
+            </Modal>
         </View>
-
-        <View>
-          <Modal animationType="fade" visible={ModalInstitution}>
-            <View style={estilos.modal}>
-              <View>
-               <TouchableOpacity 
-                  style={estilos.containerBtnFechar}
-                  onPress={() => {
-                  setModalInstitution(false)}}>
-                <Text style={estilos.btnFechar}>X</Text>
-               </TouchableOpacity>
-              </View>
-              <Text style={estilos.tituloDoCard}>{props.institution}</Text>
-
-        <CommentCards/>
-            </View>
-          </Modal>
-        </View>
-
-    </ScrollView>
-  );
+    );
 }
 
-const estilos = StyleSheet.create({
-  cardInstituicao: {
-    borderWidth: 1,
-    borderColor: '#bbb',
-    width: 300,
-    height: 100,
-    backgroundColor: '#eee',
-    elevation: 8,
-    marginTop: 40,
-    borderRadius: 15,
-  },
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  txtCard: {
-    textAlign: 'center',
-    fontSize: 15,
-    borderTopWidth: 1,
-    borderColor: '#bbb',
-  },
-  imagemCard: {
-    width: 100,
-    height: 100,
-    alignSelf: 'center',
-    marginTop: -30,
-  },
-
-
-  modal: {
-    backgroundColor: '#eee',
-    margin: 10,
-    height: '97%',
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 15,
-  },
-
-  containerBtnFechar: {
-    width: 40,
-    height: 40,
-    alignSelf: 'flex-end',
-    padding:7,
-    backgroundColor:'#236B8E',
-
-    margin:10
-  },
-
-  btnFechar:{
-    textAlign:"center",
-    fontSize:20,
-    color:'#fff',
-    fontWeight:"bold"
-  },
-
-  comentarioUsuario: {
-    marginLeft: 10,
-    color: '#000',
-    marginTop: 5,
-  },
-  
-  tituloDoCard:{
-    fontWeight:'bold',
-    color:'#000',
-    fontSize:25,
-    alignSelf:'center'
-  }
+const styles = StyleSheet.create({
+    container: {
+        padding: 20,
+ 
+    },
+    institutionCard: {
+        borderWidth: 1,
+        borderColor: '#ccc',
+        padding: 10,
+        marginVertical: 10,
+        borderRadius: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    institutionTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+    modal: {
+        padding: 20,
+        flex: 1,
+    },
+    input: {
+        borderWidth: 1,
+        borderColor: '#ccc',
+        padding: 10,
+        marginBottom: 10,
+        borderRadius: 5,
+    },
+    closeButton: {
+        color: 'red',
+        textAlign: 'right',
+    },
+    buttonsContainer: {
+        flexDirection: 'row',
+    },
+    buttonImage: {
+        width: 20,
+        height: 20,
+        marginHorizontal: 5,
+    },
 });
