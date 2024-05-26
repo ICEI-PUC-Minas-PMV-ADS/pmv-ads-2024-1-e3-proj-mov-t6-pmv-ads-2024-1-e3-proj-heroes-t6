@@ -46,7 +46,7 @@ export default function CardInstitution() {
       <PopUpAvaliacao />
       <View>
         <TouchableOpacity onPress={() => setModalVisibleInst(true)}>
-          <Text style={styles.buttonText}>Avaliações Heroes</Text>
+          <Text style={styles.buttonText}>Nossas Avaliações</Text>
         </TouchableOpacity>
       </View>
       <ModalAboltInstituition />

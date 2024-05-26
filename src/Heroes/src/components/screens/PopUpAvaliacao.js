@@ -28,7 +28,7 @@ export default function PopUpAvaliacao() {
 
     return (
         <View style={styles.mainContainer}>
-            <Button title="Abrir modal" onPress={() => setModalAvaliacao(true)} />
+            <Button title="Avalie a Heroes" onPress={() => setModalAvaliacao(true)} />
             <Modal animationType='fade' visible={modalAvaliacao} transparent={true}>
                 <View style={styles.modalOverlay}>
                     <View style={styles.container}>

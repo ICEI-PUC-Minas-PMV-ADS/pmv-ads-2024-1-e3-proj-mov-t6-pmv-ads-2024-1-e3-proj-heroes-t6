@@ -9,7 +9,7 @@ export default function CommentHeroes() {
     return (
         <View>
             <TouchableOpacity onPress={() => setModalVisible(true)}>
-                <Text>Abrir Modal</Text>
+                <Text>Avaliar Heroes</Text>
             </TouchableOpacity>
             <Modal visible={modalVisible} animationType="slide">
                 <View style={styles.modalView}>
