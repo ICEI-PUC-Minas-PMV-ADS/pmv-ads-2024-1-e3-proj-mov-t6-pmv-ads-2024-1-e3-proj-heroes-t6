@@ -82,13 +82,13 @@ export default function CardInstitution() {
 
 const styles = StyleSheet.create({
   container: {
-      height:'50%'
+    height: '50%',
   },
   buttonText: {
     fontSize: 18,
     color: '#007BFF',
     padding: 10,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   modalOverlay: {
     flex: 1,
