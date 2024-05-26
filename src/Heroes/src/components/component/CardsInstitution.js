@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TouchableOpacity, View, Text, Modal, FlatList, StyleSheet, Image } from 'react-native';
+import { TouchableOpacity, View, Text, Modal, FlatList, StyleSheet, Image, Button } from 'react-native';
 import api from '../../api/api';
 import ModalAboltInstituition from './AboltInstitution';
 import PopUpAvaliacao from '../screens/PopUpAvaliacao';
@@ -44,11 +44,11 @@ export default function CardInstitution() {
   return (
     <View style={styles.container}>
       <PopUpAvaliacao />
-      <View>
-        <TouchableOpacity onPress={() => setModalVisibleInst(true)}>
-          <Text style={styles.buttonText}>Nossas Avaliações</Text>
-        </TouchableOpacity>
-      </View>
+
+      <TouchableOpacity onPress={() => setModalVisibleInst(true)} style={styles.avaliacao}>
+        <Text style={{color:'#fff', fontSize:14}}>⭐Nossas Avaliações⭐</Text>
+      </TouchableOpacity>
+
       <ModalAboltInstituition />
 
       <Modal
@@ -84,6 +84,12 @@ const styles = StyleSheet.create({
   container: {
     height: '50%',
   },
+  avaliacao:{
+    backgroundColor:'#0ad',
+    padding:10,
+    alignSelf:'center'
+   
+},
   buttonText: {
     fontSize: 18,
     color: '#007BFF',

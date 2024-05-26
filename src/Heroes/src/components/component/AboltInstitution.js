@@ -79,11 +79,15 @@ export default function ModalAboltInstituition() {
     return (
         <View style={styles.container}>
             {id === userId && (
-                <Button title="Adicionar Instituição" onPress={() => {
+                <TouchableOpacity onPress={() => {
                     setSelectedInstitution(null);
                     setIsEditing(false);
                     setModalVisible(true);
-                }} />
+                }}
+                style={styles.btnAddInst}>
+                    <Text style={{color: 'white', fontSize:20}}>Adicionar Instituição</Text>
+                </TouchableOpacity>
+
             )}
             <FlatList
                 data={institutions}
@@ -103,27 +107,37 @@ export default function ModalAboltInstituition() {
                                 </TouchableOpacity>
                             </View>
                         )}
+                        
                     </View>
                 )}
             />
             {detailsModalVisible && selectedInstitution && (
+                
                 <Modal visible={detailsModalVisible} animationType="slide">
-                    <View style={styles.modal}>
+                    <View style={styles.background}>
+                    <Text style={styles.institutionTitle2}>{selectedInstitution.name}</Text>
+                    <View style={styles.background1}>
+                        
                         <TouchableOpacity onPress={() => {
                             setSelectedInstitution(null);
                             setDetailsModalVisible(false);
+                            
                         }}>
-                            <Text style={styles.closeButton}>Fechar</Text>
+                        <Text style={styles.closeButton}>Fechar</Text>
                         </TouchableOpacity>
-                        <Text style={styles.institutionTitle}>{selectedInstitution.name}</Text>
-                        <Text>{selectedInstitution.description}</Text>
+                        <Text style={{fontSize:17, marginBottom:10}}>{selectedInstitution.description}</Text>
                         <CommentCards institutionId={selectedInstitution.id} />
                     </View>
+                    </View>
                 </Modal>
+           
             )}
             {modalVisible && id === userId && (
                 <Modal visible={modalVisible} animationType="slide">
-                    <View style={styles.modal}>
+                    <View style={styles.background}>
+                    <Text style={styles.institutionTitle2}>Adicionar Instituição</Text>
+                        <View style={styles.background1}>
+                           
                         <TextInput
                             placeholder="Nome da Instituição"
                             value={institutionName}
@@ -136,13 +150,20 @@ export default function ModalAboltInstituition() {
                             onChangeText={setInstitutionDesc}
                             style={styles.input}
                         />
-                        <Button title={isEditing ? "Atualizar" : "Salvar"} onPress={addOrUpdateInstitution} />
-                        <Button title="Cancelar" onPress={() => {
-                            setModalVisible(false);
-                            setIsEditing(false);
-                            setInstitutionName('');
-                            setInstitutionDesc('');
-                        }} />
+                        <TouchableOpacity onPress={addOrUpdateInstitution} style={styles.TxtbtnSalvar}>
+                        <Text style={{color: 'white', fontSize:20}}>{isEditing ? "Atualizar" : "Salvar"}</Text>
+                        </TouchableOpacity>
+                                <TouchableOpacity onPress={() => {
+                                setModalVisible(false);
+                                setIsEditing(false);
+                                setInstitutionName('');
+                                setInstitutionDesc('');
+                                
+                            }}
+                            style={styles.TxtbtnCancelar}>
+                                    <Text style={{color: 'white', fontSize:20}}>Cancelar</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </Modal>
             )}
@@ -155,6 +176,39 @@ const styles = StyleSheet.create({
         padding: 20,
         flex: 1,
     },
+    TxtbtnSalvar: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 350,
+        marginTop: 30,
+        borderRadius: 20,
+        height: 50,
+        alignSelf: 'center',
+        fontSize: 60,
+        backgroundColor: '#F26430'
+    },
+    btnAddInst:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 350,
+        marginTop: 30,
+        borderRadius: 20,
+        height: 50,
+        alignSelf: 'center',
+        fontSize: 60,
+        backgroundColor: '#F26430'
+    },
+    TxtbtnCancelar: {
+        backgroundColor: '#236B8E',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 350,
+        marginTop: 20,
+        borderRadius: 20,
+        height: 50,
+        alignSelf: 'center',
+        fontSize: 60,
+    },
     institutionCard: {
         borderWidth: 1,
         borderColor: '#ccc',
@@ -166,23 +220,29 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     institutionTitle: {
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: 'bold',
     },
-    modal: {
-        padding: 20,
-        flex: 1,
+    institutionTitle2: {
+        fontSize: 30,
+        backgroundColor: '#236B8E',
+        margin:15,
+        marginTop:20,
+        color:'white'
     },
+
     input: {
         borderWidth: 1,
         borderColor: '#ccc',
         padding: 10,
         marginBottom: 10,
-        borderRadius: 5,
+        borderRadius: 15,
     },
     closeButton: {
         color: 'red',
         textAlign: 'right',
+        fontSize:17,
+        fontWeight:'bold'
     },
     buttonsContainer: {
         flexDirection: 'row',
@@ -191,5 +251,17 @@ const styles = StyleSheet.create({
         width: 20,
         height: 20,
         marginHorizontal: 5,
+    },
+    background: {
+        backgroundColor: '#236B8E',
+        flex: 1,
+    },
+    background1: {
+        backgroundColor: '#fff',
+        flex: 1,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+        padding: 20, 
+        marginTop:17
     },
 });
