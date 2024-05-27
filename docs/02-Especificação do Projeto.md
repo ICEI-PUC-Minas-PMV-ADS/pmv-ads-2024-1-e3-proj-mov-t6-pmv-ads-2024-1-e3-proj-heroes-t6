@@ -98,17 +98,16 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| A aplicação deve oferecer gerenciamento de usuários | ALTA | 
-|RF-002| A aplicação deve permitir que usuários pré cadastrados realizem login   | ALTA |
-|RF-003| A aplicação deve permitir o gerenciamento de cartão de crédito   | ALTA |
-|RF-004| A aplicação deve permitir inserir o valor a ser doado   | ALTA |
-|RF-005| A aplicação deve permitir que o usuário veja todas as instituições parceiras recebendo doações   | ALTA |
-|RF-006| A aplicação deve apresentar uma pagina sobre o heroes  | ALTA |
-|RF-007| A aplicação deve apresentar o numero de contato das instituições parceiras   | ALTA |
-|RF-008| A aplicação deve permitir a doação por cartão de crédito, pix   | ALTA |
-|RF-009| A aplicação deverá mostrar a meta a ser arrecadada e quanto a instituição já arrecadou   | ALTA |
+| ID | Descrição do Requisito | Prioridade |
+|----|------------------------|------------|
+|RF-001| A aplicação deve oferecer gerenciamento de usuários. | ALTA |
+|RF-002| A aplicação deve permitir que usuários pré-cadastrados realizem login e logout. | ALTA |
+|RF-003| A aplicação deve permitir gerenciamento das campanhas de doações. | ALTA |
+|RF-004| A aplicação deve apresentar uma página para cada campanha, onde seja possível visualizar seus detalhes, o progresso da arrecadação e executar as doações através de uma chave pix. | ALTA |
+|RF-005| A aplicação deve apresentar uma página sobre o Heroes. | ALTA |
+|RF-006| A aplicação deve apresentar uma sessão de avaliação onde o usuário possa enviar e gerenciar suas opiniões. | ALTA |
+|RF-007| A aplicação deve permitir gerenciamento das instituições parceiras através de um usuário administrativo. | ALTA |
+|RF-008| A aplicação deve permitir aos usuários enviarem e gerenciarem seus comentários as instituições. | ALTA |
 
 ### Requisitos não Funcionais
 
