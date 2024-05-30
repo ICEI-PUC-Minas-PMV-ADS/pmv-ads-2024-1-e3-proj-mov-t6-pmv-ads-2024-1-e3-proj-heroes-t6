@@ -10,7 +10,6 @@ export default function CardInstitution() {
 
   useEffect(() => {
     if (modalVisibleInst) {
-      // Função para carregar comentários ao abrir o modal
       async function loadComentarios() {
         try {
           const response = await api.get('/getAllCommentsHeroes');
