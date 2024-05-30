@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, Text, TouchableOpacity, Modal, TextInput, Button, FlatList, Image, Alert, ScrollView } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, Modal, TextInput, FlatList, Image, Alert, ScrollView } from 'react-native';
 import CommentCards from './CommentCards';
 import api from '../../api/api';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAuth } from '../services/AuthProvider';
 
 export default function ModalAboltInstituition() {
@@ -87,7 +86,6 @@ export default function ModalAboltInstituition() {
                 style={styles.btnAddInst}>
                     <Text style={{color: 'white', fontSize:20}}>Adicionar Instituição</Text>
                 </TouchableOpacity>
-
             )}
             <FlatList
                 data={institutions}
@@ -107,62 +105,60 @@ export default function ModalAboltInstituition() {
                                 </TouchableOpacity>
                             </View>
                         )}
-                        
                     </View>
                 )}
+                contentContainerStyle={{ paddingBottom: 20 }} // Adicione este estilo para evitar que os cards sejam cortados
+                style={{ flex: 1 }} // Adicione este estilo para garantir que o FlatList ocupe todo o espaço disponível
             />
             {detailsModalVisible && selectedInstitution && (
-                
                 <Modal visible={detailsModalVisible} animationType="slide">
                     <View style={styles.background}>
-                    <Text style={styles.institutionTitle2}>{selectedInstitution.name}</Text>
-                    <View style={styles.background1}>
-                        
-                        <TouchableOpacity onPress={() => {
-                            setSelectedInstitution(null);
-                            setDetailsModalVisible(false);
-                            
-                        }}>
-                        <Text style={styles.closeButton}>Fechar</Text>
-                        </TouchableOpacity>
-                        <Text style={{fontSize:17, marginBottom:10}}>{selectedInstitution.description}</Text>
-                        <CommentCards institutionId={selectedInstitution.id} />
-                    </View>
+                        <Text style={styles.institutionTitle2}>{selectedInstitution.name}</Text>
+                        <View style={styles.background1}>
+                            <TouchableOpacity onPress={() => {
+                                setSelectedInstitution(null);
+                                setDetailsModalVisible(false);
+                            }}>
+                                <Text style={styles.closeButton}>Fechar</Text>
+                            </TouchableOpacity>
+                            <ScrollView>
+                                <Text style={{fontSize:17, marginBottom:10}}>{selectedInstitution.description}</Text>
+                                <CommentCards institutionId={selectedInstitution.id} />
+                            </ScrollView>
+                        </View>
                     </View>
                 </Modal>
-           
             )}
             {modalVisible && id === userId && (
                 <Modal visible={modalVisible} animationType="slide">
                     <View style={styles.background}>
-                    <Text style={styles.institutionTitle2}>Adicionar Instituição</Text>
+                        <Text style={styles.institutionTitle2}>Adicionar Instituição</Text>
                         <View style={styles.background1}>
-                           
-                        <TextInput
-                            placeholder="Nome da Instituição"
-                            value={institutionName}
-                            onChangeText={setInstitutionName}
-                            style={styles.input}
-                        />
-                        <TextInput
-                            placeholder="Descrição"
-                            value={institutionDesc}
-                            onChangeText={setInstitutionDesc}
-                            style={styles.input}
-                        />
-                        <TouchableOpacity onPress={addOrUpdateInstitution} style={styles.TxtbtnSalvar}>
-                        <Text style={{color: 'white', fontSize:20}}>{isEditing ? "Atualizar" : "Salvar"}</Text>
-                        </TouchableOpacity>
+                            <ScrollView>
+                                <TextInput
+                                    placeholder="Nome da Instituição"
+                                    value={institutionName}
+                                    onChangeText={setInstitutionName}
+                                    style={styles.input}
+                                />
+                                <TextInput
+                                    placeholder="Descrição"
+                                    value={institutionDesc}
+                                    onChangeText={setInstitutionDesc}
+                                    style={styles.input}
+                                />
+                                <TouchableOpacity onPress={addOrUpdateInstitution} style={styles.TxtbtnSalvar}>
+                                    <Text style={{color: 'white', fontSize:20}}>{isEditing ? "Atualizar" : "Salvar"}</Text>
+                                </TouchableOpacity>
                                 <TouchableOpacity onPress={() => {
-                                setModalVisible(false);
-                                setIsEditing(false);
-                                setInstitutionName('');
-                                setInstitutionDesc('');
-                                
-                            }}
-                            style={styles.TxtbtnCancelar}>
+                                    setModalVisible(false);
+                                    setIsEditing(false);
+                                    setInstitutionName('');
+                                    setInstitutionDesc('');
+                                }} style={styles.TxtbtnCancelar}>
                                     <Text style={{color: 'white', fontSize:20}}>Cancelar</Text>
-                            </TouchableOpacity>
+                                </TouchableOpacity>
+                            </ScrollView>
                         </View>
                     </View>
                 </Modal>
@@ -187,7 +183,7 @@ const styles = StyleSheet.create({
         fontSize: 60,
         backgroundColor: '#F26430'
     },
-    btnAddInst:{
+    btnAddInst: {
         justifyContent: 'center',
         alignItems: 'center',
         width: 350,
@@ -226,11 +222,10 @@ const styles = StyleSheet.create({
     institutionTitle2: {
         fontSize: 30,
         backgroundColor: '#236B8E',
-        margin:15,
-        marginTop:20,
-        color:'white'
+        margin: 15,
+        marginTop: 20,
+        color: 'white'
     },
-
     input: {
         borderWidth: 1,
         borderColor: '#ccc',
@@ -241,8 +236,8 @@ const styles = StyleSheet.create({
     closeButton: {
         color: 'red',
         textAlign: 'right',
-        fontSize:17,
-        fontWeight:'bold'
+        fontSize: 17,
+        fontWeight: 'bold'
     },
     buttonsContainer: {
         flexDirection: 'row',
@@ -261,7 +256,7 @@ const styles = StyleSheet.create({
         flex: 1,
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
-        padding: 20, 
-        marginTop:17
+        padding: 20,
+        marginTop: 17
     },
 });

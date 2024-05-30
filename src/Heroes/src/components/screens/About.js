@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, View, StyleSheet, Image, Text } from 'react-native';
+import { ScrollView, View, StyleSheet, Image, Text, FlatList } from 'react-native';
 import Title from '../component/Title';
 import CardInstitution from '../component/CardsInstitution';
 
@@ -15,7 +15,7 @@ export default function About() {
                             Bem-vindo ao HEROES, onde cada gesto de solidariedade se transforma em uma poderosa onda de esperança. Nosso aplicativo foi criado com o propósito de conectar pessoas que desejam ajudar com comunidades que enfrentaram desastres naturais e outras crises.
                             Através do HEROES, você pode fazer doações diretamente para os locais mais impactados, garantindo que sua contribuição seja utilizada de maneira eficaz e transparente. Nos comprometemos a assegurar que cada centavo doado seja destinado à reconstrução, recuperação e fortalecimento das comunidades afetadas.
                             Ao escolher doar pelo nosso aplicativo, você não apenas oferece recursos financeiros, mas também envia uma mensagem de esperança e solidariedade. Junte-se a nós nesta missão de transformar momentos de adversidade em histórias de superação e resiliência.
-                        </Text>
+                        </Text>     
                         <CardInstitution/>
                     </View>
                 </View>

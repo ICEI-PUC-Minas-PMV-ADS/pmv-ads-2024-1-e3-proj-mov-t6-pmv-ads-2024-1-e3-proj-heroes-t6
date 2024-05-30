@@ -7,7 +7,7 @@ import {createTableCamp} from './router/campaigns/campDb.js'
 import { routerDonate } from './router/donations/donate.js';
 import { createTableDonations } from './router/donations/donateDb.js';
 import AuthenticateToken from './middlewares/autentication.js';
-import {createTableComments} from './router/commentsCards/comments_CardsDb.js'
+import {createTableComments, addColumnInstitutionId } from './router/commentsCards/comments_CardsDb.js'
 import {createTableInstituicao} from './router/instituicao/instituicaoDB.js'
 import {routerComment} from './router/commentsCards/comments_cards.js'
 import {routerInstituicao} from './router/instituicao/instituicao.js'
@@ -32,6 +32,7 @@ createTableDonations()
 createTableComments()
 createTableInstituicao()
 createTableCommentsHeroes()
+addColumnInstitutionId();
 
 // Rota protegida
 app.get('/', AuthenticateToken, (req, res) => {

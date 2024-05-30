@@ -1,33 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TextInput, FlatList, TouchableOpacity, Image, Alert } from 'react-native';
 import api from '../../api/api';
+import { useAuth } from '../services/AuthProvider';
 
 export default function CommentCards({ institutionId }) {
     const [comentario, setComentario] = useState('');
     const [comentarios, setComentarios] = useState([]);
+    const [name, setName] = useState('');
+    const { id } = useAuth(); 
 
     useEffect(() => {
+        fetchName();
         loadComments();
     }, []);
 
     const addComment = () => {
         if (comentario !== '') {
-            api.post('/addComment', { comment: comentario, userId: institutionId })
-                .then(() => {
-                    setComentario('');
-                    loadComments();
-                })
-                .catch(error => console.error('Erro ao adicionar comentário:', error));
+            if (name) {
+                api.post('/addComment', { comment: comentario, userId: id, userName: name, institutionId })
+                    .then(() => {
+                        setComentario('');
+                        loadComments();
+                    })
+                    .catch(error => console.error('Erro ao adicionar comentário:', error));
+            } else {
+                console.error('Nome do usuário não foi carregado.');
+            }
         } else {
             Alert.alert('Atenção', 'É necessário preencher o campo "Escrever comentário".');
         }
     };
 
     const loadComments = () => {
-        api.get('/getAllComments')
+        api.get('/getCommentsByInstitution', { params: { institutionId } })
             .then(response => {
-                const institutionComments = response.data.filter(comment => comment.userId === institutionId);
-                setComentarios(institutionComments);
+                console.log('Comentários carregados:', response.data);
+                setComentarios(response.data);
             })
             .catch(error => console.error('Erro ao carregar comentários:', error));
     };
@@ -65,6 +73,20 @@ export default function CommentCards({ institutionId }) {
             .catch(error => console.error('Erro ao editar comentário:', error));
     };
 
+    const fetchName = async () => {
+        try {
+            const { data } = await api.post('/user', { userid: id });
+            setName(data.name);
+            console.log('Nome do usuário:', data.name);
+        } catch (error) {
+            console.error('Erro ao buscar o nome do usuário:', error);
+        }
+    };
+
+    useEffect(() => {
+        console.log('ID do usuário autenticado:', id); // Log para verificar o ID do usuário autenticado
+    }, [id]);
+
     return (
         <View style={styles.container}>
             <TextInput
@@ -99,22 +121,28 @@ export default function CommentCards({ institutionId }) {
                                     }}
                                 />
                             ) : (
-                                <Text style={styles.commentText}>{item.text}</Text>
+                                <Text style={styles.commentText}>
+                                    <Text style={styles.userName}>{item.userName}</Text>
+                                    {'\n'}
+                                    {item.text}
+                                </Text>
                             )}
                         </View>
-                        <View style={styles.buttonsContainer}>
-                            <TouchableOpacity onPress={() => deleteComment(item.id)}>
-                                <Image source={require('../../../assets/Image/delete.png')} style={styles.buttonImage} />
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={() => toggleEdit(item.id)}>
-                                <Image source={require('../../../assets/Image/edit.png')} style={styles.buttonImage} />
-                            </TouchableOpacity>
-                            {item.editable && (
-                                <TouchableOpacity onPress={() => saveComment(item.id, item.text)}>
-                                    <Text style={{ fontWeight: 'bold', color: 'orange' }}>Salvar</Text>
+                        {item.userId == id ? (
+                            <View style={styles.buttonsContainer}>
+                                <TouchableOpacity onPress={() => deleteComment(item.id)}>
+                                    <Image source={require('../../../assets/Image/delete.png')} style={styles.buttonImage} />
                                 </TouchableOpacity>
-                            )}
-                        </View>
+                                <TouchableOpacity onPress={() => toggleEdit(item.id)}>
+                                    <Image source={require('../../../assets/Image/edit.png')} style={styles.buttonImage} />
+                                </TouchableOpacity>
+                                {item.editable && (
+                                    <TouchableOpacity onPress={() => saveComment(item.id, item.text)}>
+                                        <Text style={{ fontWeight: 'bold', color: 'orange' }}>Salvar</Text>
+                                    </TouchableOpacity>
+                                )}
+                            </View>
+                        ) : null}
                     </View>
                 )}
             />
@@ -147,6 +175,9 @@ const styles = StyleSheet.create({
     },
     commentText: {
         fontSize: 16,
+    },
+    userName: {
+        fontWeight: 'bold',
     },
     buttonsContainer: {
         flexDirection: 'row',
