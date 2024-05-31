@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   Modal,
   TextInput,
-  FlatList,
   Image,
   Alert,
   ScrollView,
@@ -116,35 +115,30 @@ export default function ModalAboltInstituition() {
           </Text>
         </TouchableOpacity>
       )}
-      <FlatList
-        data={institutions}
-        keyExtractor={item => item.id.toString()}
-        renderItem={({item}) => (
-          <View style={styles.institutionCard}>
-            <TouchableOpacity onPress={() => onViewPress(item)}>
-              <Text style={styles.institutionTitle}>{item.name}</Text>
-            </TouchableOpacity>
-            {id === userId && (
-              <View style={styles.buttonsContainer}>
-                <TouchableOpacity onPress={() => onEditPress(item)}>
-                  <Image
-                    source={require('../../../assets/Image/edit.png')}
-                    style={styles.buttonImage}
-                  />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => deleteInstitution(item.id)}>
-                  <Image
-                    source={require('../../../assets/Image/delete.png')}
-                    style={styles.buttonImage}
-                  />
-                </TouchableOpacity>
-              </View>
-            )}
-          </View>
-        )}
-        contentContainerStyle={{paddingBottom: 20}}
-        style={{flex: 1}}
-      />
+      {institutions.map((item) => (
+        <View key={item.id.toString()} style={styles.institutionCard}>
+          <TouchableOpacity onPress={() => onViewPress(item)}>
+            <Text style={styles.institutionTitle}>{item.name}</Text>
+          </TouchableOpacity>
+          {id === userId && (
+            <View style={styles.buttonsContainer}>
+              <TouchableOpacity onPress={() => onEditPress(item)}>
+                <Image
+                  source={require('../../../assets/Image/edit.png')}
+                  style={styles.buttonImage}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => deleteInstitution(item.id)}>
+                <Image
+                  source={require('../../../assets/Image/delete.png')}
+                  style={styles.buttonImage}
+                />
+              </TouchableOpacity>
+            </View>
+          )}
+        </View>
+      ))}
+
       {detailsModalVisible && selectedInstitution && (
         <Modal visible={detailsModalVisible} animationType="slide">
           <View style={styles.background}>
