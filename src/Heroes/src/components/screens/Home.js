@@ -29,7 +29,7 @@ const Home = ({ navigation }) => {
     };
 
     const editCamp = (camp) => {
-        navigation.navigate('CampanhaModal', { camp, fetchCamps });
+        navigation.navigate('CampanhaModal', { camp });
     };
 
     const delCamp = async (id) => {
@@ -40,6 +40,14 @@ const Home = ({ navigation }) => {
             console.error('Erro ao deletar a campanha:', error);
         }
     };
+
+    useEffect(() => {
+        const unsubscribe = navigation.addListener('focus', () => {
+            fetchCamps();
+        });
+
+        return unsubscribe;
+    }, [navigation]);
 
     return (
         <>
@@ -89,7 +97,7 @@ const Home = ({ navigation }) => {
                             ))
                         )}
                     </ScrollView>
-                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CampanhaModal', { fetchCamps })}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CampanhaModal')}>
                         <Text style={styles.buttonText}>+ Nova Campanha</Text>
                     </TouchableOpacity>
                 </LinearGradient>
@@ -153,16 +161,13 @@ const CampanhaModal = ({ navigation, route }) => {
     };
 
     const handleValueChange = (text) => {
-        // Filtra para permitir apenas números e um ponto decimal
         let filteredText = text.replace(/[^0-9.]/g, '');
 
-        // Se houver mais de um ponto decimal, remova os pontos extras
         const firstDecimalIndex = filteredText.indexOf('.');
         if (firstDecimalIndex !== -1) {
             filteredText = filteredText.slice(0, firstDecimalIndex + 1) + filteredText.slice(firstDecimalIndex + 1).replace(/\./g, '');
         }
 
-        // Limita a precisão decimal a duas casas
         if (filteredText.includes('.')) {
             const [integerPart, decimalPart] = filteredText.split('.');
             if (decimalPart.length > 2) {
@@ -177,7 +182,7 @@ const CampanhaModal = ({ navigation, route }) => {
         <>
             <Title title={camp ? 'Editar Campanha' : 'Nova Campanha'} />
             <View>
-                <ScrollView>
+                <ScrollView style={styles.background}>
                     <View style={styles.container}>
                         <Text style={styles.label}>Título</Text>
                         <TextInput
@@ -436,7 +441,7 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     background: {
-        height: '100%',
+        height: '86%',
     },
     background1: {
         backgroundColor: '#236B8E',
@@ -450,7 +455,7 @@ const styles = StyleSheet.create({
     },
     button: {
         position: 'absolute',
-        bottom: '33%',
+        bottom: '2%',
         right: '3%',
         backgroundColor: '#F26430',
         borderRadius: 30,
@@ -538,7 +543,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         width: 350,
-        marginTop: 30,
+        marginTop: 20,
         borderRadius: 20,
         height: 50,
         alignSelf: 'center',
@@ -556,6 +561,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: 350,
         marginTop: 20,
+        marginBottom: 20,
         borderRadius: 20,
         height: 50,
         alignSelf: 'center',

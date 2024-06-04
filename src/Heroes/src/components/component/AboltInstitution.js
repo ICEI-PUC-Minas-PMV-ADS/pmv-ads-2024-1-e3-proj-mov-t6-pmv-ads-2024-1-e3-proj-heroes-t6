@@ -13,6 +13,7 @@ import {
 import CommentCards from './CommentCards';
 import api from '../../api/api';
 import {useAuth} from '../services/AuthProvider';
+import Title from '../component/Title';
 
 export default function ModalAboltInstituition() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -166,21 +167,21 @@ export default function ModalAboltInstituition() {
       )}
       {modalVisible && id === userId && (
         <Modal visible={modalVisible} animationType="slide">
+          <Title title='Adicionar Instituição' />
           <View style={styles.background}>
-            <Text style={styles.institutionTitle2}>Adicionar Instituição</Text>
             <View style={styles.background1}>
               <ScrollView>
                 <TextInput
                   placeholder="Nome da Instituição"
                   value={institutionName}
                   onChangeText={setInstitutionName}
-                  style={styles.input}
+                  style={styles.inputs}
                 />
                 <TextInput
                   placeholder="Descrição"
                   value={institutionDesc}
                   onChangeText={setInstitutionDesc}
-                  style={styles.input}
+                  style={styles.inputs}
                 />
                 <TouchableOpacity
                   onPress={addOrUpdateInstitution}
@@ -229,7 +230,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: 350,
-    marginTop: 30,
     borderRadius: 20,
     height: 50,
     alignSelf: 'center',
@@ -269,12 +269,13 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
   },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 10,
-    marginBottom: 10,
-    borderRadius: 15,
+  inputs: {
+    borderBottomWidth: 1,
+    fontSize: 20,
+    width: 330,
+    height: 60,
+    marginBottom: 20,
+    alignSelf: 'center',
   },
   closeButton: {
     color: 'red',
@@ -300,6 +301,5 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     padding: 20,
-    marginTop: 35,
   },
 });

@@ -30,7 +30,7 @@ export default function PopUpAvaliacao() {
         <View style={styles.mainContainer}>
 
             <TouchableOpacity onPress={() => setModalAvaliacao(true)} style={styles.avaliacao}>
-                <Text style={{color:'#fff', alignSelf:'center'}}>⭐ Avalie a Heroes</Text>
+                <Text style={{color:'#fff', fontSize: 20}}>⭐ Avalie a Heroes</Text>
             </TouchableOpacity>
             <Modal animationType='fade' visible={modalAvaliacao} transparent={true}>
                 <View style={styles.modalOverlay}>
@@ -86,13 +86,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#f0f0f0',
     },
-
     avaliacao:{
-        backgroundColor:'#0ad',
-        padding:10,
-        width:173,
-    
-       
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 350,
+    marginTop: 30,
+    borderRadius: 20,
+    height: 50,
+    alignSelf: 'center',
+    fontSize: 60,
+    backgroundColor: '#236B8E',
     },
     modalOverlay: {
         flex: 1,

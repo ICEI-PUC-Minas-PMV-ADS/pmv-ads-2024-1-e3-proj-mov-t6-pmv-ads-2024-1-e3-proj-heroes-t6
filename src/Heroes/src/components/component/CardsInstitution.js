@@ -87,8 +87,8 @@ export default function CardInstitution() {
     <ScrollView>
       <PopUpAvaliacao />
       <View>
-        <TouchableOpacity onPress={() => setModalVisible(true)}>
-          <Text style={styles.buttonText}>Avaliações Heroes</Text>
+        <TouchableOpacity style={styles.avaliacao} onPress={() => setModalVisible(true)}>
+          <Text style={{color:'#fff', fontSize: 20}}>Avaliações Heroes</Text>
         </TouchableOpacity>
       </View>
       <ModalAboltInstituition />
@@ -282,4 +282,15 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
   },
+  avaliacao:{
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 350,
+    marginTop: 15,
+    borderRadius: 20,
+    height: 50,
+    alignSelf: 'center',
+    fontSize: 60,
+    backgroundColor: '#236B8E', 
+    },
 });

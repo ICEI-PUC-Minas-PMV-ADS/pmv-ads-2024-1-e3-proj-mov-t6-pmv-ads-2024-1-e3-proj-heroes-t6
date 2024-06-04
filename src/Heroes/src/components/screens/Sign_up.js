@@ -6,6 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
+  ScrollView,
 } from 'react-native';
 import api from '../../api/api';
 
@@ -39,6 +40,7 @@ export default function Sign_up() {
   };
 
   return (
+    <ScrollView>
     <View>
       <View>
         <TextInput
@@ -80,6 +82,7 @@ export default function Sign_up() {
         </TouchableOpacity>
       </View>
     </View>
+    </ScrollView>
   );
 }
 
