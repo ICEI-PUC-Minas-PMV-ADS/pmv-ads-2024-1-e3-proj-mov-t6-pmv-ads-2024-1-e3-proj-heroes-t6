@@ -25,12 +25,12 @@ routerCommentHeroes.put('/updateCommentHeroes', cors(), async (req, res) => {
 });
 
 // Rota para deletar comentário
-routerCommentHeroes.delete('/deleteCommentHeroes', cors(), async (req, res) => {
+routerCommentHeroes.post('/deleteCommentHeroes', cors(), async (req, res) => {
     try {
         await deleteCommentHeroes(req.body);
-        res.json('Comentário deletado em hero');
+        res.json('Comentário deletado em heroes');
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao deletar comentário em hero.' });
+        res.status(500).json({ error: 'Erro ao deletar comentário em heroes.' });
     }
 });
 

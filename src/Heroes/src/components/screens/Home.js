@@ -107,9 +107,10 @@ const CampanhaModal = ({ navigation, route }) => {
     const [descricao, setDescricao] = useState(camp ? camp.description : '');
     const [valor, setValor] = useState(camp ? camp.value.toString() : '');
     const [empresa, setEmpresa] = useState(camp ? camp.company : '');
+    const [pix, setPix] = useState(camp ? camp.pix : '');
 
     const addOrUpdateCamp = async () => {
-        if (!titulo || !subtitulo || !descricao || !valor || !empresa) {
+        if (!titulo || !subtitulo || !descricao || !valor || !empresa || !pix) {
             Alert.alert('Preencha todos os campos.');
             return;
         }
@@ -123,6 +124,7 @@ const CampanhaModal = ({ navigation, route }) => {
                     description: descricao,
                     value: valor,
                     company: empresa,
+                    pix : pix,
                     userId: id,
                 });
                 Alert.alert('Campanha atualizada com sucesso.');
@@ -133,6 +135,7 @@ const CampanhaModal = ({ navigation, route }) => {
                     description: descricao,
                     value: valor,
                     company: empresa,
+                    pix : pix,
                     userId: id,
                 });
                 Alert.alert('Campanha criada com sucesso.');
@@ -142,6 +145,7 @@ const CampanhaModal = ({ navigation, route }) => {
             setDescricao('');
             setValor('');
             setEmpresa('');
+            setPix('');
             navigation.goBack();
         } catch (error) {
             Alert.alert('Erro ao salvar campanha.', error.message);
@@ -216,6 +220,14 @@ const CampanhaModal = ({ navigation, route }) => {
                             onChangeText={(text) => setEmpresa(text)}
                         />
 
+                        <Text style={styles.label}>Chave Pix</Text>
+                        <TextInput
+                            placeholder="Chave Pix"
+                            style={styles.inputs}
+                            value={pix}
+                            onChangeText={(text) => setPix(text)}
+                        />
+
                         <TouchableOpacity
                             style={[styles.btnCadastrar1, { backgroundColor: '#F26430' }]}
                             onPress={addOrUpdateCamp}>
@@ -238,8 +250,8 @@ const Doacoes = ({ navigation, route }) => {
     const { id } = useAuth();
     const [name, setName] = useState('');
     const [doacao, setDoacao] = useState('');
-    const [pixKey, setPixKey] = useState('');
     const { camp } = route.params || {};
+    const [pixKey] = useState(camp.pix);
     const [totalDoacoes, setTotalDoacoes] = useState(0);
 
     const progresso = Math.min((totalDoacoes / camp.value).toFixed(2), 1);
@@ -273,9 +285,6 @@ const Doacoes = ({ navigation, route }) => {
         if (!doacao) {
             Alert.alert('Informe o valor à ser doado.');
             return;
-        }if (!pixKey) {
-            Alert.alert('Gere a chave pix.');
-            return;
         }
         try {
              await api.post('/createDonations', {
@@ -287,21 +296,9 @@ const Doacoes = ({ navigation, route }) => {
                 Alert.alert('Doação feita com sucesso!');
                 fetchAllDonations();
                 setDoacao('');
-                setPixKey('');
             }
         catch (error) {
             Alert.alert('Erro ao salvar doação.', error.message);
-        }
-    };
-
-    const generateNewPixKey = () => {
-        if (doacao) {
-            const newPixKey = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-                const r = Math.random() * 16 | 0,
-                    v = c === 'x' ? r : (r & 0x3 | 0x8);
-                return v.toString(16);
-            });
-            setPixKey(newPixKey);
         }
     };
 
@@ -364,9 +361,6 @@ const Doacoes = ({ navigation, route }) => {
                                 value={pixKey}
                                 editable={false}
                             />
-                            <TouchableOpacity style={styles.pixButton} onPress={generateNewPixKey}>
-                            <Image source={require('../../../assets/Image/refresh_icon.png')} style={styles.iconImage} />
-                            </TouchableOpacity>
                             <TouchableOpacity style={styles.pixButton} onPress={copyToClipboard}>
                             <Image source={require('../../../assets/Image/copy_icon.png')} style={styles.iconImage} />
                             </TouchableOpacity>
@@ -456,8 +450,8 @@ const styles = StyleSheet.create({
     },
     button: {
         position: 'absolute',
-        bottom: 20,
-        right: 10,
+        bottom: '33%',
+        right: '3%',
         backgroundColor: '#F26430',
         borderRadius: 30,
         paddingVertical: 15,
