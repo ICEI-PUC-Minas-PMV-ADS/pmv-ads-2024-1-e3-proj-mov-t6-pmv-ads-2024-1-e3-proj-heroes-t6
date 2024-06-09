@@ -15,8 +15,8 @@ import {routerInstituicao} from './router/instituicao/instituicao.js'
 import {routerCommentHeroes} from './router/commentHeroes/commentHeroes.js'
 import {createTableCommentsHeroes} from './router/commentHeroes/commentHeroesDB.js'
 
-const app = express();
 const PORT = 5050;
+const app = express();
 
 app.use(bodyParser.json());
 app.use(routerUser);

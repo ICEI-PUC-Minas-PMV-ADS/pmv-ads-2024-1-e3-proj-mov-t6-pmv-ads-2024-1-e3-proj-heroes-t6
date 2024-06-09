@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {
   View,
   Text,
+  Modal,
   StyleSheet,
   TextInput,
   TouchableOpacity,
@@ -17,6 +18,7 @@ export default function Sign_up() {
   const [senha, setSenha] = useState('');
   const [confirmaSenha, setConfirmaSenha] = useState('');
   const [perguntaSecreta, setPerguntaSecreta] = useState('');
+
 
   const addUser = () => {
     if (!nomeCompleto || !email || !senha) return;
