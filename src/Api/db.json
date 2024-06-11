@@ -1,30 +1,12 @@
 {
   "users": [
     {
-      "id": "2",
-      "email": "wesley.gomes@gmail.com",
-      "secretquestion": "Lupita"
-    },
-    {
-      "id": "afe6",
-      "email": "usuario.1@gmail.com"
-    },
-    {
-      "id": "ff3d",
-      "email": "usuario.1@pucminas.com"
-    },
-    {
-      "id": "1",
-      "email": "user1@pucminas.com",
-      "secretquestion": "Animal"
-    },
-    {
       "id": "1",
       "email": "adm@pucminas.com",
       "secretquestion": "Animal"
     },
     {
-      "id": 2,
+      "id": "2",
       "email": "pedro@pucminas.com",
       "secretquestion": "Faisca"
     }

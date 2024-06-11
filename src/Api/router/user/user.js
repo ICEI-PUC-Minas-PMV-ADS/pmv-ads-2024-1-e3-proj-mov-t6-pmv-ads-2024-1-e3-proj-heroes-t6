@@ -2,7 +2,7 @@ import express from 'express';
 import axios from 'axios';
 const routerUser = express.Router();
 import jwt from 'jsonwebtoken';
-import { createUser, loginUser, User, updateUser, deleteUser, updateUserRecovery } from './userDb.js';
+import { createUser, loginUser, User, updateUser, deleteUser, updateUserRecovery, searchUser } from './userDb.js';
 import cors from 'cors'; 
 
 const SECRET_KEY = 'j8tqIstNhVNWQuDIM6640719fb2d16';
@@ -25,15 +25,21 @@ routerUser.post('/recoverpassword', async  (req, res) => {
   const recover = await axios.get('http://localhost:3000/users')
   const userData = recover.data;
   const recoveryUser = req.body
+  const searchUserId = await searchUser(recoveryUser.email)
 
-  const userEmail = userData.length > 0 ? userData[0].email : 'Nenhum usuário encontrado';
-  const userSecretQuestion = userData.length > 0 ? userData[0].secretquestion : 'Nenhum usuário encontrado';
-  const userId = userData.length > 0 ? userData[0].id : 'Nenhum usuário encontrado';
-
-  if(recoveryUser.email === userEmail && recoveryUser.secretquestion === userSecretQuestion) {
-    updateUserRecovery(recoveryUser.password, userId)
-    res.json( { message: 'Alteração feita com sucesso' } );
-  }else {res.json( { message: 'Email ou palavra de recuperação incorretos' } );}
+  userData.map((response) => {
+    if(response.id == searchUserId.id) {
+      
+      const userEmail = userData.length > 0 ? userData[response.id -1].email : 'Nenhum usuário encontrado';
+      const userSecretQuestion = userData.length > 0 ? userData[response.id -1].secretquestion : 'Nenhum usuário encontrado';
+      const userId = userData.length > 0 ? userData[response.id -1].id : 'Nenhum usuário encontrado';
+    
+      if(recoveryUser.email === userEmail && recoveryUser.secretquestion === userSecretQuestion) {
+        updateUserRecovery(recoveryUser.password, userId)
+        res.json( { message: 'Alteração feita com sucesso' } );
+      }else {res.json( { message: 'Email ou palavra de recuperação incorretos' });}
+    }  
+  })
 
 });
 

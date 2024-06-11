@@ -69,6 +69,19 @@ export async function updateUserRecovery(password, userid) {
     }
 }
 
+export async function searchUser (email) {
+    try {
+        const db = await openDb();
+        let result = await db.get(`SELECT id FROM Users WHERE email=?`, email);
+        if (result !== undefined) {
+            return result
+        }else{return null}
+
+    } catch (error) {
+        console.error('Error creating user:', error);
+    }
+}
+
 export async function User(params) {
     try {
         const db = await openDb();
