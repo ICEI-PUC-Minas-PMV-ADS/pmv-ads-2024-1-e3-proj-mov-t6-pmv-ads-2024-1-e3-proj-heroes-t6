@@ -1,6 +1,6 @@
-import Home from './Home'
-import Profile from './Profile';
-import About from './About'
+import Home from '../screens/Home'
+import Profile from '../screens/Profile';
+import About from '../screens/About'
 import { useState } from 'react'
 import { useAuth } from '../services/AuthProvider'
 

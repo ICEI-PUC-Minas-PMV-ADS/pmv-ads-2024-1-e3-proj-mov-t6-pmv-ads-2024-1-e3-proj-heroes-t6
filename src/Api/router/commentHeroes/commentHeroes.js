@@ -15,10 +15,10 @@ routerCommentHeroes.post('/addCommentHeroes', cors(), async (req, res) => {
 });
 
 // Rota para atualizar comentário
-routerCommentHeroes.put('/updateCommentHeroes', cors(), async (req, res) => {
+routerCommentHeroes.post('/updateCommentHeroes', cors(), async (req, res) => {
     try {
         await updateCommentHeroes(req.body);
-        res.json('Comentário atualizado em hero');
+        res.json('Comentário atualizado em heroes');
     } catch (error) {
         res.status(500).json({ error: 'Erro ao atualizar comentário em hero.' });
     }

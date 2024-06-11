@@ -25,12 +25,15 @@ export default function Sign_up() {
     api.post('/signup', {
       name: nomeCompleto,
       email: email,
-      password: senha
+      password: senha,
+      secretquestion: perguntaSecreta,
     }).then(Alert.alert('Cadastro realizado com sucesso.'))
     setNomeCompleto('');
     setEmail('');
     setSenha('');
     setConfirmaSenha('');
+    setPerguntaSecreta('');
+
   }
 
   const onPressVerification = () => {
@@ -70,7 +73,7 @@ export default function Sign_up() {
           onChangeText={(text) => setConfirmaSenha(text)}></TextInput>
 
         <TextInput
-          placeholder="Qual o nome do seu primeiro animal"
+          placeholder="Nome do seu primeiro animal"
           style={styles.inputs}
           value={perguntaSecreta}
           onChangeText={(text) => setPerguntaSecreta(text)}></TextInput>

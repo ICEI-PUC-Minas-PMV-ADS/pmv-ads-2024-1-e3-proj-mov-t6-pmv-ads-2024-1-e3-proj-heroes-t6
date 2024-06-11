@@ -2,14 +2,14 @@ import { openDb } from "../../configDB.js";
 
 export async function createTableCommentsHeroes() {
     const db = await openDb();
-    await db.exec('CREATE TABLE IF NOT EXISTS CommentsHeroes(id INTEGER PRIMARY KEY AUTOINCREMENT, text TEXT, userId INTEGER, stars INTEGER, FOREIGN KEY (userId) REFERENCES Users(id) ON DELETE CASCADE)');
+    await db.exec('CREATE TABLE IF NOT EXISTS CommentsHeroes(id INTEGER PRIMARY KEY AUTOINCREMENT, text TEXT, userId INTEGER, stars INTEGER, userName TEXT, FOREIGN KEY (userId) REFERENCES Users(id) ON DELETE CASCADE)');
 }
 
 export async function addCommentHeroes(params) {
     try {
         await createTableCommentsHeroes();
         const db = await openDb();
-        await db.run(`INSERT INTO CommentsHeroes (text, userId, stars) VALUES (?, ?, ?)`, [params.comment, params.userId, params.stars]);
+        await db.run(`INSERT INTO CommentsHeroes (text, userId, stars, userName) VALUES (?, ?, ?, ?)`, [params.comment, params.userId, params.stars, params.userName]);
         console.log('Comentário adicionado');
     } catch (error) {
         console.error('Erro ao adicionar comentário:', error);
@@ -29,7 +29,7 @@ export async function deleteCommentHeroes(params) {
 export async function getCommentHeroes(params) {
     try {
         const db = await openDb();
-        const result = await db.get(`SELECT text, userId, stars FROM CommentsHeroes WHERE id = ?`, params.id);
+        const result = await db.get(`SELECT text, userId, stars, userName FROM CommentsHeroes WHERE id = ?`, params.id);
         return result;
     } catch (error) {
         console.error('Erro ao obter comentário:', error);
@@ -50,7 +50,7 @@ export async function getAllCommentsHeroes() {
 export async function updateCommentHeroes(params) {
     try {
         const db = await openDb();
-        await db.run(`UPDATE CommentsHeroes SET text = ?, stars = ? WHERE id = ?`, [params.comment, params.stars, params.id]);
+        await db.run(`UPDATE CommentsHeroes SET text = ?, stars = ?, userName = ? WHERE id = ?`, params.comment, params.stars, params.userName, params.id);
         console.log('Comentário atualizado');
     } catch (error) {
         console.error('Erro ao atualizar comentário:', error);

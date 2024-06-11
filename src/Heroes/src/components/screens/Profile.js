@@ -1,12 +1,12 @@
-import {View, Text, StyleSheet, Image, TouchableOpacity, Modal, TouchableHighlight, Alert, TextInput} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity, Alert, TextInput, ScrollView} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { useEffect, useState } from 'react';
-import { RadioButton } from 'react-native-paper';
 import Title from '../component/Title';
 import { useAuth } from '../services/AuthProvider'
 import api from '../../api/api';
 
-//**************************** Telas ************************************ */
+//**************************************Telas***************************************/
+
 const TelaUsuario=({navigation})=> {
   const { id, signOut } = useAuth()
 
@@ -19,24 +19,19 @@ const TelaUsuario=({navigation})=> {
       }
     }
     return (
-        <View style={estilos.background}>
-        <View style={estilos.background1}>
+        <View style={styles.background}>
+        <View style={styles.background1}>
 
             <View>
                 <Image
                 source={require('../../../assets/Image/user.png')}
-                style={estilos.imagemUser}/>
+                style={styles.imagemUser}/>
             </View>
 
-                <View style={estilos.ContainerInfoUser}>
+                <View style={styles.ContainerInfoUser}>
                 <TouchableOpacity
                     onPress={()=>{navigation.navigate('EditInfoUser')}}>
-                    <Text style={estilos.txtEditInfo}>Editar informações</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                    onPress={()=>{navigation.navigate('CartaoCredito')}}>
-                    <Text style={estilos.txtEditInfo}>Cartões</Text>
+                    <Text style={styles.txtEditInfo}>Editar informações</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -60,21 +55,21 @@ const TelaUsuario=({navigation})=> {
                            ]
                               )
                     }}>
-                    <Text style={estilos.txtEditInfo2}>Remover minha conta</Text>
+                    <Text style={styles.txtEditInfo2}>Remover minha conta</Text>
                 </TouchableOpacity>
             </View>
 
             <View>
-                <TouchableOpacity style={estilos.containerBtnLogoft} onPress={() => signOut()}>
+                <TouchableOpacity style={styles.containerBtnLogoft} onPress={() => signOut()}>
                     <Image
                     source={require('../../../assets/Image/logout.png')}
-                    style={estilos.imgLogoft}/>
-                    <Text style={estilos.btnLogoft}>Sair da conta</Text>
+                    style={styles.imgLogoft}/>
+                    <Text style={styles.btnLogoft}>Sair da conta</Text>
                 </TouchableOpacity>
             </View>
 
             <View>
-                <Text style={estilos.txtVersao}>Versão 1.0.0</Text>
+                <Text style={styles.txtVersao}>Versão 1.0.0</Text>
             </View>
 
 
@@ -90,6 +85,10 @@ const EditarPerfil=({navigation})=>{
   const [confirmaSenha, setConfirmaSenha] = useState('');
   const { id, signOut } = useAuth()
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const fetchData = async () => {
     try {
       const {data} = await api.post('/user', {userid: id});
@@ -99,29 +98,37 @@ const EditarPerfil=({navigation})=>{
       console.error('Erro ao buscar os dados:', error);
     }
   }
-  useEffect(() => {
-    fetchData();
-  }, []);
+
+  const onPressVerification = () => {
+    if (senha != confirmaSenha) {
+      Alert.alert('Erro', 'Ambas as senhas precisam ser iguais');
+    } else {
+      updateUser();
+    }
+  };
 
   const updateUser = () => {
-    if (senha === confirmaSenha) {
+    if (!nomeCompleto || !email || !senha || !confirmaSenha) {
+      Alert.alert('Erro', 'Preencha todos os campos');
+      return;
+    }
+    try {
       api.post('/updateUser', {
         userid: id,
         name: nomeCompleto,
         email: email,
         password: senha
-      })
-      Alert.alert('Usuario', 'Cadastro atualizado com sucesso')
-      if (senha !== '' && confirmaSenha !== ''){
-        signOut()
-      } else {
-        fetchData()
-      }
+      });
+      Alert.alert('Usuario', 'Cadastro atualizado com sucesso');
+      signOut();
+    } catch (error) {
+      Alert.alert('Erro ao atualizar o usuário', error.message);
     }
   }
 
   return(
     <View style={styles.container}>
+      <ScrollView style={styles.scrollView}>
       <View>
         <Text style={styles.label}>Nome completo</Text>
         <TextInput
@@ -150,12 +157,10 @@ const EditarPerfil=({navigation})=>{
           style={styles.inputs}
           value={confirmaSenha}
           onChangeText={(text) => setConfirmaSenha(text)}></TextInput>
-      </View>
-
-      <View>
+        
         <TouchableOpacity
           style={styles.btnCadastrar}
-          onPress={updateUser}>
+          onPress={() => onPressVerification()}>
           <Text style={styles.TxtbtnCadastrar}>Editar</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -164,176 +169,12 @@ const EditarPerfil=({navigation})=>{
           <Text style={styles.TxtbtnCadastrar}>Voltar</Text>
         </TouchableOpacity>
       </View>
+      </ScrollView>
     </View>
   )
   }
-  const styles = StyleSheet.create({
-    container: {
-      display: 'flex',
-      justifyContent: 'center',
-      height: '100%'
-    },
 
-    label: {
-      fontSize: 18,
-      width: 330,
-      height: 20,
-      alignSelf: 'center',
-    },
-
-    inputs: {
-      borderBottomWidth: 1,
-      fontSize: 20,
-      width: 330,
-      height: 60,
-      marginBottom: 20,
-      alignSelf: 'center',
-    },
-  
-    TxtbtnCadastrar: {
-      fontSize: 20,
-      alignSelf: 'center',
-      color: 'white'
-    },
-  
-    btnCadastrar: {
-      backgroundColor: '#F26430',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: 350,
-      marginTop: 60,
-      borderRadius: 20,
-      height: 50,
-      alignSelf: 'center',
-      fontSize: 60,
-    },
-    btnCadastrar2: {
-      backgroundColor: '#236B8E',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: 350,
-      marginTop: 20,
-      borderRadius: 20,
-      height: 50,
-      alignSelf: 'center',
-      fontSize: 60,
-    },
-  });
-
-  const EditarcartaoCredito=({navigation})=>{
-    return(
-      <View style={estilos.GerenciarCard}>
-        <View style={estilos.GerenciarCard1}>
-            <View>
-              <Image source={require('../../../assets/Image/Card_credit.png')} style={estilos.imagemCardCredit}/>
-            </View>
-
-            <View>
-              <Text style={estilos.textoGerenciarCard}>Gerenciar cartoes</Text>
-            </View>
-
-            <View>
-              <View style={estilos.ContainerInfoUser}>
-                <TouchableOpacity style={estilos.btnAddcard} onPress={()=>{navigation.navigate('AddcartaoCredito')}}>
-                  <Text style={estilos.txtBtnAddCard}>+  Adicionar novo cartao</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-        </View>
-      </View>
-    )
-    }
-
-const AddCartaoCredito=({navigation})=>{
-
-  const [titular, setTitular]=useState('')
-  const [numeroCartao, setNumeroCartao]=useState('')
-  const [dataValidade, setdataValidade]=useState('')
-  const [cvv, setCvv]=useState('')
-  const[checked, setChecked]=useState('')
-
-    return(
-      <View style={estilos.AddCreditCard}>
-        <View style={estilos.AddCreditCard1}>
-           <View>
-            <Image source={require('../../../assets/Image/Card_credit.png')} style={estilos.imagemCardCredit}></Image>
-           </View>
-           <View>
-               <View style={estilos.ContainerInfoCard}>
-
-                  <View style={estilos.radioCard}>
-                    <RadioButton
-                        value='first'
-                        color={'#236B8E'}
-                        status={checked === 'first' ? 'checked' : 'unchecked'}
-                        onPress={()=>{setChecked('first')}}>
-                    </RadioButton>
-                     <Text style={estilos.txtRadioCard}>Visa</Text>
-
-                          <RadioButton
-                              value='first'
-                              color={'#236B8E'}
-                              status={checked === 'second' ? 'checked' : 'unchecked'}
-                              onPress={()=>{setChecked('second')}}>
-                          </RadioButton>
-                            <Text style={estilos.txtRadioCard}>Elo</Text>
-
-                    <RadioButton
-                        value='first'
-                        color={'#236B8E'}
-                        status={checked === 'third' ? 'checked' : 'unchecked'}
-                        onPress={()=>{setChecked('third')}}>
-                    </RadioButton>
-                      <Text style={estilos.txtRadioCard}>MasterCard</Text>
-                </View>
-
-          <View>
-                <TextInput 
-                  style={estilos.InputsAddCard}
-                  placeholder='Nome do titular'
-                  onChangeText={text=>{setTitular(text)}}>
-                </TextInput>
-
-                    <TextInput 
-                      style={estilos.InputsAddCard}
-                      placeholder='Numero do cartao'
-                      onChangeText={text=>{setNumeroCartao(text)}}
-                      keyboardType='numeric'>
-                    </TextInput>
-
-                    <TextInput 
-                      style={estilos.InputsAddCard}
-                      placeholder='Data de validade'
-                      onChangeText={text=>{setdataValidade(text)}}
-                      keyboardType='numeric'>
-                    </TextInput>
-
-                <TextInput 
-                  style={estilos.InputsAddCard}
-                  placeholder='CVV'
-                  onChangeText={text=>{setCvv(text)}}
-                  keyboardType='numeric'>
-                </TextInput>
-          </View>
-              
-              <View style={estilos.containerBtn}>
-                  <TouchableOpacity style={estilos.btnCancelar} onPress={()=>{navigation.navigate('AddcartaoCredito')}}>
-                    <Text style={estilos.txtBtnCancelar}>Cancelar</Text>
-                  </TouchableOpacity>
-
-                  <TouchableOpacity style={estilos.btnAdd} onPress={()=>{navigation.navigate('AddcartaoCredito')}}>
-                    <Text style={estilos.txtBtnAdd}>Adicionar</Text>
-                  </TouchableOpacity>
-              </View>
-            
-            </View>
-          </View>
-      </View>
-    </View>
-  )
-}
-
-//******************************************************************************* */
+//***********************************Navegação************************************ */
 
 const Pilha = createNativeStackNavigator()
 
@@ -354,25 +195,14 @@ export default function NavegarTelasUser(){
                         component={EditarPerfil}
                         options={{headerShown: false}}>
                     </Pilha.Screen>
-
-                    <Pilha.Screen
-                        name='CartaoCredito'
-                        component={EditarcartaoCredito}
-                        options={{headerShown: false}}>
-                    </Pilha.Screen>
-
-                <Pilha.Screen
-                    name='AddcartaoCredito'
-                    component={AddCartaoCredito}
-                    options={{headerShown: false}}>
-                </Pilha.Screen>
         </Pilha.Navigator>
       </>
        
     )
 }
 
-const estilos = StyleSheet.create({
+//***************************************Estilos************************************/
+const styles = StyleSheet.create({
   textoGerenciarCard: {
     alignSelf: 'center',
     color: '#000',
@@ -428,7 +258,7 @@ const estilos = StyleSheet.create({
     margin: 20,
     marginTop: 60,
     borderRadius: 10,
-    height: 180,
+    height: 140,
     elevation: 8,
   },
 
@@ -444,9 +274,9 @@ const estilos = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 20,
     color: '#555',
-    marginBottom: 10,
-    marginTop: 10,
-    paddingBottom: 10,
+    marginBottom: 20,
+    marginTop: 20,
+    paddingBottom: 20,
     marginLeft: 30,
     borderBottomColor: '#555',
     borderBottomWidth: 1,
@@ -458,7 +288,6 @@ const estilos = StyleSheet.create({
     fontSize: 20,
     color: '#555',
     marginBottom: 10,
-    marginTop: 10,
     marginLeft: 30,
     marginRight: 30,
   },
@@ -473,7 +302,7 @@ const estilos = StyleSheet.create({
     flexDirection: 'row',
     alignSelf: 'center',
     alignItems: 'center',
-    marginTop: 100,
+    marginTop: 50,
   },
 
   txtVersao: {
@@ -486,93 +315,148 @@ const estilos = StyleSheet.create({
     tintColor: '#236B8E'
   },
 
-imagemCardCredit:{
-  width:150,
-  height:150,
-  alignSelf:'center'
-},
+  imagemCardCredit:{
+    width:150,
+    height:150,
+    alignSelf:'center'
+  },
 
-btnAddcard:{
-  backgroundColor:'#F26430',
-  marginTop:120,
-  margin:30,
-  borderRadius:10,
-  height:45,
- alignItems:'center',
- justifyContent:'center'
-},
+  btnAddcard:{
+    backgroundColor:'#F26430',
+    marginTop:120,
+    margin:30,
+    borderRadius:10,
+    height:45,
+    alignItems:'center',
+    justifyContent:'center'
+  },
 
-txtBtnAddCard:{
-  fontSize:20,
-  color:'#fff',
-},
+  txtBtnAddCard:{
+    fontSize:20,
+    color:'#fff',
+  },
 
-containerBtn:{
-  flexDirection:'row',
-  gap:16,
-  justifyContent: 'flex-end',
-  alignItems: 'flex-end',
-  marginTop:20
-},
+  containerBtn:{
+    flexDirection:'row',
+    gap:16,
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    marginTop:20
+  },
 
-txtBtnAdd:{
-color:'white',
-fontSize:17,
-alignSelf:'center',
-},
+  txtBtnAdd:{
+    color:'white',
+    fontSize:17,
+    alignSelf:'center',
+  },
 
-txtBtnCancelar:{
-  color:'#F26430',
-  fontSize:17,
-  alignSelf:'center',
+  txtBtnCancelar:{
+    color:'#F26430',
+    fontSize:17,
+    alignSelf:'center',
+  },
 
-},
-btnCancelar:{
-  backgroundColor:'white',
-  width:100,
-  borderRadius:25,
-  borderColor:'#F26430',
-  borderWidth:1,
-  width:110,
-  height:35, 
- justifyContent:'center',
- alignItems:'center'
-},
+  btnCancelar:{
+    backgroundColor:'white',
+    width:100,
+    borderRadius:25,
+    borderColor:'#F26430',
+    borderWidth:1,
+    width:110,
+    height:35, 
+    justifyContent:'center',
+    alignItems:'center'
+  },
 
-btnAdd:{
-  backgroundColor:'#F26430',
-  width:100,
-  borderRadius:25,
-  width:110,
-  height:35, 
-  justifyContent:'center',
-  alignItems:'center',
-  marginRight:15
-},
+  btnAdd:{
+    backgroundColor:'#F26430',
+    width:100,
+    borderRadius:25,
+    width:110,
+    height:35, 
+    justifyContent:'center',
+    alignItems:'center',
+    marginRight:15
+  },
 
-InputsAddCard: {
-  fontWeight: 'bold',
-  fontSize: 20,
-  color: '#555',
-  margin: 15,
-  marginLeft: 30,
-  borderBottomColor: '#555',
-  borderBottomWidth: 1,
-  marginRight: 30,
-},
+  InputsAddCard: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    color: '#555',
+    margin: 15,
+    marginLeft: 30,
+    borderBottomColor: '#555',
+    borderBottomWidth: 1,
+    marginRight: 30,
+  },
 
-radioCard:{
-  flexDirection:'row',
-  alignItems:'center',
-  justifyContent: 'center',
-  padding: 10,
-},
+  radioCard:{
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent: 'center',
+    padding: 10,
+  },
 
-txtRadioCard:{
-  fontSize:20,
-  paddingRight: 10,
-  fontWeight: 'bold',
-}
+  txtRadioCard:{
+    fontSize:20,
+    paddingRight: 10,
+    fontWeight: 'bold',
+  },
+
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    height: '100%'
+  },
+
+  label: {
+    fontSize: 18,
+    width: 330,
+    height: 20,
+    alignSelf: 'center',
+  },
+
+  inputs: {
+    borderBottomWidth: 1,
+    fontSize: 20,
+    width: 330,
+    height: 60,
+    marginBottom: 20,
+    alignSelf: 'center',
+  },
+
+  TxtbtnCadastrar: {
+    fontSize: 20,
+    alignSelf: 'center',
+    color: 'white'
+  },
+
+  btnCadastrar: {
+    backgroundColor: '#F26430',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 350,
+    marginTop: 20,
+    borderRadius: 20,
+    height: 50,
+    alignSelf: 'center',
+    fontSize: 60,
+  },
+
+  btnCadastrar2: {
+    backgroundColor: '#236B8E',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 350,
+    marginTop: 20,
+    borderRadius: 20,
+    height: 50,
+    alignSelf: 'center',
+    fontSize: 60,
+  },
+  scrollView: {
+    paddingTop: '5%',
+  },
 });
 
 

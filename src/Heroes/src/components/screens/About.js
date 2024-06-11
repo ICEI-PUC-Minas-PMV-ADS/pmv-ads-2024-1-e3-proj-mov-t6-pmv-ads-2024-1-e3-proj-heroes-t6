@@ -5,22 +5,23 @@ import {
   StyleSheet,
   Image,
   Text,
-  FlatList,
 } from 'react-native';
 import Title from '../component/Title';
-import CardInstitution from '../component/CardsInstitution';
+import RatingHeroes from '../screens/RatingHeroes';
+import Institutions from '../screens/Institutions';
 
 export default function About() {
   return (
     <>
+      <Title title="Sobre" />
       <ScrollView>
-        <Title title="Sobre" />
         <View style={styles.background}>
           <View style={styles.background1}>
             <Image
               source={require('../../../assets/Image/heroLogobyDesigner.png')}
               style={styles.imgLogo}
             />
+            <RatingHeroes />
             <Text style={styles.descriptionText}>
               Bem-vindo ao HEROES, onde cada gesto de solidariedade se
               transforma em uma poderosa onda de esperança. Nosso aplicativo foi
@@ -36,7 +37,7 @@ export default function About() {
               solidariedade. Junte-se a nós nesta missão de transformar momentos
               de adversidade em histórias de superação e resiliência.
             </Text>
-            <CardInstitution />
+            <Institutions />
           </View>
         </View>
       </ScrollView>

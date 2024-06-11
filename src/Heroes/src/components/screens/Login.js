@@ -6,7 +6,7 @@ import api from '../../api/api'
 
 export default function Login(){
     const { signIn } = useAuth();
-    const [email, setEmail]=useState('wesley.gomes@gmail.com')
+    const [email, setEmail]=useState('adm@pucminas.com')
     const [senha, setSenha]=useState('12345')
     const [passwordEye, setPasswordEye]= useState(true)
     const [modalVisible, setModalVisible] = useState(false);
@@ -88,6 +88,7 @@ export default function Login(){
 
             >
               <View style={style.modal}>
+
                 <View>
                 <TextInput 
                   placeholder='E-mail'
@@ -132,11 +133,11 @@ const style=StyleSheet.create({
     backgroundColor:"white",
     display:"flex",
     justifyContent:"center",
+    alignSelf: 'center',
     alignItems:"center",
-    width:300,
+    marginTop: '50%',
+    width:330,
     height:450,
-    marginTop:"50%",
-    marginLeft:"10%",
     borderRadius: 30,
     shadowColor: "black",
     shadowColor: '#000',
@@ -168,7 +169,7 @@ const style=StyleSheet.create({
   TxtbtnCancelar: {
     fontSize: 20,
     alignSelf: 'center',
-    color: '#F26430'
+    color: 'white'
   },
 
   btnCancelar: {
@@ -177,8 +178,7 @@ const style=StyleSheet.create({
     width: 120,
     marginTop: 50,
     borderRadius: 20,
-    borderWidth: 1,
-    borderColor: "#F26430",
+    backgroundColor: "#236B8E",
     height: 50,
     alignSelf: 'center',
     fontSize: 60,
@@ -228,5 +228,4 @@ const style=StyleSheet.create({
     alignSelf:'center',
     color: 'white'
   },
-  
   })

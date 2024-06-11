@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, Alert, ScrollView } from 'react-native';
 import api from '../../api/api';
 import { useAuth } from '../services/AuthProvider';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
-export default function CommentCards({ institutionId }) {
+export default function CommentCards({ institutionId, setDetailsModalVisible }) {
   const [comentario, setComentario] = useState('');
   const [comentarios, setComentarios] = useState([]);
   const [name, setName] = useState('');
@@ -19,6 +20,7 @@ export default function CommentCards({ institutionId }) {
       if (name) {
         api.post('/addComment', { comment: comentario, userId: id, userName: name, institutionId })
           .then(() => {
+            Alert.alert('Sucesso',`Comentário criado com sucesso.`);
             setComentario('');
             loadComments();
           })
@@ -27,14 +29,13 @@ export default function CommentCards({ institutionId }) {
         console.error('Nome do usuário não foi carregado.');
       }
     } else {
-      Alert.alert('Atenção', 'É necessário preencher o campo "Escrever comentário".');
+      Alert.alert('Erro','Preencha o campo "Escrever comentário".');
     }
   };
 
   const loadComments = () => {
     api.get('/getCommentsByInstitution', { params: { institutionId } })
       .then(response => {
-        console.log('Comentários carregados:', response.data);
         setComentarios(response.data);
       })
       .catch(error => console.error('Erro ao carregar comentários:', error));
@@ -58,7 +59,7 @@ export default function CommentCards({ institutionId }) {
   };
 
   const toggleEdit = (id) => {
-    const updatedComments = comentarios.map(comment => {
+    const updatedComments = comentarios.reverse().map(comment => {
       if (comment.id === id) {
         return { ...comment, editable: !comment.editable };
       }
@@ -69,7 +70,9 @@ export default function CommentCards({ institutionId }) {
 
   const saveComment = (id, newText) => {
     api.post('/updateComment', { id, comment: newText })
-      .then(() => loadComments())
+      .then(() => {
+        Alert.alert('Sucesso',`Comentário editado com sucesso.`);
+        loadComments()})
       .catch(error => console.error('Erro ao editar comentário:', error));
   };
 
@@ -88,28 +91,42 @@ export default function CommentCards({ institutionId }) {
   }, [id]);
 
   return (
-    <View style={styles.container}>
+    <View>
       <TextInput
         value={comentario}
         style={styles.textInput}
+        maxLength={150}
+        multiline={true}
         placeholder="Escrever comentário:"
         onChangeText={(text) => setComentario(text)}
-        multiline={true}
       />
       <TouchableOpacity onPress={addComment} style={styles.btnEnviar}>
         <Text style={{ color: 'white', fontSize: 20 }}>Enviar</Text>
       </TouchableOpacity>
 
-      <ScrollView contentContainerStyle={{ paddingBottom: 20 }}>
-        {comentarios.map((item) => (
+      <TouchableOpacity
+        onPress={() => setDetailsModalVisible(false)}
+                  style={styles.btnVoltar}>
+                  <Text style={{color: 'white', fontSize: 20}}>Voltar</Text>
+      </TouchableOpacity>
+
+      <Text style={styles.label}>Lista de Comentários</Text>
+      
+      {comentarios.length === 0 ? (
+          <Text style={styles.emptyText}>Nenhum comentário disponível</Text>
+                        ) : (
+        comentarios.reverse().map((item) => (
           <View key={item.id.toString()} style={styles.commentContainer}>
-            <View style={styles.commentTextContainer}>
+            <Text style={styles.userName}>{item.userName}</Text>
+            <View>
               {item.editable ? (
                 <TextInput
-                  style={styles.commentText}
+                  style={styles.textInput}
                   value={item.text}
+                  maxLength={150}
+                  multiline={true}
                   onChangeText={(text) => {
-                    const updatedComments = comentarios.map(comment => {
+                    const updatedComments = comentarios.reverse().map(comment => {
                       if (comment.id === item.id) {
                         return { ...comment, text: text };
                       }
@@ -119,67 +136,81 @@ export default function CommentCards({ institutionId }) {
                   }}
                 />
               ) : (
-                <Text style={styles.commentText}>
-                  <Text style={styles.userName}>{item.userName}</Text>
-                  {'\n'}
+                <Text style={styles.textComment}>
                   {item.text}
                 </Text>
               )}
+
             </View>
-            {item.userId == id ? (
-              <View style={styles.buttonsContainer}>
-                <TouchableOpacity onPress={() => deleteComment(item.id)}>
-                  <Image source={require('../../../assets/Image/delete.png')} style={styles.buttonImage} />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => toggleEdit(item.id)}>
-                  <Image source={require('../../../assets/Image/edit.png')} style={styles.buttonImage} />
-                </TouchableOpacity>
-                {item.editable && (
-                  <TouchableOpacity onPress={() => saveComment(item.id, item.text)}>
-                    <Text style={{ fontWeight: 'bold', color: 'orange' }}>Salvar</Text>
-                  </TouchableOpacity>
-                )}
-              </View>
-            ) : null}
+            {item.userId == id && (
+  <View style={styles.buttonsContainer}>
+    {item.editable ? (
+      <TouchableOpacity onPress={() => saveComment(item.id, item.text)}>
+        <Icon name={'content-save'} size={20} color='#F26430' />
+      </TouchableOpacity>
+    ) : (
+      <>
+        <TouchableOpacity onPress={() => toggleEdit(item.id)}>
+          <Icon name={'pencil'} size={20} color='gray' />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => deleteComment(item.id)}>
+          <Icon name={'trash-can-outline'} size={20} color='gray' />
+        </TouchableOpacity>
+      </>
+    )}
+  </View>
+)}
           </View>
-        ))}
-      </ScrollView>
+        )))}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-  },
   textInput: {
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 10,
-    marginBottom: 10,
-    borderRadius: 15,
+    borderBottomWidth: 1,
+        fontSize: 20,
+        width: 330,
+        marginTop: 10,
+        marginBottom: 20,
+        alignSelf: 'center',
   },
   commentContainer: {
-    borderColor: '#ccc',
-    padding: 10,
-    borderTopWidth: 1,
+      borderRadius: 10,
+          marginTop: 10,
+          marginBottom: 20,
+          marginLeft: 20,
+          marginRight: 20,
+          backgroundColor: '#ffff',
+          overflow: 'hidden',
+          alignSelf:'center',
+          width: 340,
   },
-  commentTextContainer: {
-    marginBottom: 10,
-  },
-  commentText: {
-    fontSize: 16,
-  },
-  userName: {
+  userName:{
+    fontSize: 20,
     fontWeight: 'bold',
+    textAlign: 'left',
+    alignSelf: 'flex-start',
+    marginTop: 10,
+    marginLeft: 20,
+    color: 'black',
   },
+  textComment:{
+    fontSize: 18,
+    textAlign: 'justify',
+    alignSelf: 'flex-start',
+    marginBottom: 20,
+    marginTop: 10,
+    marginLeft: 20,
+    color: 'black',
+  },
+
   buttonsContainer: {
+    marginTop: 10,
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    position: 'absolute',
+    marginLeft: '5%',
+    alignSelf: 'flex-end',
   },
   buttonImage: {
     width: 20,
@@ -190,7 +221,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: 350,
-    marginTop: 30,
+    marginTop: 20,
+    marginBottom: 20,
     borderRadius: 20,
     height: 50,
     alignSelf: 'center',
@@ -201,11 +233,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: 350,
-    marginTop: 30,
+    marginBottom: 40,
     borderRadius: 20,
     height: 50,
     alignSelf: 'center',
     fontSize: 60,
-    backgroundColor: '#F26430',
+    backgroundColor: '#236B8E',
+  },
+  label: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    width: 330,
+    height: 25,
+    marginBottom: 10,
+    alignSelf: 'center',
+  },
+  emptyText: {
+    alignSelf: 'center',
+    marginTop: 20,
+    fontSize: 15,
+    color: 'gray',
   },
 });

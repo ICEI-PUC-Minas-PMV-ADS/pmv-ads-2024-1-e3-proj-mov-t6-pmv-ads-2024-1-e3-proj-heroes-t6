@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, ScrollView, Alert, Image, ImageBackground, TextInput } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, ScrollView, Alert, ImageBackground, TextInput } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFocusEffect } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import Clipboard from '@react-native-clipboard/clipboard';
 import Title from '../component/Title';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { Picker } from '@react-native-picker/picker';
 import { useAuth } from '../services/AuthProvider';
 import api from '../../api/api';
 
@@ -55,10 +57,16 @@ const Home = ({ navigation }) => {
             <View>
                 <LinearGradient colors={['#236B8E', '#FFFFFF']} style={styles.gradient}>
                     <ScrollView style={styles.background}>
+
+                        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CampanhaModal')}>
+                            <Icon name={'plus'} size={20} color='white' />
+                            <Text style={styles.buttonText}>Nova Campanha</Text>
+                        </TouchableOpacity>
+                        
                         {camps.length === 0 ? (
-                            <Text style={styles.emptyText}>Nenhuma campanha disponível.</Text>
+                            <Text style={styles.emptyText}>Nenhuma campanha disponível</Text>
                         ) : (
-                            camps.map(camp => (
+                            camps.reverse().map(camp => (
                                 <TouchableOpacity key={camp.id} style={styles.cards} onPress={() => navigation.navigate('Doacoes', { camp })}>
                                     <ImageBackground
                                         source={require('../../../assets/Image/fundo1.png')}
@@ -66,10 +74,10 @@ const Home = ({ navigation }) => {
                                     >
                                         {camp.userId.toString() === id && (
                                             <View style={styles.buttonIconContainer}>
-                                                <TouchableOpacity style={styles.iconButton} onPress={() => editCamp(camp)}>
-                                                    <Image source={require('../../../assets/Image/edit.png')} style={styles.iconImage} />
+                                                <TouchableOpacity onPress={() => editCamp(camp)}>
+                                                    <Icon name={'pencil'} size={23} color='white' />
                                                 </TouchableOpacity>
-                                                <TouchableOpacity style={styles.iconButton} onPress={() => {
+                                                <TouchableOpacity onPress={() => {
                                                     Alert.alert(
                                                         "Remover Campanha", 
                                                         "Tem certeza que deseja apagar a campanha?", 
@@ -86,7 +94,7 @@ const Home = ({ navigation }) => {
                                                         ]
                                                     )
                                                 }}>
-                                                    <Image source={require('../../../assets/Image/delete.png')} style={styles.iconImage} />
+                                                    <Icon name={'trash-can-outline'} size={23} color='white' />
                                                 </TouchableOpacity>
                                             </View>
                                         )}
@@ -97,9 +105,6 @@ const Home = ({ navigation }) => {
                             ))
                         )}
                     </ScrollView>
-                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CampanhaModal')}>
-                        <Text style={styles.buttonText}>+ Nova Campanha</Text>
-                    </TouchableOpacity>
                 </LinearGradient>
             </View>
         </>
@@ -116,10 +121,24 @@ const CampanhaModal = ({ navigation, route }) => {
     const [valor, setValor] = useState(camp ? camp.value.toString() : '');
     const [empresa, setEmpresa] = useState(camp ? camp.company : '');
     const [pix, setPix] = useState(camp ? camp.pix : '');
+    const [instituicoes, setInstituicoes] = useState([]);
+
+    useEffect(() => {
+        fetchInstituicoes();
+    }, []);
+
+    const fetchInstituicoes = async () => {
+        try {
+            const { data } = await api.get('/getAllInstituicoes');
+            setInstituicoes(data);
+        } catch (error) {
+            console.error('Erro ao buscar instituições:', error);
+        }
+    };
 
     const addOrUpdateCamp = async () => {
         if (!titulo || !subtitulo || !descricao || !valor || !empresa || !pix) {
-            Alert.alert('Preencha todos os campos.');
+            Alert.alert('Erro','Preencha todos os campos');
             return;
         }
 
@@ -132,10 +151,10 @@ const CampanhaModal = ({ navigation, route }) => {
                     description: descricao,
                     value: valor,
                     company: empresa,
-                    pix : pix,
+                    pix: pix,
                     userId: id,
                 });
-                Alert.alert('Campanha atualizada com sucesso.');
+                Alert.alert('Sucesso','Campanha atualizada com sucesso.');
             } else {
                 await api.post('/createCamp', {
                     title: titulo,
@@ -143,10 +162,10 @@ const CampanhaModal = ({ navigation, route }) => {
                     description: descricao,
                     value: valor,
                     company: empresa,
-                    pix : pix,
+                    pix: pix,
                     userId: id,
                 });
-                Alert.alert('Campanha criada com sucesso.');
+                Alert.alert('Sucesso', 'Campanha criada com sucesso.');
             }
             setTitulo('');
             setSubtitulo('');
@@ -162,19 +181,16 @@ const CampanhaModal = ({ navigation, route }) => {
 
     const handleValueChange = (text) => {
         let filteredText = text.replace(/[^0-9.]/g, '');
-
         const firstDecimalIndex = filteredText.indexOf('.');
         if (firstDecimalIndex !== -1) {
             filteredText = filteredText.slice(0, firstDecimalIndex + 1) + filteredText.slice(firstDecimalIndex + 1).replace(/\./g, '');
         }
-
         if (filteredText.includes('.')) {
             const [integerPart, decimalPart] = filteredText.split('.');
             if (decimalPart.length > 2) {
                 filteredText = `${integerPart}.${decimalPart.slice(0, 2)}`;
             }
         }
-
         setValor(filteredText);
     };
 
@@ -205,6 +221,7 @@ const CampanhaModal = ({ navigation, route }) => {
                             placeholder="Descrição"
                             style={styles.inputs}
                             value={descricao}
+                            multiline={true}
                             onChangeText={(text) => setDescricao(text)}
                         />
 
@@ -217,14 +234,6 @@ const CampanhaModal = ({ navigation, route }) => {
                             onChangeText={handleValueChange}
                         />
 
-                        <Text style={styles.label}>Empresa</Text>
-                        <TextInput
-                            placeholder="Empresa"
-                            style={styles.inputs}
-                            value={empresa}
-                            onChangeText={(text) => setEmpresa(text)}
-                        />
-
                         <Text style={styles.label}>Chave Pix</Text>
                         <TextInput
                             placeholder="Chave Pix"
@@ -232,6 +241,18 @@ const CampanhaModal = ({ navigation, route }) => {
                             value={pix}
                             onChangeText={(text) => setPix(text)}
                         />
+
+                        <Text style={styles.label}>Instituição Responsável</Text>
+                        <Picker
+                            selectedValue={empresa}
+                            style={styles.inputs}
+                            onValueChange={(itemValue) => setEmpresa(itemValue)}
+                        >
+                            <Picker.Item label="Escolha uma de nossas instituições:" value="" style={styles.label}/>
+                            {instituicoes.reverse().map((inst) => (
+                                <Picker.Item key={inst.id} label={inst.name} value={inst.name} />
+                            ))}
+                        </Picker>
 
                         <TouchableOpacity
                             style={[styles.btnCadastrar1, { backgroundColor: '#F26430' }]}
@@ -260,7 +281,6 @@ const Doacoes = ({ navigation, route }) => {
     const [totalDoacoes, setTotalDoacoes] = useState(0);
 
     const progresso = Math.min((totalDoacoes / camp.value).toFixed(2), 1);
-    console.log(progresso);
 
     useEffect(() => {
         fetchAllDonations();
@@ -279,7 +299,6 @@ const Doacoes = ({ navigation, route }) => {
     const fetchAllDonations = async () => {
         try {
             const response = await api.get('/getAllDonations', { params: { campId: camp.id } });
-            console.log(response.data.totalDonations);
             setTotalDoacoes(response.data.totalDonations);
         } catch (error) {
             console.error('Erro ao buscar as doações da campanha:', error);
@@ -288,7 +307,7 @@ const Doacoes = ({ navigation, route }) => {
     
     const addDonate = async () => {
         if (!doacao) {
-            Alert.alert('Informe o valor à ser doado.');
+            Alert.alert('Erro', 'Informe o valor à ser doado');
             return;
         }
         try {
@@ -298,9 +317,10 @@ const Doacoes = ({ navigation, route }) => {
                     name: name,
                     donate: doacao,
                 });
-                Alert.alert('Doação feita com sucesso!');
+                Alert.alert('Sucesso','Doação feita com sucesso!');
                 fetchAllDonations();
                 setDoacao('');
+                navigation.goBack();
             }
         catch (error) {
             Alert.alert('Erro ao salvar doação.', error.message);
@@ -340,7 +360,7 @@ const Doacoes = ({ navigation, route }) => {
                     <View style={styles.container}>
                         <Text style={styles.label2}>Descrição</Text>
                         <Text style={styles.txtDonation}>{camp.description}</Text>
-                        <Text style={styles.label2}>Empresa Responsável</Text>
+                        <Text style={styles.label2}>Instituição Responsável</Text>
                         <Text style={styles.txtDonation}>{camp.company}</Text>
                         <Text style={styles.label2}>Meta</Text>
                         <Text style={styles.txtDonation}>R${camp.value.toFixed(2)}</Text>
@@ -362,12 +382,13 @@ const Doacoes = ({ navigation, route }) => {
                         <Text style={styles.label2}>Chave Pix</Text>
                         <View style={styles.pixContainer}>
                             <TextInput
-                                style={styles.pixKeyInput}
+                                style={styles.pixKeyInputs}
                                 value={pixKey}
                                 editable={false}
                             />
+                            
                             <TouchableOpacity style={styles.pixButton} onPress={copyToClipboard}>
-                            <Image source={require('../../../assets/Image/copy_icon.png')} style={styles.iconImage} />
+                                <Icon name={'content-copy'} size={25} color='gray' />
                             </TouchableOpacity>
                         </View>
 
@@ -427,12 +448,12 @@ const styles = StyleSheet.create({
     cards: {
         borderRadius: 20,
         marginTop: 20,
-        marginLeft: 20,
-        marginRight: 20,
         backgroundColor: '#ffff',
         overflow: 'hidden',
         elevation: 10,
         height: 120,
+        width: 340,
+        alignSelf: 'center',
     },
     cardImage: {
         alignSelf: 'center',
@@ -448,25 +469,26 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     background2: {
-        backgroundColor: '#F0F0F0',
+        backgroundColor: 'white',
         flex: 1,
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
     },
     button: {
-        position: 'absolute',
-        bottom: '2%',
-        right: '3%',
-        backgroundColor: '#F26430',
-        borderRadius: 30,
-        paddingVertical: 15,
-        paddingHorizontal: 20,
-        flexDirection: 'row',
+        justifyContent: 'center',
         alignItems: 'center',
+        width: 340,
+        marginBottom: 20,
+        borderRadius: 20,
+        flexDirection: 'row',
+        height: 50,
+        alignSelf: 'center',
+        fontSize: 60,
+        backgroundColor: '#F26430',
     },
     buttonText: {
-        fontSize: 15,
-        alignSelf: 'center',
+        fontSize: 20,
+        textAlign: 'center',
         color: 'white',
     },
     cardTitle: {
@@ -489,13 +511,6 @@ const styles = StyleSheet.create({
         marginLeft: '5%',
         alignSelf: 'flex-end',
     },
-    iconButton: {
-        padding: 5,
-    },
-    iconImage: {
-        width: 20,
-        height: 20,
-    },
     emptyText: {
         alignSelf: 'center',
         marginTop: 20,
@@ -511,21 +526,20 @@ const styles = StyleSheet.create({
     label: {
         fontSize: 18,
         width: 330,
-        height: 20,
+        height: 25,
         alignSelf: 'center',
     },
     label2: {
         fontSize: 18,
         fontWeight: 'bold',
         width: 330,
-        height: 20,
+        height: 25,
         alignSelf: 'center',
     },
     inputs: {
         borderBottomWidth: 1,
         fontSize: 20,
         width: 330,
-        height: 60,
         marginBottom: 20,
         alignSelf: 'center',
     },
@@ -568,12 +582,14 @@ const styles = StyleSheet.create({
         fontSize: 60,
     },
     txtDonation: {
-        fontSize: 20,
+        fontSize: 15,
+        lineHeight: 21,
         textAlign: 'justify',
         marginBottom: 10,
         marginTop: 10,
         marginLeft: 45,
         marginRight: 45,
+        color: 'black',
     },
     progressBarContainer: {
         height: 20,
@@ -600,14 +616,13 @@ const styles = StyleSheet.create({
         width: 330,
         alignSelf: 'center',
     },
-    pixKeyInput: {
+    pixKeyInputs: {
         borderBottomWidth: 1,
         fontSize: 20,
         flex: 1,
         marginRight: 10,
     },
     pixButton: {
-        backgroundColor: '#999999',
         paddingHorizontal: 10,
         paddingVertical: 5,
         borderRadius: 5,

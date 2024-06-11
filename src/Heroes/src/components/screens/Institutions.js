@@ -6,17 +6,19 @@ import {
   TouchableOpacity,
   Modal,
   TextInput,
-  Image,
   Alert,
   ScrollView,
+  ImageBackground,
 } from 'react-native';
-import CommentCards from './CommentCards';
+import IntComments from '../screens/InstComments'
 import api from '../../api/api';
 import {useAuth} from '../services/AuthProvider';
 import Title from '../component/Title';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function ModalAboltInstituition() {
   const [modalVisible, setModalVisible] = useState(false);
+  const [detailsModalVisible, setDetailsModalVisible] = useState(false);
   const [institutionName, setInstitutionName] = useState('');
   const [institutionDesc, setInstitutionDesc] = useState('');
   const [institutions, setInstitutions] = useState([]);
@@ -24,7 +26,6 @@ export default function ModalAboltInstituition() {
   const [isEditing, setIsEditing] = useState(false);
   const [userId, setUserId] = useState('1'); // ID do usuário atual
   const {id} = useAuth();
-  const [detailsModalVisible, setDetailsModalVisible] = useState(false);
 
   useEffect(() => {
     loadInstitutions();
@@ -60,8 +61,10 @@ export default function ModalAboltInstituition() {
           id: selectedInstitution?.id,
           name: institutionName,
           description: institutionDesc,
+          
         })
         .then(() => {
+          Alert.alert('Sucesso',`Instituição ${isEditing ? 'atualizada' : 'criada'} com sucesso.`);
           setInstitutionName('');
           setInstitutionDesc('');
           setIsEditing(false);
@@ -76,7 +79,7 @@ export default function ModalAboltInstituition() {
           ),
         );
     } else {
-      alert('Preencha todos os campos');
+      Alert.alert('Erro','Preencha todos os campos.');
     }
   };
 
@@ -103,6 +106,7 @@ export default function ModalAboltInstituition() {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.titleInst}>Instituições Parceiras</Text>
       {id === userId && (
         <TouchableOpacity
           onPress={() => {
@@ -111,63 +115,42 @@ export default function ModalAboltInstituition() {
             setModalVisible(true);
           }}
           style={styles.btnAddInst}>
-          <Text style={{color: 'white', fontSize: 20}}>
-            Adicionar Instituição
-          </Text>
+            <Icon name={'plus'} size={20} color='white' />
+            <Text style={{color: 'white', fontSize: 20, textAlign:'center'}}> 
+              Nova Instituição
+            </Text>
         </TouchableOpacity>
       )}
-      {institutions.map((item) => (
-        <View key={item.id.toString()} style={styles.institutionCard}>
-          <TouchableOpacity onPress={() => onViewPress(item)}>
+
+      {institutions.reverse().map((item) => (
+        
+        <TouchableOpacity 
+          key={item.id.toString()} 
+          style={styles.institutionCard}
+          onPress={() => onViewPress(item)}>
+          <ImageBackground
+            source={require('../../../assets/Image/fundo2.png')}
+            imageStyle={styles.cardImage}>
+
             <Text style={styles.institutionTitle}>{item.name}</Text>
-          </TouchableOpacity>
+
           {id === userId && (
             <View style={styles.buttonsContainer}>
               <TouchableOpacity onPress={() => onEditPress(item)}>
-                <Image
-                  source={require('../../../assets/Image/edit.png')}
-                  style={styles.buttonImage}
-                />
+                <Icon name={'pencil'} size={23} color='white' />
               </TouchableOpacity>
               <TouchableOpacity onPress={() => deleteInstitution(item.id)}>
-                <Image
-                  source={require('../../../assets/Image/delete.png')}
-                  style={styles.buttonImage}
-                />
+                <Icon name={'trash-can-outline'} size={23} color='white' />
               </TouchableOpacity>
             </View>
           )}
-        </View>
+          </ImageBackground>
+        </TouchableOpacity>
       ))}
 
-      {detailsModalVisible && selectedInstitution && (
-        <Modal visible={detailsModalVisible} animationType="slide">
-          <View style={styles.background}>
-            <Text style={styles.institutionTitle2}>
-              {selectedInstitution.name}
-            </Text>
-            <View style={styles.background1}>
-              <TouchableOpacity
-                onPress={() => {
-                  setSelectedInstitution(null);
-                  setDetailsModalVisible(false);
-                }}>
-                <Text style={styles.closeButton}>Fechar</Text>
-              </TouchableOpacity>
-              <ScrollView>
-                <Text style={{fontSize: 17, marginBottom: 10}}>
-                  {selectedInstitution.description}
-                </Text>
-
-                <CommentCards institutionId={selectedInstitution.id} />
-              </ScrollView>
-            </View>
-          </View>
-        </Modal>
-      )}
       {modalVisible && id === userId && (
         <Modal visible={modalVisible} animationType="slide">
-          <Title title='Adicionar Instituição' />
+          <Title title={isEditing ? 'Editar Instituição' : 'Adicionar Instituição'} />
           <View style={styles.background}>
             <View style={styles.background1}>
               <ScrollView>
@@ -180,6 +163,7 @@ export default function ModalAboltInstituition() {
                 <TextInput
                   placeholder="Descrição"
                   value={institutionDesc}
+                  multiline={true}
                   onChangeText={setInstitutionDesc}
                   style={styles.inputs}
                 />
@@ -205,14 +189,44 @@ export default function ModalAboltInstituition() {
           </View>
         </Modal>
       )}
+
+      {detailsModalVisible && selectedInstitution && (
+  <Modal visible={detailsModalVisible} animationType="slide">
+    <Title title={selectedInstitution.name}/>
+    <View style={styles.background}>
+      <ScrollView style={styles.background2}>
+        <View style={styles.container2}>
+
+          <Text style={styles.label}>Descrição</Text>
+          <Text style={styles.txtDescription}>
+            {selectedInstitution.description}
+          </Text>
+          <Text style={styles.label}>Comente sobre a instituição</Text>
+
+          <IntComments
+            institutionId={selectedInstitution.id}
+            setDetailsModalVisible={setDetailsModalVisible}
+          />
+
+        </View>
+      </ScrollView>
     </View>
-  );
+  </Modal>
+  )}
+    </View>
+    );
 }
 
 const styles = StyleSheet.create({
   container: {
     padding: 20,
     flex: 1,
+  },
+  container2: {
+    display: 'flex',
+    justifyContent: 'center',
+    height: '100%',
+    paddingTop: '5%',
   },
   TxtbtnSalvar: {
     justifyContent: 'center',
@@ -225,81 +239,109 @@ const styles = StyleSheet.create({
     fontSize: 60,
     backgroundColor: '#F26430',
   },
-
-  btnAddInst: {
+  TxtbtnCancelar: {
     justifyContent: 'center',
     alignItems: 'center',
     width: 350,
+    marginTop: 20,
+    marginBottom: 20,
     borderRadius: 20,
+    flexDirection: 'row',
+    height: 50,
+    alignSelf: 'center',
+    fontSize: 60,
+    backgroundColor: '#236B8E',
+  },
+  btnAddInst: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 340,
+    marginBottom: 20,
+    borderRadius: 20,
+    flexDirection: 'row',
     height: 50,
     alignSelf: 'center',
     fontSize: 60,
     backgroundColor: '#F26430',
   },
-  TxtbtnCancelar: {
-    backgroundColor: '#236B8E',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 350,
-    marginTop: 20,
-    borderRadius: 20,
-    height: 50,
-    alignSelf: 'center',
-    fontSize: 60,
-  },
   institutionCard: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 10,
-    marginVertical: 10,
-    borderRadius: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    borderRadius: 20,
+    marginTop: 10,
+    marginBottom: 10,
+    backgroundColor: '#ffff',
+    overflow: 'hidden',
+    elevation: 10,
+    height: 90,
+    width: 340,
+    alignSelf: 'center',
   },
   institutionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  institutionTitle2: {
-    fontSize: 22,
-    backgroundColor: '#236B8E',
-    margin: 15,
-    marginTop: 20,
+    marginTop: 30,
     color: 'white',
+    alignSelf: 'center',
+    fontSize: 20,
     fontWeight: 'bold',
   },
   inputs: {
     borderBottomWidth: 1,
     fontSize: 20,
     width: 330,
-    height: 60,
     marginBottom: 20,
     alignSelf: 'center',
   },
-  closeButton: {
-    color: 'red',
-    textAlign: 'right',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
   buttonsContainer: {
-    flexDirection: 'row',
-  },
-  buttonImage: {
-    width: 20,
-    height: 20,
-    marginHorizontal: 5,
+    marginTop: 10,
+      flexDirection: 'row',
+        position: 'absolute',
+        marginLeft: '5%',
+        alignSelf: 'flex-end',
   },
   background: {
     backgroundColor: '#236B8E',
     flex: 1,
   },
   background1: {
-    backgroundColor: '#fff',
+    paddingTop: 20,
+    backgroundColor: 'white',
+    flex: 1,
+  },
+  background2: {
+    backgroundColor: '#F0F0F0',
     flex: 1,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    padding: 20,
   },
+  titleInst:{
+      fontSize: 20,
+      fontWeight: 'bold',
+      width: 330,
+      height: 25,
+      marginBottom: 20,
+      alignSelf: 'center',
+      textAlign: 'center',
+  },
+  label: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    width: 330,
+    height: 25,
+    alignSelf: 'center',
+  },
+  txtDescription: {
+    fontSize: 15,
+    lineHeight: 21,
+    textAlign: 'justify',
+    marginBottom: 20,
+    marginTop: 10,
+    marginLeft: 45,
+    marginRight: 45,
+    color: 'black',
+  },
+  cardImage: {
+    alignSelf: 'center',
+    position: 'absolute',
+    height: 120,
+    width: '100%',
+    opacity: 0.8,
+},
 });
