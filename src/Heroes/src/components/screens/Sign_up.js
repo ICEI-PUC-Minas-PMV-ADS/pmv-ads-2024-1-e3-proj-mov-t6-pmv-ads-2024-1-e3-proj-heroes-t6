@@ -45,7 +45,6 @@ export default function Sign_up() {
   };
 
   return (
-    <ScrollView>
     <View>
       <View>
         <TextInput
@@ -87,7 +86,6 @@ export default function Sign_up() {
         </TouchableOpacity>
       </View>
     </View>
-    </ScrollView>
   );
 }
 
@@ -114,6 +112,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: 350,
     marginTop: 60,
+    marginBottom: 10,
     borderRadius: 20,
     height: 50,
     alignSelf: 'center',

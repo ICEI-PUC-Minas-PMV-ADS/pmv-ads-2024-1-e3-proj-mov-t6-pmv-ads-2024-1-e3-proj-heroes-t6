@@ -54,9 +54,9 @@ const Home = ({ navigation }) => {
     return (
         <>
             <Title title='Campanhas' />
-            <View>
+            <ScrollView>
                 <LinearGradient colors={['#236B8E', '#FFFFFF']} style={styles.gradient}>
-                    <ScrollView style={styles.background}>
+                    <View style={styles.background}>
 
                         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CampanhaModal')}>
                             <Icon name={'plus'} size={20} color='white' />
@@ -104,9 +104,9 @@ const Home = ({ navigation }) => {
                                 </TouchableOpacity>
                             ))
                         )}
-                    </ScrollView>
+                    </View>
                 </LinearGradient>
-            </View>
+            </ScrollView>
         </>
     );
 };
@@ -443,11 +443,12 @@ export default function NavegarTelasCamp(){
 // -------------- Estilos ------------//
 const styles = StyleSheet.create({
     gradient: {
-        height: 680,
+        height: '100%',
     },
     cards: {
         borderRadius: 20,
         marginTop: 20,
+        marginBottom: 10,
         backgroundColor: '#ffff',
         overflow: 'hidden',
         elevation: 10,
@@ -460,9 +461,10 @@ const styles = StyleSheet.create({
         position: 'absolute',
         height: 120,
         width: '100%',
+        opacity: 0.75,
     },
     background: {
-        height: '86%',
+        height: '100%',
     },
     background1: {
         backgroundColor: '#236B8E',

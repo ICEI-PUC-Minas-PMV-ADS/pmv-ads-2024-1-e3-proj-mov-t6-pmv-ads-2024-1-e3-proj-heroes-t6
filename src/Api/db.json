@@ -1,13 +1,13 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "email": "adm@pucminas.com",
       "secretquestion": "Animal"
     },
     {
-      "id": "2",
-      "email": "pedro@pucminas.com",
+      "id": 2,
+      "email": "pedro@gmail.com",
       "secretquestion": "Faisca"
     }
   ]

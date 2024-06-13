@@ -28,7 +28,7 @@ export default function Login(){
             secretquestion: recoveryPhrase
           }
         ).then(response => {
-          Alert.alert('Sucesso', response.data.message);
+          Alert.alert('Aviso', response.data.message);
           setRecoveryEmail('');
           setRecoveryPhrase('');
           setRecoveryPassword('');
@@ -219,6 +219,7 @@ const style=StyleSheet.create({
     alignItems:'center',
     width:350,
     marginTop: 60,
+    marginBottom: 10,
     borderRadius:20,
     height:50,
     alignSelf:'center'

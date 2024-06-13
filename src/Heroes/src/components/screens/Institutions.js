@@ -342,6 +342,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     height: 120,
     width: '100%',
-    opacity: 0.8,
+    opacity: 0.75,
 },
 });

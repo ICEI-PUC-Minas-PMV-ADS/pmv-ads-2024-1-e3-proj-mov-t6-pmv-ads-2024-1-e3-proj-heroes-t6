@@ -38,7 +38,7 @@ export default function Teste () {
               </TouchableOpacity>
             </View>
           </View>
-        <ScrollView>
+        <ScrollView style={styles.ScrollView}>
         <View style={styles.container2}>
           {isLoginSelected ? <Login /> : <Sign_up />}
         </View>
@@ -54,7 +54,7 @@ export default function Teste () {
 const styles = StyleSheet.create({
 
   container2:{
-    marginTop: 80,
+    marginTop: 50,
   },
 
   imgLogo: {
@@ -95,7 +95,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20
+    borderBottomRightRadius: 20,
+    marginBottom: 24,
   },
   buttons:{
     backgroundColor:'#E6E6E6',
@@ -133,5 +134,9 @@ const styles = StyleSheet.create({
     width: 360,
     backgroundColor: '#E6E6E6',
     borderRadius:2025,
+  },
+
+  ScrollView: {
+    
   }
 })
