@@ -5,16 +5,12 @@ import { Alert } from 'react-native'
 
 const AuthContext = createContext()
 
-export function useAuth() {
-  return useContext(AuthContext)
-}
 
 export function AuthProvider({ children }) {
   const [id, setId] = useState(null)
-  const [token, setToken] = useState('')
   const [user, setUser] = useState(null)
-
-  const validation = async () => {
+  
+  const validation = async (token) => {
     if (token) {
       try{
         const {data} = await api.get('/', {
@@ -33,30 +29,32 @@ export function AuthProvider({ children }) {
   }
   
   const signIn = async ({ email, senha }) => {
-
+    
     const {data} = await api.post('/login', {
       email: email,
       password: senha
     }).catch(error => {console.error(error)});
-
-    setToken(data.token)
+    
     if (!data.token){
       Alert.alert('Email ou senha incorreto')
     }
-
-    validation()
-
+    
+    validation(data.token)
+    
   };
-
+  
   const signOut = () => {
     setUser(false);
     setId(null);
-    setToken('');
   };
-
+  
   return (
     <AuthContext.Provider value={{ user, signIn, signOut, id }}>
       {children}
     </AuthContext.Provider>
   );
+}
+
+export function useAuth() {
+  return useContext(AuthContext)
 }

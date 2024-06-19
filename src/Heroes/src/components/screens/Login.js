@@ -6,8 +6,8 @@ import api from '../../api/api'
 
 export default function Login(){
     const { signIn } = useAuth();
-    const [email, setEmail]=useState('adm@pucminas.com')
-    const [senha, setSenha]=useState('12345')
+    const [email, setEmail]=useState('')
+    const [senha, setSenha]=useState('')
     const [passwordEye, setPasswordEye]= useState(true)
     const [modalVisible, setModalVisible] = useState(false);
 
