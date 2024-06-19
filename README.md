@@ -1,8 +1,12 @@
-# Heroes - Seja mais um herói
+<img src="docs/img/heroes-logo.png">
 
-`Analise e desenvolvimento de sistemas - EAD`
+# Heroes - Seja mais um herói!
+
+`Análise e Desenvolvimento de Sistemas - EAD`
 
 `DISCIPLINA`
+
+Projeto: Desenvolvimento de uma Aplicação Móvel em um Ambiente de Negócio
 
 `3° Semestre`
 
@@ -12,10 +16,9 @@ Uma aplicação que facilite a doação de alimentos para pessoas em situação 
 ## Integrantes
 
 * Bruno Henrique Arantes Dias
-* Gustavo da Silva Candido
 * Marcos Teixeira Dias
-* Renan Gonçalves da Cunha
 * Pedro Ferreira Andrade
+* Renan Gonçalves da Cunha
 * Wesley Correa Gomes
 
 ## Orientador
@@ -24,7 +27,7 @@ Uma aplicação que facilite a doação de alimentos para pessoas em situação 
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+O arquivo .apk da aplicação se encontra na seção 'releases' deste repositório. Basta instalá-lo em seu dispositivo móvel Android.
 
 # Documentação
 
