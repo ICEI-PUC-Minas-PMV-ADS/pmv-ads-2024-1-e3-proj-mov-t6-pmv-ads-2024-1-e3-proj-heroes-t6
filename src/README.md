@@ -2,10 +2,8 @@
 
 ## Instalação do Site
 
-O site em HTML/CSS/JS é um projeto estático, logo pode ser utilizado tanto em servidores...
+O aplicativo se encontra em um arquivo .apk na seção 'releases' deste repositório. Para instalá-lo, é necessário que seu dispositivo tenha habilitada a função de instalação de apps de fontes desconhecidas. Depois disso, basta baixar o arquivo e clicar nele dentro do dispositivo para que o processo se inicie.
 
 ## Histórico de versões
 
-### [0.1.0] - DD/MM/AAAA
-#### Adicionado
-- Adicionado ...
+### [1.0.0] - 18/06/2024
