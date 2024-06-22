@@ -42,6 +42,15 @@
 
 ## Avaliação
 
-Os testes realizados na aplicação mobile foram bem-sucedidos no que diz respeito à comunicação com o banco de dados. As ações foram executadas corretamente, os registros nas tabelas de cada operação CRUD ocorreram conforme o esperado, e as informações estão sendo exibidas corretamente no front-end após esses registros.
-No entanto, a aplicação ainda enfrenta desafios em termos de responsividade e design. Algumas páginas não são muito responsivas e o design precisa ser ajustado para se alinhar ao layout original.
+Teste 1 - 25/05/2024
+
+Os testes realizados na aplicação mobile foram bem-sucedidos no que diz respeito à comunicação com o banco de dados. As ações foram executadas corretamente, os registros nas tabelas de cada operação CRUD ocorreram conforme o esperado e as informações estão sendo exibidas corretamente no front-end após esses registros.
+No entanto, a aplicação ainda enfrenta desafios em termos de responsividade e design. Um problema foi identificado na realização do login (necessidade de double click para logar), além de páginas pouco responsivas e o design que precisa ser ajustado para se alinhar ao layout original.
 Além disso, algumas funcionalidades ainda estão ausentes, como a edição e exclusão das avaliações dentro do aplicativo. Essas funcionalidades serão implementadas e testadas na próxima etapa.
+
+Teste 2 - 22/06/2024
+
+Os testes realizados na aplicação mobile mostraram uma significativa melhoria em comparação com o teste anterior. A comunicação com o banco de dados continua funcionando corretamente, com todas as operações CRUD sendo executadas conforme o esperado. As informações estão sendo exibidas corretamente no front-end após os registros.
+Os problemas de responsividade e design foram amplamente resolvidos. A aplicação agora está alinhada com o layout original e as páginas são totalmente responsivas. O problema de login (double click para logar) foi corrigido, permitindo um login mais fluido e intuitivo.
+Além disso, as funcionalidades de edição e exclusão das avaliações foram implementadas com sucesso. As ações de editar e excluir avaliações estão funcionando conforme o esperado e foram devidamente testadas.
+Com essas melhorias, a aplicação está mais estável e pronta para ser utilizada pelos usuários finais.

@@ -6,7 +6,7 @@ Este capítulo desempenha um papel fundamental no desenvolvimento da aplicação
 
 As personas levantadas durante o processo de entendimento do problema são apresentadas a seguir:
 
-| <img src="./img/personas01.jpg"> | Florentino Rossi| 
+| ![Persona1](img/personas01.jpg) | Florentino Rossi| 
 |-----------|------------| 
 | **Idade:** | 29 anos |
 | **Ocupação:** | Sociólogo |
@@ -15,7 +15,7 @@ As personas levantadas durante o processo de entendimento do problema são apres
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *LinkedIn |
 | **Como o sistema pode facilitar o trabalho?** | Facilita com transparência e segurança o envio do dinheiro para ajudar nos desastres |
 
-| <img src="./img/personas02.jpg"> | Sabrina Yumi | 
+| ![Persona2](img/personas02.jpg) | Sabrina Yumi | 
 |-----------|------------| 
 | **Idade:** | 25 anos |
 | **Ocupação:** |Gerente de Projeto em uma OSCS de Conservação Ambiental |
@@ -24,7 +24,7 @@ As personas levantadas durante o processo de entendimento do problema são apres
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *Zoom <br> * Twitter |
 | **Como o sistema pode facilitar o trabalho?** | O sistema pode simplificar o processo de solicitação de financiamento, centralizando todas as informações necessárias em uma plataforma fácil de usar. |
 
-| <img src="./img/personas03.jpg"> | Ayumi Kubo | 
+| ![Persona3](img/personas03.jpg) | Ayumi Kubo | 
 |-----------|------------| 
 | **Idade:** | 55 anos |
 | **Ocupação:** | Coordenadora de Voluntariado em uma OSCS de Saúde Pública |
@@ -33,7 +33,7 @@ As personas levantadas durante o processo de entendimento do problema são apres
 | **Aplicativos:** | *Instagram <br> *Facebook <br> LinkedIn <br> Vagas |
 | **Como o sistema pode facilitar o trabalho?** | Pode ajudar a OSCS a arrecadar fundos para cobrir os custos associados à operação dos programas de saúde pública. |
 
-| <img src="./img/personas04.jpg">| Camila Schneider | 
+| ![Persona4](img/personas04.jpg)| Camila Schneider | 
 |-----------|------------| 
 | **Idade:** | 26 anos |
 | **Ocupação:** | Empresária |
@@ -42,7 +42,7 @@ As personas levantadas durante o processo de entendimento do problema são apres
 | **Aplicativos:** | *Instagram <br> *Facebook <br> *Microsoft Teams <br> *AutoCad |
 | **Como o sistema pode facilitar o trabalho?** | O sistema pode oferecer a Camila uma plataforma centralizada onde ele possa pesquisar e descobrir OSCS que atuam diretamente com ajudas com desastres |
 
-| <img src="./img/personas05.jpg"> | Rami Opash | 
+| ![Persona5](img/personas05.jpg) | Rami Opash | 
 |-----------|------------| 
 | **Idade:** | 25 anos |
 | **Ocupação:** | Profissional Liberal |
@@ -76,20 +76,20 @@ Atualmente, muitas pessoas desejam contribuir com causas humanitárias, mas freq
 
 ### Descrição Geral da Proposta
 
-A proposta da nossa aplicação seria facilitar a arrecadação de ajuda solidária para pessoas em situações difíceis e ajudar instituições para causas humanitarias
+A proposta da nossa aplicação seria facilitar a arrecadação de ajuda solidária para pessoas em situações difíceis e ajudar instituições para causas humanitarias.
 
 ### Processo - Página Inicial
 
-![Processo 1](img/Faculdade4.png)
+![Processo 1](img/Processo%20-%20Página%20Inicial.png)
 
 ### Processo - Doação
 
-![Processo 2](img/Faculdade5.png)
+![Processo 2](img/Processo%20-%20Doação.png)
 
 
 ## Indicadores de Desempenho
 
-![Indicadores de Desempenho](img/Faculdadde.png)
+![Indicadores de Desempenho](img/indicadores%20de%20desempenho.png)
 
 
 ## Requisitos
@@ -120,7 +120,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-005| A aplicação será desenvolvida utilizando banco de dados relacional |  ALTA |
 
 ## Diagrama de Casos de Uso
-<img src="./img/diagrama-uso.png">
+![Diagrama de casos de uso](img/Diagrama%20de%20casos%20de%20uso.png)
 
 # Matriz de Rastreabilidade
 
@@ -128,7 +128,7 @@ A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualizaç
 
 A matriz deve contemplar todos os elementos relevantes que fazem parte do sistema, conforme a figura meramente ilustrativa apresentada a seguir.
 
-![Matriz de Rastreabilidade](img/Matriz_de_rastreabilidade.png)
+![Matriz de Rastreabilidade](img/Matriz%20de%20rastreabilidade.png)
 
 # Gerenciamento de Projeto
 
@@ -141,7 +141,7 @@ Em resumo, a gestão do tempo em um projeto envolve a definição clara de metas
 
 "O tempo é o recurso mais escasso e, a menos que seja gerenciado, nada mais pode ser gerenciado." - Peter Drucker
 
-<img src="./img/Fluxograma - Gerenciamento de Tempo.jpeg">
+![Gerenciamento de tempo](img/Fluxograma%20-%20Gerenciamento%20de%20Tempo.jpeg)
 
 | Nome da Tarefa |  Duração  |   Início   |  Término   |
 |----------------|-----------|------------|------------|
@@ -154,7 +154,7 @@ Em resumo, a gestão do tempo em um projeto envolve a definição clara de metas
 
 O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
 
-<img src="./img/grafico de gantt.jpg">
+![Grafico de gantt](img/grafico%20de%20gantt.jpg)
 
 ## Gerenciamento de Equipe
 
@@ -168,7 +168,6 @@ A gestão de equipe em um projeto de desenvolvimento é um processo complexo que
 |    Bruno Arantes      |    Desenvolvedor                            |
 |    Marcos Teixeira    |    Arquiteto de Software e Desenvolvedor    |
 |    Renan Golçaves     |    Analista de Negócios e Desenvolvedor     |
-|    Gustavo Candido    |    Desenvolvedor                            |
 
 
 ## Gestão de Orçamento

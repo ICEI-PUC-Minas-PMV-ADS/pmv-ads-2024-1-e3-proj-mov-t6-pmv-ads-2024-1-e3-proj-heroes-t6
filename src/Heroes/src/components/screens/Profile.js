@@ -128,7 +128,7 @@ const EditarPerfil=({navigation})=>{
 
   return(
     <View style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView>
       <View>
         <Text style={styles.label}>Nome completo</Text>
         <TextInput
@@ -453,9 +453,6 @@ const styles = StyleSheet.create({
     height: 50,
     alignSelf: 'center',
     fontSize: 60,
-  },
-  scrollView: {
-    paddingTop: '5%',
   },
 });
 

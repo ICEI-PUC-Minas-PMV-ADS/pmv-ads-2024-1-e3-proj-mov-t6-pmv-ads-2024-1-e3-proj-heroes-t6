@@ -1,3 +1,3 @@
 # Template Padrão da Aplicação
 
-![alt text](img/Heroes.jpg)<sub> Template padrão do Heroes <sub>
+![Template](img/Template%20do%20app.png)<sub> Template padrão do Heroes <sub>

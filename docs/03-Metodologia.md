@@ -16,7 +16,8 @@ O projeto segue a seguinte convenção para o nome de branches:
 
 - `main`: versão estável já testada do software
 - `develop`: versão de desenvolvimento do software
-<img src="./img/gitflow.png">
+
+![Gitflow](img/gitflow.png)
 
 Quanto à gerência de issues, o projeto adota a seguinte convenção para
 etiquetas:
@@ -35,7 +36,7 @@ Apresente a divisão de papéis entre os membros do grupo.
 Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
 - `Scrum Master` - Pedro Ferreira Andrade
 - `Product Owner` - Wesley Correa Gomes
-- `Dev Team` - Wesley, Bruno, Pedro, Marcos, Gustavo, Renan
+- `Dev Team` - Wesley, Bruno, Pedro, Marcos, Renan
 - `Design Team` - Marcos Teixeira Dias
 
 ### Processo
@@ -50,7 +51,7 @@ Backlog: todas as atividades que devem ser realizadas no projeto, desde a docume
 - `In Review`: O que precisa ser revisado junto ao orientador.
 - `Done`: Tudo o que foi finalizado.
 
-  <img src="./img/Kanban_github.png">
+![Kanban](img/Kanban_github.png)
 
 ### Ferramentas
 
@@ -58,7 +59,7 @@ As ferramentas empregadas no projeto são:
 
 Editor de código: Visual Code Studio
 - `Ferramentas de comunicação`: WhatsApp, Discord e Microsoft Teams
-- `Ferramentas de desenho de tela (interface, _wireframing_)`: Figma
+- `Ferramentas de desenho de tela (interface, _wireframing_)`: Figma, Canva
 - `Ferramentas de desenho de Digrama`: MySQL WorkBench, LucidChart
-- 
+
 O editor de código foi escolhido porque ele possui uma integração com o sistema de versão. As ferramentas de comunicação utilizadas possuem integração semelhante e por isso foram selecionadas. Por fim, para criar diagramas utilizamos essa ferramenta por melhor captar as necessidades da nossa solução.

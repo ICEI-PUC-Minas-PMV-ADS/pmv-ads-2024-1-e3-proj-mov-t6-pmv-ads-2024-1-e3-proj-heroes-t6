@@ -58,10 +58,12 @@ const Home = ({ navigation }) => {
                 <LinearGradient colors={['#236B8E', '#FFFFFF']} style={styles.gradient}>
                     <View style={styles.background}>
 
-                        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CampanhaModal')}>
-                            <Icon name={'plus'} size={20} color='white' />
-                            <Text style={styles.buttonText}>Nova Campanha</Text>
-                        </TouchableOpacity>
+                        {id === '1' && (
+                            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CampanhaModal')}>
+                                <Icon name={'plus'} size={20} color='white' />
+                                <Text style={styles.buttonText}>Nova Campanha</Text>
+                            </TouchableOpacity>
+                        )}
                         
                         {camps.length === 0 ? (
                             <Text style={styles.emptyText}>Nenhuma campanha disponível</Text>
@@ -72,7 +74,7 @@ const Home = ({ navigation }) => {
                                         source={require('../../../assets/Image/fundo1.png')}
                                         imageStyle={styles.cardImage}
                                     >
-                                        {camp.userId.toString() === id && (
+                                        {id === '1' && (
                                             <View style={styles.buttonIconContainer}>
                                                 <TouchableOpacity onPress={() => editCamp(camp)}>
                                                     <Icon name={'pencil'} size={23} color='white' />
@@ -464,7 +466,7 @@ const styles = StyleSheet.create({
         opacity: 0.75,
     },
     background: {
-        height: '100%',
+        height: '84%',
     },
     background1: {
         backgroundColor: '#236B8E',

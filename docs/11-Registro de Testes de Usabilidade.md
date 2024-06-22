@@ -4,36 +4,42 @@ CTU-01 – Contraste e Multiplataforma
 
 |Usuário	|Artefato	|Idade	|Tempo	|Clicks/Ações	|Qtd. Erros	|Se recuperou do erro	|Comentários e observações|
 | --- 	| --- 	| --- | --- | ---  | --- | --- | --- |
-|Usuário 1	|CTU-01	|25	|00:03:32	|19	|0	|---	|Usuário achou a aplicação intuitiva|
-|Usuário 2	|CTU-01	|17	|00:03:10	|18	|0	|---	|Usuário achou a aplicação fácil de acessar|
-|Usuário 3	|CTU-01	|20	|00:02:50	|18	|0	|---	|Usuário achou acessível o teste|
-|Usuário 4	|CTU-01	|30	|00:03:23	|17	|0	|---	|Usuário achou intuitivo, fácil e didático|
-|Usuário 5	|CTU-01	|24	|00:02:49	|18	|0	|---	|Usuário achou o cadastro de fácil acesso, página limpa e intuitiva|
+|Usuário 1	|CTU-01	|23	|00:03:12	|42	|1	|Sim	|Usuário teve dificuldade inicial, mas achou a aplicação intuitiva|
+|Usuário 2	|CTU-01	|19	|00:03:07	|45	|0	|---	|Usuário achou a aplicação fácil de navegar e fazer doações|
+|Usuário 3	|CTU-01	|27	|00:02:58	|43	|0	|---	|Usuário achou os comentários acessíveis e funcionais|
+|Usuário 4	|CTU-01	|31	|00:03:21	|47	|0	|---	|Usuário achou intuitivo fazer avaliações|
+|Usuário 5	|CTU-01	|22	|00:00:15	|1	|1	|Não	|Usuário não foi capaz de acessar a aplicação em um dispositivo ios|
 
 CTU-02 – Intuitividade e Amigabilidade
 
 |Usuário	|Artefato	|Idade	|Tempo	|Clicks/Ações	|Qtd. Erros	|Se recuperou do erro	|Comentários e observações|
 | --- 	| --- 	| --- | --- | ---  | --- | --- | --- |
-|Usuário 1	|CTU-02	|25	|00:04:20	|17	|1	|Sim	|Usuário teve dificuldade na navegação inicial, mas conseguiu se recuperar e achou a aplicação amigável|
-|Usuário 2	|CTU-02	|17	|00:03:45	|18	|0	|---	|Usuário achou a navegação lógica e clara|
-|Usuário 3	|CTU-02	|20	|00:04:10	|20	|0	|---	|Usuário não encontrou dificuldades e achou a interface intuitiva|
-|Usuário 4	|CTU-02	|30	|00:02:55	|18	|2	|Sim	|Usuário teve alguns problemas, mas conseguiu resolver e achou a aplicação amigável|
-|Usuário 5	|CTU-02	|24	|00:03:05	|20	|1	|Sim	|Usuário achou a interface confusa inicialmente, mas se adaptou rapidamente|
+|Usuário 1	|CTU-02	|23	|00:03:12	|42	|1	|Sim	|Usuário teve dificuldade inicial, mas achou a aplicação amigável e fácil para realizar doações|
+|Usuário 2	|CTU-02	|19	|00:03:07	|45	|0	|---	|Usuário não encontrou dificuldades e achou a interface intuitiva para realizar comentários as instituições|
+|Usuário 3	|CTU-02	|27	|00:02:58	|43	|0	|---	|Usuário achou a aplicação prática para gerenciar comentários e avaliações|
+|Usuário 4	|CTU-02	|31	|00:03:21	|47	|0	|---	|Usuário achou a navegação lógica e clara ao procurar instituições para doar|
+|Usuário 5	|CTU-02	|22	|00:00:15	|1	|1	|Não	|Usuário não foi capaz de acessar a aplicação em um dispositivo ios|
 
 CTU-03 – Banco de Dados Relacional
 
 |Usuário	|Artefato	|Idade	|Tempo	|Clicks/Ações	|Qtd. Erros	|Se recuperou do erro	|Comentários e observações|
 | --- 	| --- 	| --- | --- | ---  | --- | --- | --- |
-|Usuário 1	|CTU-03	|25	|00:04:05	|16	|0	|---	|Usuário achou a integração com o banco de dados eficiente|
-|Usuário 2	|CTU-03	|17	|00:03:50	|15	|0	|---	|Usuário achou que as informações foram apresentadas de forma clara e precisa|
-|Usuário 3	|CTU-03	|20	|00:02:35	|14	|0	|---	|Usuário não encontrou problemas com a exibição de dados|
-|Usuário 4	|CTU-03	|30	|00:02:45	|15	|0	|---	|Usuário ficou satisfeito com a rapidez das operações de banco de dados|
-|Usuário 5	|CTU-03	|24	|00:03:15	|15	|0	|---	|Usuário achou que a interface e o banco de dados estavam bem integrados|
+|Usuário 1	|CTU-03	|23	|00:03:12	|42	|0	|---	|Usuário achou a integração com o banco de dados eficiente ao visualizar os detalhes das campanhas|
+|Usuário 2	|CTU-03	|19	|00:03:07	|45	|0	|---	|Usuário achou que as informações das doações foram apresentadas de forma clara e precisa|
+|Usuário 3	|CTU-03	|27	|00:02:58	|43	|0	|---	|Usuário não encontrou problemas com a exibição de dados das avaliações|
+|Usuário 4	|CTU-03	|31	|00:03:21	|47	|0	|---	|Usuário ficou satisfeito com a rapidez das operações de banco de dados ao gerenciar seus comentários|
+|Usuário 5	|CTU-03	|22	|00:00:15	|1	|1	|Não	|Usuário não foi capaz de acessar a aplicação em um dispositivo ios|
 
 ## Avaliação
 
-Os testes de usabilidade realizados na aplicação revelaram insights valiosos sobre a experiência do usuário, destacando tanto pontos fortes quanto áreas para melhorias.
-No teste de contraste e multiplataforma (CTU-01), os participantes conseguiram realizar todas as tarefas sem encontrar erros. Eles elogiaram a aplicação por sua intuitividade, facilidade de uso e acessibilidade, independentemente do dispositivo utilizado. Esse feedback positivo indica que a aplicação é consistente e visualmente acessível, atendendo aos requisitos de ser multiplataforma e de oferecer um bom nível de contraste, o que é crucial para garantir uma experiência inclusiva para todos os usuários.
-No teste de intuitividade e amigabilidade (CTU-02), a maioria dos usuários encontrou a navegação lógica e clara. Alguns tiveram dificuldades iniciais, mas conseguiram se recuperar rapidamente e continuar usando a aplicação sem problemas significativos. Isso sugere que, embora a interface seja geralmente intuitiva, há espaço para melhorias para tornar a navegação ainda mais fluida e evitar pontos de confusão. No geral, a aplicação é amigável e atende às expectativas, mas pequenas melhorias podem torná-la ainda mais acessível e fácil de usar para todos, inclusive para aqueles com menos familiaridade tecnológica.
-Finalmente, no teste de banco de dados relacional (CTU-03), todos os usuários relataram uma experiência eficiente e rápida ao acessar e manipular informações. A integração entre a interface do usuário e o banco de dados foi elogiada por sua clareza e precisão, demonstrando que a aplicação atende bem ao requisito de utilizar um banco de dados relacional de forma eficaz.
-Em resumo, os testes indicam que a aplicação mobile de doações oferece uma experiência consistente e acessível em diferentes plataformas, possui uma interface intuitiva e amigável, e apresenta uma integração eficiente com o banco de dados. Apesar dos resultados amplamente positivos, algumas pequenas melhorias na navegação podem tornar a aplicação ainda mais user-friendly. Esses insights fornecem uma base sólida para futuras melhorias, garantindo que a aplicação continue evoluindo para atender às necessidades de todos os seus usuários.
+CTU-01 – Contraste e Multiplataforma
+
+Os resultados do teste de contraste e multiplataforma indicam que a maioria dos usuários encontrou a aplicação intuitiva e fácil de navegar, com um bom nível de contraste entre os elementos da tela. No entanto, um problema significativo foi identificado: um dos usuários não conseguiu acessar a aplicação em um dispositivo iOS. Esse problema ocorreu porque o aplicativo foi disponibilizado apenas como um arquivo APK, compatível exclusivamente com dispositivos Android. A questão ressalta a necessidade de oferecer suporte multiplataforma para garantir uma acessibilidade mais ampla. No entanto, ao final deste projeto, foi definido que esse suporte não será disponibilizado.
+
+CTU-02 – Intuitividade e Amigabilidade
+
+O teste de intuitividade e amigabilidade revelou que os usuários, em sua maioria, acharam a interface do aplicativo clara e fácil de usar para realizar doações, comentar sobre as instituições parceiras e avaliar o app. A navegação foi considerada lógica e intuitiva, permitindo aos usuários completar suas tarefas sem dificuldades significativas. Um dos usuários teve dificuldades iniciais, mas conseguiu se recuperar e completar suas tarefas, reforçando a amigabilidade da aplicação.
+
+CTU-03 – Banco de Dados Relacional
+
+Os resultados do teste do banco de dados relacional foram positivos, com todos os usuários satisfeitos com a eficiência e rapidez das operações de banco de dados. Os dados das campanhas, doações, avaliações e comentários foram apresentados de forma clara e precisa, sem problemas de exibição. Os usuários apreciaram a rapidez e precisão das operações de banco de dados, o que contribuiu para uma experiência de uso satisfatória. Em geral, o desempenho do banco de dados foi bem avaliado e considerado eficiente.
