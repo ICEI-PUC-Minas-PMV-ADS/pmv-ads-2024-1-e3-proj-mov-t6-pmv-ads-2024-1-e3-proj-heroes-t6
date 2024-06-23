@@ -10,7 +10,7 @@ Projeto: Desenvolvimento de uma Aplicação Móvel em um Ambiente de Negócio
 
 `3° Semestre`
 
-Uma aplicação que facilite a doação de alimentos para pessoas em situação de vulnerabilidade social e vítimas de desastres, promovendo uma ponte eficaz entre doadores (indivíduos, empresas, e organizações) e os beneficiários finais.
+Uma aplicação que facilite o processo de doação para pessoas em situação de vulnerabilidade social e vítimas de desastres, promovendo uma ponte eficaz entre doadores (indivíduos, empresas, e organizações) e os beneficiários finais.
 
 
 ## Integrantes
