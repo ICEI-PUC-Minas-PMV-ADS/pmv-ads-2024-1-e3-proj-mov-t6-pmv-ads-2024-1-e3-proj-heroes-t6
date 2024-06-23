@@ -1,0 +1,26 @@
+message: Please cite this software using these metadata.
+title: Heroes - Seja mais um herói!
+authors:
+  - family-names: Henrique Arantes Dias
+    given-names: Bruno
+  - family-names: Teixeira Dias
+    given-names: Marcos
+  - family-names: Gonçalves da Cunha
+    given-names: Renan
+  - family-names: Correa Gomes
+    given-names: Wesley
+  - family-names: Ferreira Andrade
+    given-names: Pedro
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Dias Maciel
+    given-names: Wesley
+keywords:
+  - Heroes
+  - doações
+  - vulnerabilidade
+  - instituições
+  - projeto
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e3-proj-mov-t6-pmv-ads-2024-1-e3-proj-heroes-t6.git
+version: 1.0.0
+date-released: 2024-06-18
