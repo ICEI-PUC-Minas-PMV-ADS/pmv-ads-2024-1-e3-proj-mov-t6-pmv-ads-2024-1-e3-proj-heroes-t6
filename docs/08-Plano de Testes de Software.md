@@ -28,26 +28,26 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | Critério de Êxito | A remoção do usuário deve ser efetuada e o logout executado com sucesso. |
 | | |
 | **Caso de Teste** | **CT-05 – Visualizar Lista de Campanhas** |
-| Requisito Associado | RF-003 - A aplicação deve permitir gerenciamento das campanhas de doações. |
+| Requisito Associado | RF-003 - A aplicação deve permitir gerenciamento das campanhas de doações através de um usuário administrativo. |
 | Objetivo do Teste | Verificar se o usuário é capaz de visualizar todas as campanhas. |
 | Instruções | - Acessar a aplicação pelo dispositivo <br> - Realizar o login <br> - Visualizar as campanhas já cadastradas na página inicial |
 | Critério de Êxito | Visualizar com sucesso as campanhas. |
 | | |
 | **Caso de Teste** | **CT-06 – Criar Campanhas** |
-| Requisito Associado | RF-003 - A aplicação deve permitir gerenciamento das campanhas de doações. |
-| Objetivo do Teste | Verificar se o usuário é capaz de criar campanhas. |
+| Requisito Associado | RF-003 - A aplicação deve permitir gerenciamento das campanhas de doações através de um usuário administrativo. |
+| Objetivo do Teste | Verificar se o usuário administrativo é capaz de criar campanhas. |
 | Instruções | - Acessar a aplicação pelo dispositivo <br> - Realizar o login <br> - Clicar em "+ Nova Campanha" <br> - Preencher as informações da campanha <br> - Confirmar criação |
 | Critério de Êxito | Visualizar a nova campanha na página inicial. |
 | | |
 | **Caso de Teste** | **CT-07 – Editar Campanhas** | 
-| Requisito Associado | RF-003 - A aplicação deve permitir gerenciamento das campanhas de doações. |
-| Objetivo do Teste | Verificar se o usuário é capaz de editar suas campanhas. |
+| Requisito Associado | RF-003 - A aplicação deve permitir gerenciamento das campanhas de doações através de um usuário administrativo. |
+| Objetivo do Teste | Verificar se o usuário administrativo é capaz de editar campanhas. |
 | Instruções | - Acessar a aplicação pelo dispositivo <br> - Realizar o login <br> - Clicar no ícone de edição da campanha desejada <br> - Preencher as novas informações da campanha <br> - Confirmar edição |
 | Critério de Êxito | Visualizar a campanha editada na página inicial. |
 | | |
 | **Caso de Teste** | **CT-08– Excluir Campanhas** |
-| Requisito Associado | RF-003 - A aplicação deve permitir gerenciamento das campanhas de doações. |
-| Objetivo do Teste | Verificar se o usuário é capaz de excluir suas campanhas. |
+| Requisito Associado | RF-003 - A aplicação deve permitir gerenciamento das campanhas de doações através de um usuário administrativo. |
+| Objetivo do Teste | Verificar se o usuário administrativo é capaz de excluir campanhas. |
 | Instruções | - Acessar a aplicação pelo dispositivo <br> - Realizar o login <br> - Clicar no ícone de remoção da campanha desejada <br> - Confirmar remoção |
 | Critério de Êxito | Visualizar que a campanha não está mais presente na página inicial. |
 | | |
@@ -65,7 +65,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir.
 | | |
 | **Caso de Teste** | **CT-11– Criar Avaliação** |
 | Requisito Associado | RF-006 - A aplicação deve apresentar uma sessão de avaliação onde o usuário possa enviar e gerenciar suas opiniões. |
-| Objetivo do Teste | Verificar se o usuário consegue avaliar a aplicação. |
+| Objetivo do Teste | Verificar se o usuário é capaz de avaliar a aplicação. |
 | Instruções | - Acessar a aplicação pelo dispositivo <br> - Realizar o login <br> - Clicar no ícone de informações <br> - Clicar em "Avaliar" <br> - Inserir a nota e o comentário <br> Confirmar a nova avaliação |
 | Critério de Êxito | Visualizar a nova avaliação na lista. |
 | | |

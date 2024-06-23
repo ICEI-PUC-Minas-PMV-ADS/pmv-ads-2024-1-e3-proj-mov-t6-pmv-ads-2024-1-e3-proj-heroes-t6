@@ -197,12 +197,14 @@ const styles = StyleSheet.create({
   },
   textComment:{
     fontSize: 18,
-    textAlign: 'justify',
-    alignSelf: 'flex-start',
-    marginBottom: 20,
-    marginTop: 10,
-    marginLeft: 20,
-    color: 'black',
+      lineHeight: 21,
+      textAlign: 'justify',
+      alignSelf: 'flex-start',
+      marginBottom: 20,
+      marginTop: 10,
+      marginLeft: 20,
+      marginRight: 20,
+      color: 'black',
   },
 
   buttonsContainer: {

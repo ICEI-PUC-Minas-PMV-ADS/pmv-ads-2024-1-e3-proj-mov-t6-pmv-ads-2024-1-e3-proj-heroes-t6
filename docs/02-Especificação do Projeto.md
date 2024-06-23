@@ -100,9 +100,9 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 | ID | Descrição do Requisito | Prioridade |
 |----|------------------------|------------|
-|RF-001| A aplicação deve oferecer gerenciamento de usuários. | ALTA |
-|RF-002| A aplicação deve permitir que usuários pré-cadastrados realizem login e logout. | ALTA |
-|RF-003| A aplicação deve permitir gerenciamento das campanhas de doações. | ALTA |
+|RF-001| A aplicação deve oferecer gerenciamento de usuários | ALTA |
+|RF-002| A aplicação deve permitir que usuários pré-cadastrados realizem login e logout | ALTA |
+|RF-003| A aplicação deve permitir gerenciamento das campanhas de doações através de um usuário administrativo | ALTA |
 |RF-004| A aplicação deve apresentar uma página para cada campanha, onde seja possível visualizar seus detalhes, o progresso da arrecadação e executar as doações através de uma chave pix. | ALTA |
 |RF-005| A aplicação deve apresentar uma página sobre o Heroes. | ALTA |
 |RF-006| A aplicação deve apresentar uma sessão de avaliação onde o usuário possa enviar e gerenciar suas opiniões. | ALTA |
@@ -113,11 +113,11 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| A aplicação deve utilizar um framework multiplataformas | ALTA | 
-|RNF-002| A aplicação deve ter interface intuitiva e amigável, mesmo para usuários não técnicos |  ALTA |
-|RNF-003| A aplicação deve ter Navegação clara e lógica, facilitando o acesso às informações |  MÉDIA |
-|RNF-004| A aplicação deve ter bom nível de contraste entre os elementos da tela em conformidade |  MÉDIA |
-|RNF-005| A aplicação será desenvolvida utilizando banco de dados relacional |  ALTA |
+|RNF-001| A aplicação deve utilizar um framework compatível com dispositivos Android. | ALTA | 
+|RNF-002| A aplicação deve ter interface intuitiva e amigável, mesmo para usuários não técnicos. |  ALTA |
+|RNF-003| A aplicação deve ter Navegação clara e lógica, facilitando o acesso às informações. |  MÉDIA |
+|RNF-004| A aplicação deve ter bom nível de contraste entre os elementos da tela em conformidade. |  MÉDIA |
+|RNF-005| A aplicação será desenvolvida utilizando banco de dados relacional. |  ALTA |
 
 ## Diagrama de Casos de Uso
 ![Diagrama de casos de uso](img/Diagrama%20de%20casos%20de%20uso.png)

@@ -219,7 +219,6 @@ export default function ModalAboltInstituition() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
     flex: 1,
   },
   container2: {

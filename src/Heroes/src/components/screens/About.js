@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: 'black',
     lineHeight: 21,
-    marginHorizontal: 20, 
+    marginHorizontal: 10, 
     textAlign: 'justify', 
   },
 });

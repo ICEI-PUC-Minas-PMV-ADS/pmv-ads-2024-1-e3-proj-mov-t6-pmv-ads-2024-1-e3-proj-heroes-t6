@@ -2,10 +2,10 @@
 
 Os testes de usabilidade a serem realizados no aplicativo são descritos a seguir.
 
-| **Caso de Teste** | **CTU-01 – Contraste e Multiplataforma** |
+| **Caso de Teste** | **CTU-01 – Contraste** |
 |:---:|:---:|
-| Requisito Associado | RNF-001 - A aplicação deve utilizar um framework multiplataformas;<br> RNF-004 - A aplicação deve ter bom nível de contraste entre os elementos da tela em conformidade. |
-| Objetivo do Teste | Avaliar a consistência da experiência do usuário em diferentes plataformas, verificar se todas as funcionalidades estão acessíveis e funcionando corretamente em cada uma delas, e avaliar o nível de contraste entre os elementos da tela para verificar se é suficiente para garantir a legibilidade e acessibilidade para usuários. |
+| Requisito Associado | RNF-001 - A aplicação deve utilizar um framework compatível com dispositivos Android;<br> RNF-004 - A aplicação deve ter bom nível de contraste entre os elementos da tela em conformidade. |
+| Objetivo do Teste | Avaliar a consistência da experiência do usuário em diferentes dispositivos, verificar se todas as funcionalidades estão acessíveis e funcionando corretamente em cada uma delas, e avaliar o nível de contraste entre os elementos da tela para verificar se é suficiente para garantir a legibilidade e acessibilidade para usuários. |
 | Instruções | - Acessar a aplicação pelo dispositivo <br> - Realizar atividades cotidianas do aplicativo (cadastro, login, acesso as campanhas, gerenciamento de usuário, gerenciamento de avaliações, gerenciamento de comentários, acessar informações, realizar doações) |
 | Critério de Êxito | As funcionalidades devem estar funcionando corretamente  e os elementos das telas devem apresentar um nível de contraste aceitável. |
 | | |

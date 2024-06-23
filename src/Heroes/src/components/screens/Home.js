@@ -57,7 +57,6 @@ const Home = ({ navigation }) => {
             <ScrollView>
                 <LinearGradient colors={['#236B8E', '#FFFFFF']} style={styles.gradient}>
                     <View style={styles.background}>
-
                         {id === '1' && (
                             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CampanhaModal')}>
                                 <Icon name={'plus'} size={20} color='white' />
@@ -449,7 +448,7 @@ const styles = StyleSheet.create({
     },
     cards: {
         borderRadius: 20,
-        marginTop: 20,
+        marginTop: 5,
         marginBottom: 10,
         backgroundColor: '#ffff',
         overflow: 'hidden',
